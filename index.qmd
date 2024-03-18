@@ -1,0 +1,16 @@
+# Organisatorisches {.unnumbered}
+
+```{r qr,  echo=FALSE, warning=FALSE}
+library(qrcode)
+
+qr <- qr_code('https://janvoss.github.io/Zukunftsoekonomie/')
+#plot(qr)
+
+generate_svg(qr, filename = "qr.svg")
+
+```
+
+|       ${}$        | Unterlagen: <https://janvoss.github.io/Zukunftsoekonomie/> |
+|:-----------------:|:--------------------------------------------------:|
+| ![logo](logo.png) |              ![](qr.svg){width="60%"}              |
+
