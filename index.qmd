@@ -3,14 +3,14 @@
 ```{r qr,  echo=FALSE, warning=FALSE}
 library(qrcode)
 
-qr <- qr_code('https://janvoss.github.io/Zukunftsoekonomie/')
+qr <- qr_code('https://janvoss.github.io/Spieltheorie/')
 #plot(qr)
 
 generate_svg(qr, filename = "qr.svg")
 
 ```
 
-|       ${}$        | Unterlagen: <https://janvoss.github.io/Zukunftsoekonomie/> |
+|       ${}$        | Unterlagen: <https://janvoss.github.io/Spieltheorie/> |
 |:-----------------:|:--------------------------------------------------:|
 | ![logo](logo.png) |              ![](qr.svg){width="60%"}              |
 
