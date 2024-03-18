@@ -11,6 +11,9 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - Rationalität.qmd
+    - Spieltheorie.qmd
+    - Verhaltensoekonomik.qmd
 #    - summary.qmd
 #    - references.qmd
 
