@@ -14,10 +14,9 @@ book:
     - Rationalitaet.qmd
     - Spieltheorie.qmd
     - Verhaltensoekonomik.qmd
-#    - summary.qmd
-#    - references.qmd
+    - Literatur.qmd
 
-bibliography: references.bib
+bibliography: Spieltheorie.bib
 
 format:
   html:

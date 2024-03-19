@@ -10,7 +10,14 @@ generate_svg(qr, filename = "qr.svg")
 
 ```
 
-|       ${}$        | Unterlagen: <https://janvoss.github.io/Spieltheorie/> |
+|       ${}$        |  ${}$  |
 |:-----------------:|:--------------------------------------------------:|
-| ![logo](logo.png) |              ![](qr.svg){width="60%"}              |
+| ![logo](logo.png) |    ![](qr.svg){width="30%"}              |
 
+- Unterlagen: <https://janvoss.github.io/Spieltheorie/>
+
+- Modul: 203-039 Wettbewerb und Staat I [Modulhandbuch](https://www.hfwu.de/fileadmin/user_upload/FAVM/VWL/modulhandbuch/Modulhandbuch_spob_vwl_2015_wise_Stand_2016_WiSe.pdf)
+
+- Weitere Veranstaltung im ModuL: Industrie- und Regulierungsökonomik, Wettbewerbspolitik
+
+- Prüfungsleistung: K60, diese VL davon 50%

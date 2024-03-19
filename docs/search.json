@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Spieltheorie und Verhaltensökonomik",
     "section": "",
-    "text": "Organisatorisches\n\n\n\n\\({}\\)\nUnterlagen: https://janvoss.github.io/Spieltheorie/",
+    "text": "Organisatorisches\n\n\n\n\n\n\n\n\\({}\\)\n\\({}\\)\n\n\n\n\n\n\n\n\n\n\nUnterlagen: https://janvoss.github.io/Spieltheorie/\nModul: 203-039 Wettbewerb und Staat I Modulhandbuch\nWeitere Veranstaltung im ModuL: Industrie- und Regulierungsökonomik, Wettbewerbspolitik\nPrüfungsleistung: K60, diese VL davon 50%",
     "crumbs": [
       "Organisatorisches"
     ]
@@ -12,11 +12,101 @@
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  Einleitung",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 Ökomomische Modellierung menschlichen Verhaltens",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "Literatur.html",
+    "href": "Literatur.html",
+    "title": "Literatur",
+    "section": "",
+    "text": "Beck, Hanno. 2014. Behavioral Economics: Eine Einführung. Wiesbaden.\n\n\nBerninghaus, Siegfried K., Karl-Martin Ehrhart, and Werner Güth. 2010. Strategische Spiele. Springer-Lehrbuch. Berlin, Heidelberg: Springer. https://doi.org/10.1007/978-3-642-11651-3.\n\n\nDetel, Wolfgang. 2007. Grundkurs Philosophie. Band 5: Philosophie des Sozialen. Stuttgart.\n\n\nGigerenzer, Gerd. 2018. “The Bias Bias in Behavioral Economics.” Review of Behavioral Economics 5: 303–36.\n\n\nHoller, Manfred J., Gerhard Illing, and Stefan Napel. 2019. Einführung in die Spieltheorie. Berlin, Heidelberg: Springer. https://doi.org/10.1007/978-3-642-31963-1.\n\n\nJust, David R. 2014. Introduction to Behavioral Economics. Noneconomic Factors That Shape Economic Decisions. Hoboken NJ.\n\n\nLee, Dwight R., and J. R. Clark. 2017. “Can Behavioral Economists Improve Economic Rationality?” Public Choice 174: 1–18.\n\n\nMusgrave, Allen. 1981. “Unreal Assumptions in Economic Theory. The f-Twist Untwisted.” Kyklos 34: 377–87.\n\n\nWeintraub, E. Roy. 2017. “Game Theory and Cold War Rationality: A Review Essay.” Journal of Economic Literature 55: 148–61.\n\n\nWinter, Stefan. 2019. Grundzüge der Spieltheorie. Ein Lehr- und Arbeitsbuch für das (Selbst-)Studium. Berlin Heidelberg.",
+    "crumbs": [
+      "Literatur"
+    ]
+  },
+  {
+    "objectID": "intro.html#ökomomische-modellierung-menschlichen-verhaltens",
+    "href": "intro.html#ökomomische-modellierung-menschlichen-verhaltens",
+    "title": "1  Einleitung",
+    "section": "",
+    "text": "Methodologischer Individualismus\n\nSituationslogik erlaubt Verknüpfung von Situation, Zielen und Handlung\nRationalität\n\nStrenge Rationalität\nBeschränkte Rationalität\nVerhaltensökonomik\n\nRationalität als Konzept\nRationalität als Behauptung über einen Sachverhalt\nRationalität als Analysegrammatik",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#formen-des-wettbewerbs",
+    "href": "intro.html#formen-des-wettbewerbs",
+    "title": "1  Einleitung",
+    "section": "1.2 Formen des Wettbewerbs",
+    "text": "1.2 Formen des Wettbewerbs\n-Vollkommener Wettbewerb auf Märkten - Innovationswettbewerb - Entdeckungswettbewerb - \\(\\dots\\)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#arenen-des-wettbewerbs",
+    "href": "intro.html#arenen-des-wettbewerbs",
+    "title": "1  Einleitung",
+    "section": "1.3 Arenen des Wettbewerbs",
+    "text": "1.3 Arenen des Wettbewerbs\n\nMärkte\nOrganisationen\n\ndurch Märkte diszipliniert (Unternehmen)\nnicht durch Märkte diszipliniert (Behörden, Vereine, \\(\\dots\\))",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#fazit-zum-modul",
+    "href": "intro.html#fazit-zum-modul",
+    "title": "1  Einleitung",
+    "section": "1.4 Fazit zum Modul",
+    "text": "1.4 Fazit zum Modul\n\\(\\rightarrow\\) Im Modul befassen wir uns mit Wettbewerb in unterschiedlichen Kontexten\n\\(\\rightarrow\\) Basis der Überlegungen sind (unterschiedliche) Konzepte über menschliches Verhalten",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung</span>"
+    ]
+  },
+  {
+    "objectID": "Rationalitaet.html",
+    "href": "Rationalitaet.html",
+    "title": "2  Rationalität",
+    "section": "",
+    "text": "2.1 Basisschema der Handlungserklärung\nDas Basisschema ist noch unvollständig:\n\\(\\Rightarrow\\) erweitertes Schema der Handlungserklärung",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Rationalität</span>"
+    ]
+  },
+  {
+    "objectID": "Rationalitaet.html#basisschema-der-handlungserklärung",
+    "href": "Rationalitaet.html#basisschema-der-handlungserklärung",
+    "title": "2  Rationalität",
+    "section": "",
+    "text": "Person \\(S\\) wünscht, Ziel \\(Z\\) zu realisieren.\n\\(S\\) glaubt, die Handlung \\(H\\) sei ein Mittel, um \\(Z\\) zu realisieren.\n\\(S\\) vollzieht Handlung \\(H\\).\n\n\n\nWas ist, wenn es für \\(S\\) bessere Handlungen als \\(H\\) gibt, \\(Z\\) zu realisieren? Dann wäre es nicht vernünftig, \\(H\\) zu vollziehen.\nWas ist, wenn es \\(S\\) \\(H\\) gar nicht vollziehen kann?\nWas ist, wenn \\(H\\) mit negativen Folgen einhergeht, die schlimmer sind, als \\(Z\\) nicht zu realisieren?\nWas ist, wenn \\(S\\) noch weitere Ziele realisieren will, die mit \\(Z\\) nicht vereinbar sind?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Rationalität</span>"
+    ]
+  },
+  {
+    "objectID": "Rationalitaet.html#erweitertes-schema-der-handlungserklärung",
+    "href": "Rationalitaet.html#erweitertes-schema-der-handlungserklärung",
+    "title": "2  Rationalität",
+    "section": "2.2 Erweitertes Schema der Handlungserklärung",
+    "text": "2.2 Erweitertes Schema der Handlungserklärung\n\n\\(S\\) hat die Absicht, Ziel \\(Z\\) zu realisieren.\n\\(S\\) glaubt, dass, wenn sie Handlung \\(H\\) vollzieht, sie somit \\(Z\\) realisieren kann.\n\\(S\\) glaubt in der Lage zu sein, \\(Z\\) zu realisieren und \\(H\\) zu vollziehen.\n\\(S\\) weiß, wie man \\(Z\\) realisiert und \\(H\\) vollzieht.\n\\(S\\) glaubt nicht, dass es etwas Besseres gibt als \\(H\\), um \\(Z\\) zu realisieren.\n\\(S\\) glaubt nicht, dass der Vollzug von \\(H\\) Folgen hat, die schlimmer sind als nicht \\(Z\\) realisieren zu können.\n\\(S\\) hat nicht die Absicht, ein Ziel zu realisieren, von dem \\(S\\) weiß, dass es unvereinbar damit ist, \\(Z\\) zu realisieren, und das sie \\(Z\\) gegenüber vorzieht.\n\\(S\\) vollzieht Handlung \\(H\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Rationalität</span>"
+    ]
+  },
+  {
+    "objectID": "Rationalitaet.html#zwischenfazit",
+    "href": "Rationalitaet.html#zwischenfazit",
+    "title": "2  Rationalität",
+    "section": "2.3 Zwischenfazit",
+    "text": "2.3 Zwischenfazit\n\nErklärungen rationaler Handlungen unterstellen nicht zwangsläufig, dass die handelnde Person “alles richtig” macht.\nInsbesondere lässt es beschränkte Handlungsmöglichkeiten zu und unvollständige oder fehlerhafte Informationslagen.\nDas Rationalprinzip ist weniger eine Behauptung über die handelnde Person, sondern ein Schema, eine “Grammatik” der Erklärung.\nDiese Grammatik verwenden wir sowohl in der Spieltheorie als auch in der Verhaltensökonomik\n\nSchwerpunkt Spieltheorie: Individuen handeln nach (dem richtigen) mathematischen Kalkül und machen höchstens zufällig Fehler\n\nSchwerpunkt Verhaltensökonomik: Individuen handeln nachvollziehbar, aber nach Kalkülen, die nicht ganz “richtig” sind.\n\n\n\n\n\n\nDetel, Wolfgang. 2007. Grundkurs Philosophie. Band 5: Philosophie des Sozialen. Stuttgart.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Rationalität</span>"
     ]
   }
 ]
