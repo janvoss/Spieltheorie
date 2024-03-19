@@ -1,2 +1,30 @@
 # Nicht-kooperative Spieltheorie
 
+## Einleitung und begriffliche Einordnung
+
+## Das Nash-Gleichgewicht
+
+## Simultane Spiele
+
+### Reine Strategien
+
+#### Einperiodige Spiele
+
+#### Wiederholte Spiele
+
+#### Trembling Hand
+
+### Gemischte Strategien
+
+## Sequenzielle Spiele
+
+### Vollständige Information
+
+### Unvollständige Information
+
+## Koalitionsspiele
+
+## Evolutionäre Spiele
+
+
+

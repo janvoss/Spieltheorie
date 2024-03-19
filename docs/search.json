@@ -108,5 +108,145 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Rationalität</span>"
     ]
+  },
+  {
+    "objectID": "Spieltheorie.html",
+    "href": "Spieltheorie.html",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "",
+    "text": "3.1 Einleitung und begriffliche Einordnung",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Spieltheorie.html#das-nash-gleichgewicht",
+    "href": "Spieltheorie.html#das-nash-gleichgewicht",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "3.2 Das Nash-Gleichgewicht",
+    "text": "3.2 Das Nash-Gleichgewicht",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Spieltheorie.html#simultane-spiele",
+    "href": "Spieltheorie.html#simultane-spiele",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "3.3 Simultane Spiele",
+    "text": "3.3 Simultane Spiele\n\n3.3.1 Reine Strategien\n\n3.3.1.1 Einperiodige Spiele\n\n\n3.3.1.2 Wiederholte Spiele\n\n\n3.3.1.3 Trembling Hand\n\n\n\n3.3.2 Gemischte Strategien",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Spieltheorie.html#sequenzielle-spiele",
+    "href": "Spieltheorie.html#sequenzielle-spiele",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "3.4 Sequenzielle Spiele",
+    "text": "3.4 Sequenzielle Spiele\n\n3.4.1 Vollständige Information\n\n\n3.4.2 Unvollständige Information",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Spieltheorie.html#koalitionsspiele",
+    "href": "Spieltheorie.html#koalitionsspiele",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "3.5 Koalitionsspiele",
+    "text": "3.5 Koalitionsspiele",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Spieltheorie.html#evolutionäre-spiele",
+    "href": "Spieltheorie.html#evolutionäre-spiele",
+    "title": "3  Nicht-kooperative Spieltheorie",
+    "section": "3.6 Evolutionäre Spiele",
+    "text": "3.6 Evolutionäre Spiele",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nicht-kooperative Spieltheorie</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html",
+    "href": "Verhaltensoekonomik.html",
+    "title": "4  Verhaltensökonomik",
+    "section": "",
+    "text": "4.1 Einleitung",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#unrealistische-annahmen-vs.-realistische-modellierung",
+    "href": "Verhaltensoekonomik.html#unrealistische-annahmen-vs.-realistische-modellierung",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.2 Unrealistische Annahmen vs. realistische Modellierung",
+    "text": "4.2 Unrealistische Annahmen vs. realistische Modellierung",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#flat-rate-bias",
+    "href": "Verhaltensoekonomik.html#flat-rate-bias",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.3 Flat-Rate Bias",
+    "text": "4.3 Flat-Rate Bias",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#die-prospect-theory",
+    "href": "Verhaltensoekonomik.html#die-prospect-theory",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.4 Die Prospect Theory",
+    "text": "4.4 Die Prospect Theory",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#mental-accounting",
+    "href": "Verhaltensoekonomik.html#mental-accounting",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.5 Mental Accounting",
+    "text": "4.5 Mental Accounting",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#der-status-quo-bias",
+    "href": "Verhaltensoekonomik.html#der-status-quo-bias",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.6 Der Status-quo Bias",
+    "text": "4.6 Der Status-quo Bias",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#umgang-mit-risiken",
+    "href": "Verhaltensoekonomik.html#umgang-mit-risiken",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.7 Umgang mit Risiken",
+    "text": "4.7 Umgang mit Risiken",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
+  },
+  {
+    "objectID": "Verhaltensoekonomik.html#kritische-diskussion-der-verhaltensökonomik",
+    "href": "Verhaltensoekonomik.html#kritische-diskussion-der-verhaltensökonomik",
+    "title": "4  Verhaltensökonomik",
+    "section": "4.8 Kritische Diskussion der Verhaltensökonomik",
+    "text": "4.8 Kritische Diskussion der Verhaltensökonomik",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Verhaltensökonomik</span>"
+    ]
   }
 ]

@@ -7,6 +7,7 @@ book:
   subtitle: "Sommersemester 2024" 
   author: "Prof. Dr. Jan S. Voßwinkel"
   language:  _language.yml
+  repo-url: https://github.com/janvoss/Spieltheorie.git
 #  date: "18.3.2024"
   chapters:
     - index.qmd
@@ -21,6 +22,9 @@ bibliography: Spieltheorie.bib
 format:
   html:
     theme: cosmo
+    code-fold: true
+    code-overflow: wrap
+    
   pdf:
     documentclass: scrreprt
 
