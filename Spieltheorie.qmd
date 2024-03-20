@@ -90,7 +90,7 @@ for element in Nash_GG:
 
 ```
 ```{python}
-print("\033[37m" + str(Nash_GG_filtered) + "\033[0m")
+print(Nash_GG_filtered)
 ```
 
 
