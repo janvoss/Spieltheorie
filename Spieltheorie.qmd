@@ -31,7 +31,7 @@ $B	\geq A \land b  \geq d$ $\rightarrow$ **ul**
 
 $C	\geq D \land c  \geq a$ $\rightarrow$ **or**
 
-$D	\geq C \land d  \geq b$ $\rightarrow$ **ul**
+$D	\geq C \land d  \geq b$ $\rightarrow$ **ur**
 
 Es kann kein oder ein Nash-Gleichgewicht existieren oder mehrere Nash-Gleichgewichte
 

@@ -287,12 +287,12 @@ window.Quarto = {
 <p><span class="math inline">\(A  \geq B \land a  \geq c\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ol</strong></p>
 <p><span class="math inline">\(B  \geq A \land b  \geq d\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ul</strong></p>
 <p><span class="math inline">\(C  \geq D \land c  \geq a\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>or</strong></p>
-<p><span class="math inline">\(D  \geq C \land d  \geq b\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ul</strong></p>
+<p><span class="math inline">\(D  \geq C \land d  \geq b\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ur</strong></p>
 <p>Es kann kein oder ein Nash-Gleichgewicht existieren oder mehrere Nash-Gleichgewichte</p>
 </section>
 <section id="einperiodige-spiele" class="level4" data-number="3.3.2.2">
 <h4 data-number="3.3.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.3.2.2</span> Einperiodige Spiele</h4>
-<div id="c0ba0707" class="cell" data-execution_count="1">
+<div id="7b63ea5d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -346,17 +346,17 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  5,9  2,1
-u  7,9  7,7</code></pre>
+o  5,0  9,7
+u  8,1  2,0</code></pre>
 </div>
 </div>
-<div id="24e25299" class="cell" data-execution_count="2">
+<div id="6d9131d0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\033</span><span class="st">[37m"</span> <span class="op">+</span> <span class="bu">str</span>(Nash_GG_filtered) <span class="op">+</span> <span class="st">"</span><span class="ch">\033</span><span class="st">[0m"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['ul']</code></pre>
+<pre><code>['ul', 'or']</code></pre>
 </div>
 </div>
 <section id="koordinationsspiel" class="level5" data-number="3.3.2.2.1">
