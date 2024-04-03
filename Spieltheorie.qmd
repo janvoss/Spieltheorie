@@ -338,12 +338,8 @@ print(Nash_GG_filtered)
 
 - Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{d}{1-p}-d$
 
-
-
-```{r eval=F, include=F}
 - Kooperation durch Spieler 1 wenn $p\geq \frac{B-A}{B-D}$
 - Kooperation durch Spieler 2 wenn $p\geq \frac{c-a}{c-d}$
-```
 
 #### Trembling Hand
 
