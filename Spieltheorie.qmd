@@ -336,7 +336,7 @@ print(Nash_GG_filtered)
 
 - Erwartungswert der Kooperation für Spieler 2: $E^2_k\approx \frac{a}{1-p}$
 
-- Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{c}{1-p}-d$
+- Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{d}{1-p}-d$
 
 
 
