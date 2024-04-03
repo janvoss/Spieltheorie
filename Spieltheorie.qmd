@@ -329,7 +329,29 @@ print(Nash_GG_filtered)
 
 - Ausgangspunkt Gefangenendilemma mit $B>A>D>C$ und $c>a>d>b$
 
+- Erwartungswert der Kooperation für Spieler 1: $E^1_k\approx \frac{A}{1-p}$
+
+- Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}\approx B+ \frac{D}{1-p}-D$
+
+
+- Erwartungswert der Kooperation für Spieler 2: $E^2_k\approx \frac{a}{1-p}$
+
+- Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{c}{1-p}-d$
+
+
+
+```{r eval=F, include=F}
+- Kooperation durch Spieler 1 wenn $p\geq \frac{B-A}{B-D}$
+- Kooperation durch Spieler 2 wenn $p\geq \frac{c-a}{c-d}$
+```
+
 #### Trembling Hand
+
+- Idee: Manche Nash-Gleichgewichte sind riskant
+
+- Wenn der Gegenspieler "versehentlich" eine falsche Strategie spielt, dann macht man evtl hohe Verluste
+
+- Wie hoch darf die Fehlerwahrscheinlichkeit des Gegenspielers sein, damit das Nash-Gleichgewicht noch die richtige Strategie impliziert?
 
 ### Gemischte Strategien
 
