@@ -1,4 +1,4 @@
-# Nicht-kooperative Spieltheorie
+8# Nicht-kooperative Spieltheorie
 
 ## Einleitung und begriffliche Einordnung
 
@@ -326,6 +326,8 @@ print(Nash_GG_filtered)
 
 
 #### Wiederholte Spiele
+
+- Ausgangspunkt Gefangenendilemma mit $B>A>D>C$ und $c>a>d>b$
 
 #### Trembling Hand
 
