@@ -362,9 +362,9 @@ $\iff A-pA+pC\geq B-pB+pD$
 
 $\iff A-p(A-C) \geq B-p(B-D)$
 
-$ \iff p(B-D)-p(A-C) \geq B-A$
+$\iff p(B-D)-p(A-C) \geq B-A$
 
-$ \iff p(B-D-A+C)\geq B-A$
+$\iff p(B-D-A+C)\geq B-A$
 
 mit $(B-D-A+C) <0$
 
