@@ -289,7 +289,7 @@ window.Quarto = {
 </section>
 <section id="einperiodige-spiele" class="level4" data-number="3.2.2.2">
 <h4 data-number="3.2.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.2.2.2</span> Einperiodige Spiele</h4>
-<div id="c94e354e" class="cell" data-execution_count="1">
+<div id="008200a6" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -343,17 +343,17 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  9,5  4,3
-u  2,7  4,3</code></pre>
+o  3,9  7,6
+u  4,1  1,9</code></pre>
 </div>
 </div>
-<div id="d6e7325f" class="cell" data-execution_count="2">
+<div id="cbbc1344" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['ol']</code></pre>
+<pre><code>[]</code></pre>
 </div>
 </div>
 <section id="koordinationsspiel" class="level5" data-number="3.2.2.2.1">
@@ -364,7 +364,7 @@ u  2,7  4,3</code></pre>
 <figcaption>Koordinationsspiel</figcaption>
 </figure>
 </div>
-<div id="6cd91d62" class="cell" data-execution_count="3">
+<div id="90c43012" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -432,7 +432,7 @@ u  8,8  0,0
 <figcaption>Chicken Game</figcaption>
 </figure>
 </div>
-<div id="d76908f2" class="cell" data-execution_count="4">
+<div id="c5f3d4b2" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -486,8 +486,8 @@ u  8,8  0,0
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  5,7  3,9
-u  8,2  1,0
+o  5,7  4,9
+u  9,3  0,1
 ['ul', 'or']</code></pre>
 </div>
 </div>
@@ -500,7 +500,7 @@ u  8,2  1,0
 <figcaption>Geschlechterkampf</figcaption>
 </figure>
 </div>
-<div id="8330deea" class="cell" data-execution_count="5">
+<div id="4359fcbd" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -554,8 +554,8 @@ u  8,2  1,0
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  8,6  3,4
-u  1,2  6,8
+o  9,6  5,5
+u  2,2  7,8
 ['ol', 'ur']</code></pre>
 </div>
 </div>
@@ -568,7 +568,7 @@ u  1,2  6,8
 <figcaption>Gefangenendilemma</figcaption>
 </figure>
 </div>
-<div id="24ba45bd" class="cell" data-execution_count="6">
+<div id="64548c8a" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -622,8 +622,8 @@ u  1,2  6,8
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  6,7  1,8
-u  8,0  2,3
+o  6,8  1,9
+u  9,0  2,4
 ['ur']</code></pre>
 </div>
 </div>
@@ -653,7 +653,8 @@ u  8,0  2,3
 <p>Wenn er davon ausgeht, dass Spieler 2 mit einer Wahrscheinlichkeit von <span class="math inline">\(p\)</span> versehentlich rechts statt links spielt, heißt das</p>
 <p><span class="math inline">\((1-p)A+pC \geq (1-p)B+pD\)</span></p>
 <p><span class="math inline">\(\iff A-pA+pC\geq B-pB+pD\)</span></p>
-<p><span class="math inline">\(\iff A-p(A-C) \geq B-p(B-D)\)</span> $ p(B-D)-p(A-C) B-A$</p>
+<p><span class="math inline">\(\iff A-p(A-C) \geq B-p(B-D)\)</span></p>
+<p>$ p(B-D)-p(A-C) B-A$</p>
 <p>$ p(B-D-A+C)B-A$</p>
 <p>mit <span class="math inline">\((B-D-A+C) &lt;0\)</span></p>
 <p><span class="math inline">\(\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}\)</span></p>
