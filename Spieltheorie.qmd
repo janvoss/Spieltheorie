@@ -370,6 +370,23 @@ mit $(B-D-A+C) <0$
 
 $\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}$
 
+Für Spieler 2 muss dann gelten
+$E_l\geq E_r$
+
+$(1-p)a+pb \geq (1-p)c+pd$
+
+$\iff a-pa+pb \geq c-pc+pd$
+
+$\iff a-p(a-b) \geq c-p(c-d)$
+
+$\iff p(c-d)-p(a-b) \geq c-a$
+
+$ \iff p(c-d-a+b) \geq c-a$
+
+mit $(c-d-a+b)\neq 0$
+
+$p \leq \frac{c-a}{(c-d-a+b)}=\frac{a-c}{(a-b-c+d)}$
+
 
 
 ### Gemischte Strategien
