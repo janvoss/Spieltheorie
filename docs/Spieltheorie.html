@@ -289,7 +289,7 @@ window.Quarto = {
 </section>
 <section id="einperiodige-spiele" class="level4" data-number="3.2.2.2">
 <h4 data-number="3.2.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.2.2.2</span> Einperiodige Spiele</h4>
-<div id="581af7e5" class="cell" data-execution_count="1">
+<div id="67825759" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -343,11 +343,11 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  2,8  4,3
-u  5,5  8,8</code></pre>
+o  5,0  0,6
+u  6,1  7,3</code></pre>
 </div>
 </div>
-<div id="6d0231a8" class="cell" data-execution_count="2">
+<div id="e5555594" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -364,7 +364,7 @@ u  5,5  8,8</code></pre>
 <figcaption>Koordinationsspiel</figcaption>
 </figure>
 </div>
-<div id="5ddff593" class="cell" data-execution_count="3">
+<div id="2addc521" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -418,8 +418,8 @@ u  5,5  8,8</code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  0,0  2,2
-u  2,2  0,0
+o  0,0  9,9
+u  9,9  0,0
 ['ul', 'or']</code></pre>
 </div>
 </div>
@@ -432,7 +432,7 @@ u  2,2  0,0
 <figcaption>Chicken Game</figcaption>
 </figure>
 </div>
-<div id="98f67aff" class="cell" data-execution_count="4">
+<div id="8ac3ffff" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -486,8 +486,8 @@ u  2,2  0,0
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  7,6  2,9
-u  9,4  0,1
+o  5,7  3,9
+u  9,4  1,1
 ['ul', 'or']</code></pre>
 </div>
 </div>
@@ -500,7 +500,7 @@ u  9,4  0,1
 <figcaption>Geschlechterkampf</figcaption>
 </figure>
 </div>
-<div id="82c711a6" class="cell" data-execution_count="5">
+<div id="e1cfcc9f" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -554,8 +554,8 @@ u  9,4  0,1
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  9,7  3,3
-u  0,1  7,8
+o  8,6  3,3
+u  1,1  7,9
 ['ol', 'ur']</code></pre>
 </div>
 </div>
@@ -568,7 +568,7 @@ u  0,1  7,8
 <figcaption>Gefangenendilemma</figcaption>
 </figure>
 </div>
-<div id="21cb0f12" class="cell" data-execution_count="6">
+<div id="36cb7669" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -622,8 +622,8 @@ u  0,1  7,8
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  7,7  0,8
-u  9,1  4,2
+o  7,8  1,8
+u  8,0  2,4
 ['ur']</code></pre>
 </div>
 </div>
@@ -663,7 +663,7 @@ u  9,1  4,2
 <p><span class="math inline">\(\iff a-pa+pb \geq c-pc+pd\)</span></p>
 <p><span class="math inline">\(\iff a-p(a-b) \geq c-p(c-d)\)</span></p>
 <p><span class="math inline">\(\iff p(c-d)-p(a-b) \geq c-a\)</span></p>
-<p>$ p(c-d-a+b) c-a$</p>
+<p><span class="math inline">\(\iff p(c-d-a+b) \geq c-a\)</span></p>
 <p>mit <span class="math inline">\((c-d-a+b)\neq 0\)</span></p>
 <p><span class="math inline">\(p \leq \frac{c-a}{(c-d-a+b)}=\frac{a-c}{(a-b-c+d)}\)</span></p>
 </section>

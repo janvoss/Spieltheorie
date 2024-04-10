@@ -381,7 +381,7 @@ $\iff a-p(a-b) \geq c-p(c-d)$
 
 $\iff p(c-d)-p(a-b) \geq c-a$
 
-$ \iff p(c-d-a+b) \geq c-a$
+$\iff p(c-d-a+b) \geq c-a$
 
 mit $(c-d-a+b)\neq 0$
 
