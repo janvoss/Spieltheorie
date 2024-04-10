@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spieltheorie und Verhaltensökonomik - 3&nbsp; Einleitung und begriffliche Einordnung</title>
+<title>Spieltheorie und Verhaltensökonomik - 3&nbsp; Nicht-kooperative Spieltheorie</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Spieltheorie.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Einleitung und begriffliche Einordnung</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Spieltheorie.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Nicht-kooperative Spieltheorie</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -193,7 +193,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Spieltheorie.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Einleitung und begriffliche Einordnung</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Nicht-kooperative Spieltheorie</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,20 +218,21 @@ window.Quarto = {
     <h2 id="toc-title">Überblick</h2>
    
   <ul>
-  <li><a href="#das-nash-gleichgewicht" id="toc-das-nash-gleichgewicht" class="nav-link active" data-scroll-target="#das-nash-gleichgewicht"><span class="header-section-number">3.1</span> Das Nash-Gleichgewicht</a></li>
-  <li><a href="#simultane-spiele" id="toc-simultane-spiele" class="nav-link" data-scroll-target="#simultane-spiele"><span class="header-section-number">3.2</span> Simultane Spiele</a>
+  <li><a href="#einleitung-und-begriffliche-einordnung" id="toc-einleitung-und-begriffliche-einordnung" class="nav-link active" data-scroll-target="#einleitung-und-begriffliche-einordnung"><span class="header-section-number">3.1</span> Einleitung und begriffliche Einordnung</a></li>
+  <li><a href="#das-nash-gleichgewicht" id="toc-das-nash-gleichgewicht" class="nav-link" data-scroll-target="#das-nash-gleichgewicht"><span class="header-section-number">3.2</span> Das Nash-Gleichgewicht</a></li>
+  <li><a href="#simultane-spiele" id="toc-simultane-spiele" class="nav-link" data-scroll-target="#simultane-spiele"><span class="header-section-number">3.3</span> Simultane Spiele</a>
   <ul class="collapse">
-  <li><a href="#grundsätzliche-struktur-eines-spiels" id="toc-grundsätzliche-struktur-eines-spiels" class="nav-link" data-scroll-target="#grundsätzliche-struktur-eines-spiels"><span class="header-section-number">3.2.1</span> Grundsätzliche Struktur eines Spiels</a></li>
-  <li><a href="#reine-strategien" id="toc-reine-strategien" class="nav-link" data-scroll-target="#reine-strategien"><span class="header-section-number">3.2.2</span> Reine Strategien</a></li>
-  <li><a href="#gemischte-strategien" id="toc-gemischte-strategien" class="nav-link" data-scroll-target="#gemischte-strategien"><span class="header-section-number">3.2.3</span> Gemischte Strategien</a></li>
+  <li><a href="#grundsätzliche-struktur-eines-spiels" id="toc-grundsätzliche-struktur-eines-spiels" class="nav-link" data-scroll-target="#grundsätzliche-struktur-eines-spiels"><span class="header-section-number">3.3.1</span> Grundsätzliche Struktur eines Spiels</a></li>
+  <li><a href="#reine-strategien" id="toc-reine-strategien" class="nav-link" data-scroll-target="#reine-strategien"><span class="header-section-number">3.3.2</span> Reine Strategien</a></li>
+  <li><a href="#gemischte-strategien" id="toc-gemischte-strategien" class="nav-link" data-scroll-target="#gemischte-strategien"><span class="header-section-number">3.3.3</span> Gemischte Strategien</a></li>
   </ul></li>
-  <li><a href="#sequenzielle-spiele" id="toc-sequenzielle-spiele" class="nav-link" data-scroll-target="#sequenzielle-spiele"><span class="header-section-number">3.3</span> Sequenzielle Spiele</a>
+  <li><a href="#sequenzielle-spiele" id="toc-sequenzielle-spiele" class="nav-link" data-scroll-target="#sequenzielle-spiele"><span class="header-section-number">3.4</span> Sequenzielle Spiele</a>
   <ul class="collapse">
-  <li><a href="#vollständige-information" id="toc-vollständige-information" class="nav-link" data-scroll-target="#vollständige-information"><span class="header-section-number">3.3.1</span> Vollständige Information</a></li>
-  <li><a href="#unvollständige-information" id="toc-unvollständige-information" class="nav-link" data-scroll-target="#unvollständige-information"><span class="header-section-number">3.3.2</span> Unvollständige Information</a></li>
+  <li><a href="#vollständige-information" id="toc-vollständige-information" class="nav-link" data-scroll-target="#vollständige-information"><span class="header-section-number">3.4.1</span> Vollständige Information</a></li>
+  <li><a href="#unvollständige-information" id="toc-unvollständige-information" class="nav-link" data-scroll-target="#unvollständige-information"><span class="header-section-number">3.4.2</span> Unvollständige Information</a></li>
   </ul></li>
-  <li><a href="#koalitionsspiele" id="toc-koalitionsspiele" class="nav-link" data-scroll-target="#koalitionsspiele"><span class="header-section-number">3.4</span> Koalitionsspiele</a></li>
-  <li><a href="#evolutionäre-spiele" id="toc-evolutionäre-spiele" class="nav-link" data-scroll-target="#evolutionäre-spiele"><span class="header-section-number">3.5</span> Evolutionäre Spiele</a></li>
+  <li><a href="#koalitionsspiele" id="toc-koalitionsspiele" class="nav-link" data-scroll-target="#koalitionsspiele"><span class="header-section-number">3.5</span> Koalitionsspiele</a></li>
+  <li><a href="#evolutionäre-spiele" id="toc-evolutionäre-spiele" class="nav-link" data-scroll-target="#evolutionäre-spiele"><span class="header-section-number">3.6</span> Evolutionäre Spiele</a></li>
   </ul>
 </nav>
     </div>
@@ -240,7 +241,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Einleitung und begriffliche Einordnung</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Nicht-kooperative Spieltheorie</span></h1>
 </div>
 
 
@@ -257,14 +258,16 @@ window.Quarto = {
 </header>
 
 
-<p>8# Nicht-kooperative Spieltheorie</p>
-<section id="das-nash-gleichgewicht" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="das-nash-gleichgewicht"><span class="header-section-number">3.1</span> Das Nash-Gleichgewicht</h2>
+<section id="einleitung-und-begriffliche-einordnung" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="einleitung-und-begriffliche-einordnung"><span class="header-section-number">3.1</span> Einleitung und begriffliche Einordnung</h2>
 </section>
-<section id="simultane-spiele" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="simultane-spiele"><span class="header-section-number">3.2</span> Simultane Spiele</h2>
-<section id="grundsätzliche-struktur-eines-spiels" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="grundsätzliche-struktur-eines-spiels"><span class="header-section-number">3.2.1</span> Grundsätzliche Struktur eines Spiels</h3>
+<section id="das-nash-gleichgewicht" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="das-nash-gleichgewicht"><span class="header-section-number">3.2</span> Das Nash-Gleichgewicht</h2>
+</section>
+<section id="simultane-spiele" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="simultane-spiele"><span class="header-section-number">3.3</span> Simultane Spiele</h2>
+<section id="grundsätzliche-struktur-eines-spiels" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="grundsätzliche-struktur-eines-spiels"><span class="header-section-number">3.3.1</span> Grundsätzliche Struktur eines Spiels</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure/Allgemeine-Struktur.png" class="img-fluid figure-img" style="width:50.0%"></p>
@@ -272,10 +275,10 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="reine-strategien" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="reine-strategien"><span class="header-section-number">3.2.2</span> Reine Strategien</h3>
-<section id="definition-nash-gleichgewicht" class="level4" data-number="3.2.2.1">
-<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="definition-nash-gleichgewicht"><span class="header-section-number">3.2.2.1</span> Definition Nash-Gleichgewicht</h4>
+<section id="reine-strategien" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="reine-strategien"><span class="header-section-number">3.3.2</span> Reine Strategien</h3>
+<section id="definition-nash-gleichgewicht" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="definition-nash-gleichgewicht"><span class="header-section-number">3.3.2.1</span> Definition Nash-Gleichgewicht</h4>
 <p>Ein Nash-Gleichgewicht liegt vor, wenn jeder Spieler die beste Antwort auf die beste Strategie des Gegenspielers spielt.</p>
 <p>Formal:</p>
 <p><span class="math inline">\(u_{i}\left(s_{i}^{*},s_{-i}^{*}\right)\geq u_{i}\left(s_{i},s_{-i}^{*}\right)\mbox{ für alle }i,\mbox{ }s_{i}\in S_{i}\)</span></p>
@@ -287,9 +290,9 @@ window.Quarto = {
 <p><span class="math inline">\(D  \geq C \land d  \geq b\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ur</strong></p>
 <p>Es kann kein oder ein Nash-Gleichgewicht existieren oder mehrere Nash-Gleichgewichte</p>
 </section>
-<section id="einperiodige-spiele" class="level4" data-number="3.2.2.2">
-<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.2.2.2</span> Einperiodige Spiele</h4>
-<div id="67825759" class="cell" data-execution_count="1">
+<section id="einperiodige-spiele" class="level4" data-number="3.3.2.2">
+<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.3.2.2</span> Einperiodige Spiele</h4>
+<div id="f987781d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -343,28 +346,28 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  5,0  0,6
-u  6,1  7,3</code></pre>
+o  2,7  0,4
+u  2,9  9,3</code></pre>
 </div>
 </div>
-<div id="e5555594" class="cell" data-execution_count="2">
+<div id="0bb54ff9" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['ur']</code></pre>
+<pre><code>['ol', 'ul']</code></pre>
 </div>
 </div>
-<section id="koordinationsspiel" class="level5" data-number="3.2.2.2.1">
-<h5 data-number="3.2.2.2.1" class="anchored" data-anchor-id="koordinationsspiel"><span class="header-section-number">3.2.2.2.1</span> Koordinationsspiel</h5>
+<section id="koordinationsspiel" class="level5" data-number="3.3.2.2.1">
+<h5 data-number="3.3.2.2.1" class="anchored" data-anchor-id="koordinationsspiel"><span class="header-section-number">3.3.2.2.1</span> Koordinationsspiel</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure/Koordinationsspiel-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Koordinationsspiel</figcaption>
 </figure>
 </div>
-<div id="2addc521" class="cell" data-execution_count="3">
+<div id="7f8b8209" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -424,15 +427,15 @@ u  9,9  0,0
 </div>
 </div>
 </section>
-<section id="chicken-game" class="level5" data-number="3.2.2.2.2">
-<h5 data-number="3.2.2.2.2" class="anchored" data-anchor-id="chicken-game"><span class="header-section-number">3.2.2.2.2</span> Chicken Game</h5>
+<section id="chicken-game" class="level5" data-number="3.3.2.2.2">
+<h5 data-number="3.3.2.2.2" class="anchored" data-anchor-id="chicken-game"><span class="header-section-number">3.3.2.2.2</span> Chicken Game</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure/Chicken-Game-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Chicken Game</figcaption>
 </figure>
 </div>
-<div id="8ac3ffff" class="cell" data-execution_count="4">
+<div id="7a05a273" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -486,21 +489,21 @@ u  9,9  0,0
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  5,7  3,9
-u  9,4  1,1
+o  5,7  3,8
+u  9,3  0,1
 ['ul', 'or']</code></pre>
 </div>
 </div>
 </section>
-<section id="geschlechterkampf" class="level5" data-number="3.2.2.2.3">
-<h5 data-number="3.2.2.2.3" class="anchored" data-anchor-id="geschlechterkampf"><span class="header-section-number">3.2.2.2.3</span> Geschlechterkampf</h5>
+<section id="geschlechterkampf" class="level5" data-number="3.3.2.2.3">
+<h5 data-number="3.3.2.2.3" class="anchored" data-anchor-id="geschlechterkampf"><span class="header-section-number">3.3.2.2.3</span> Geschlechterkampf</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure/Geschlechterkampf-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Geschlechterkampf</figcaption>
 </figure>
 </div>
-<div id="e1cfcc9f" class="cell" data-execution_count="5">
+<div id="d26d36d7" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -554,21 +557,21 @@ u  9,4  1,1
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  8,6  3,3
-u  1,1  7,9
+o  9,6  3,5
+u  2,2  6,9
 ['ol', 'ur']</code></pre>
 </div>
 </div>
 </section>
-<section id="gefangenendilemma" class="level5" data-number="3.2.2.2.4">
-<h5 data-number="3.2.2.2.4" class="anchored" data-anchor-id="gefangenendilemma"><span class="header-section-number">3.2.2.2.4</span> Gefangenendilemma</h5>
+<section id="gefangenendilemma" class="level5" data-number="3.3.2.2.4">
+<h5 data-number="3.3.2.2.4" class="anchored" data-anchor-id="gefangenendilemma"><span class="header-section-number">3.3.2.2.4</span> Gefangenendilemma</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figure/Gefangenendilemma-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption>Gefangenendilemma</figcaption>
 </figure>
 </div>
-<div id="36cb7669" class="cell" data-execution_count="6">
+<div id="270d68f1" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -622,15 +625,15 @@ u  1,1  7,9
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  7,8  1,8
-u  8,0  2,4
+o  6,8  0,9
+u  8,0  3,3
 ['ur']</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="wiederholte-spiele" class="level4" data-number="3.2.2.3">
-<h4 data-number="3.2.2.3" class="anchored" data-anchor-id="wiederholte-spiele"><span class="header-section-number">3.2.2.3</span> Wiederholte Spiele</h4>
+<section id="wiederholte-spiele" class="level4" data-number="3.3.2.3">
+<h4 data-number="3.3.2.3" class="anchored" data-anchor-id="wiederholte-spiele"><span class="header-section-number">3.3.2.3</span> Wiederholte Spiele</h4>
 <ul>
 <li><p>Ausgangspunkt Gefangenendilemma mit <span class="math inline">\(B&gt;A&gt;D&gt;C\)</span> und <span class="math inline">\(c&gt;a&gt;d&gt;b\)</span></p></li>
 <li><p>Erwartungswert der Kooperation für Spieler 1: <span class="math inline">\(E^1_k\approx \frac{A}{1-p}\)</span></p></li>
@@ -641,15 +644,16 @@ u  8,0  2,4
 <li><p>Kooperation durch Spieler 2 wenn <span class="math inline">\(p\geq \frac{c-a}{c-d}\)</span></p></li>
 </ul>
 </section>
-<section id="trembling-hand" class="level4" data-number="3.2.2.4">
-<h4 data-number="3.2.2.4" class="anchored" data-anchor-id="trembling-hand"><span class="header-section-number">3.2.2.4</span> Trembling Hand</h4>
+<section id="trembling-hand" class="level4" data-number="3.3.2.4">
+<h4 data-number="3.3.2.4" class="anchored" data-anchor-id="trembling-hand"><span class="header-section-number">3.3.2.4</span> Trembling Hand</h4>
 <ul>
 <li><p>Idee: Manche Nash-Gleichgewichte sind riskant</p></li>
 <li><p>Wenn der Gegenspieler “versehentlich” eine falsche Strategie spielt, dann macht man evtl hohe Verluste</p></li>
 <li><p>Wie hoch darf die Fehlerwahrscheinlichkeit des Gegenspielers sein, damit das Nash-Gleichgewicht noch die richtige Strategie impliziert?</p></li>
 </ul>
 <p>Angenommen, beide Spieler streben ein Nash-Gleichgewicht oben links an</p>
-<p>Für Spieler 1 muss dann gelten <span class="math inline">\(E_o\geq E_u\)</span></p>
+<p><strong>Für Spieler 1 muss dann gelten</strong></p>
+<p><span class="math inline">\(E_o\geq E_u\)</span></p>
 <p>Wenn er davon ausgeht, dass Spieler 2 mit einer Wahrscheinlichkeit von <span class="math inline">\(p\)</span> versehentlich rechts statt links spielt, heißt das</p>
 <p><span class="math inline">\((1-p)A+pC \geq (1-p)B+pD\)</span></p>
 <p><span class="math inline">\(\iff A-pA+pC\geq B-pB+pD\)</span></p>
@@ -658,7 +662,8 @@ u  8,0  2,4
 <p><span class="math inline">\(\iff p(B-D-A+C)\geq B-A\)</span></p>
 <p>mit <span class="math inline">\((B-D-A+C) &lt;0\)</span></p>
 <p><span class="math inline">\(\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}\)</span></p>
-<p>Für Spieler 2 muss dann gelten <span class="math inline">\(E_l\geq E_r\)</span></p>
+<p><strong>Für Spieler 2 muss dann gelten</strong></p>
+<p><span class="math inline">\(E_l\geq E_r\)</span></p>
 <p><span class="math inline">\((1-p)a+pb \geq (1-p)c+pd\)</span></p>
 <p><span class="math inline">\(\iff a-pa+pb \geq c-pc+pd\)</span></p>
 <p><span class="math inline">\(\iff a-p(a-b) \geq c-p(c-d)\)</span></p>
@@ -666,26 +671,166 @@ u  8,0  2,4
 <p><span class="math inline">\(\iff p(c-d-a+b) \geq c-a\)</span></p>
 <p>mit <span class="math inline">\((c-d-a+b)\neq 0\)</span></p>
 <p><span class="math inline">\(p \leq \frac{c-a}{(c-d-a+b)}=\frac{a-c}{(a-b-c+d)}\)</span></p>
+<div id="3daef11e" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeiten ausrechnen</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, solve, Eq</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>symbols <span class="op">=</span> [Symbol(name) <span class="cf">for</span> name <span class="kw">in</span> <span class="st">'ABCDabcdp'</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>A, B, C, D, a, b, c, d, p <span class="op">=</span> symbols  <span class="co"># Entpacken und als separate Variablen speichern</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Beide streben ol an</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>E_o<span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>A<span class="op">+</span>p<span class="op">*</span>C</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>E_u<span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>B <span class="op">+</span> p<span class="op">*</span>D</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> solve(Eq(E_o, E_u), p)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>E_l <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>a <span class="op">+</span> p<span class="op">*</span>b</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>E_r <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>c <span class="op">+</span> p<span class="op">*</span>d</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> solve(Eq(E_l, E_r),p)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 </section>
-<section id="gemischte-strategien" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="gemischte-strategien"><span class="header-section-number">3.2.3</span> Gemischte Strategien</h3>
+<section id="gemischte-strategien" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="gemischte-strategien"><span class="header-section-number">3.3.3</span> Gemischte Strategien</h3>
+<ul>
+<li><p>Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein</p></li>
+<li><p>Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)</p></li>
+</ul>
+<div id="2643ec48" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeiten ausrechnen</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> Symbol, solve, Eq</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>symbols <span class="op">=</span> [Symbol(name) <span class="cf">for</span> name <span class="kw">in</span> <span class="st">'ABCDabcdp'</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>A, B, C, D, a, b, c, d, p <span class="op">=</span> symbols  <span class="co"># Auspacken in verschiedene Variablen</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#p_l</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>E_o<span class="op">=</span> p<span class="op">*</span>A<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>C</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>E_u<span class="op">=</span> p<span class="op">*</span>B  <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>D</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> solve(Eq(E_o, E_u), p)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co">#p_o</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>E_l <span class="op">=</span> p<span class="op">*</span>a <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>b</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>E_r <span class="op">=</span> p<span class="op">*</span>c <span class="op">+</span> (<span class="dv">1</span><span class="op">-</span>p)<span class="op">*</span>d</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> solve(Eq(E_l, E_r),p)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="85ae83af" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Zufällige Ganzzahlen zwischen 0 und 9 generieren</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatierte Bimatrix ausgeben</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"    l   r"</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"o  </span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">  </span><span class="sc">{</span>C<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"u  </span><span class="sc">{</span>B<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">  </span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktionen für Nash-Bedingungen</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ol_nash(A, B, a, c):</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ol"</span> <span class="cf">if</span> (A <span class="op">&gt;=</span> B) <span class="kw">and</span> (a <span class="op">&gt;=</span> c) <span class="cf">else</span> <span class="st">"not_ol"</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ul_nash(B, A, b, d):</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ul"</span> <span class="cf">if</span> (B <span class="op">&gt;=</span> A) <span class="kw">and</span> (b <span class="op">&gt;=</span> d) <span class="cf">else</span> <span class="st">"not_ul"</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_or_nash(C, D, c, a):</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"or"</span> <span class="cf">if</span> (C <span class="op">&gt;=</span> D) <span class="kw">and</span> (c <span class="op">&gt;=</span> a) <span class="cf">else</span> <span class="st">"not_or"</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ur_nash(D, C, d, b):</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ur"</span> <span class="cf">if</span> (D <span class="op">&gt;=</span> C) <span class="kw">and</span> (d <span class="op">&gt;=</span> b) <span class="cf">else</span> <span class="st">"not_ur"</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Nash-Bedingungen überprüfen und Strings zuweisen</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ol <span class="op">=</span> is_ol_nash(A, B, a, c)</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ul <span class="op">=</span> is_ul_nash(B, A, b, d)</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>Cand_Nash_or <span class="op">=</span> is_or_nash(C, D, c, a)</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ur <span class="op">=</span> is_ur_nash(D, C, d, b)</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Ergebnisse kombinieren und NAs entfernen</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>Nash_GG <span class="op">=</span> np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>Nash_GG_filtered <span class="op">=</span> []</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> element <span class="kw">in</span> Nash_GG:</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> element <span class="op">==</span> <span class="st">"ol"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"ul"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"or"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"ur"</span>:</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>    Nash_GG_filtered.append(element)</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Ergebnis ausgeben</span></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Anzahl der Nash GG</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>Anzahl_NGG<span class="op">=</span><span class="bu">len</span>(Nash_GG_filtered)</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Anzahl_NGG)</span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeiten ausrechnen.</span></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Dabei jeweils den Fall Division duch 0 aussschließen</span></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="co">#p_l</span></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (A <span class="op">-</span> B <span class="op">-</span> C <span class="op">+</span> D)<span class="op">!=</span><span class="dv">0</span>: p_l <span class="op">=</span> ( D<span class="op">-</span>C)<span class="op">/</span>(A <span class="op">-</span> B <span class="op">-</span> C <span class="op">+</span> D)</span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a><span class="co">#print(round(p_l, 2))</span></span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a><span class="co">#p_o</span></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="op">-</span>b <span class="op">+</span> d)<span class="op">/</span>(a <span class="op">-</span> b <span class="op">-</span> c <span class="op">+</span> d)<span class="op">!=</span><span class="dv">0</span>: p_o <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> d)<span class="op">/</span>(a <span class="op">-</span> b <span class="op">-</span> c <span class="op">+</span> d)</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a><span class="co">#print(round(p_o, 2))</span></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausgabe Abhängig von Bedingungen</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="co">#Anzahl_NGG == 1 or </span></span>
+<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a>    p_o <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> p_l <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span></span>
+<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a>            p_o <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">or</span> p_l <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">or</span></span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a>            (a <span class="op">-</span> b <span class="op">-</span> c <span class="op">+</span> d) <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span></span>
+<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a>            (A <span class="op">-</span> B <span class="op">-</span> C <span class="op">+</span> D) <span class="op">==</span> <span class="dv">0</span>): <span class="bu">print</span>(<span class="st">"Kein Nash-Gleichgewicht in gemischten Strategien"</span>)</span>
+<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:   <span class="bu">print</span>(<span class="ss">f"p_l= </span><span class="sc">{</span><span class="bu">round</span>(p_l, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">, p_o= </span><span class="sc">{</span>(<span class="bu">round</span>(p_o, <span class="dv">2</span>))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 </section>
-<section id="sequenzielle-spiele" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="sequenzielle-spiele"><span class="header-section-number">3.3</span> Sequenzielle Spiele</h2>
-<section id="vollständige-information" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="vollständige-information"><span class="header-section-number">3.3.1</span> Vollständige Information</h3>
+<section id="sequenzielle-spiele" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sequenzielle-spiele"><span class="header-section-number">3.4</span> Sequenzielle Spiele</h2>
+<section id="vollständige-information" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="vollständige-information"><span class="header-section-number">3.4.1</span> Vollständige Information</h3>
 </section>
-<section id="unvollständige-information" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="unvollständige-information"><span class="header-section-number">3.3.2</span> Unvollständige Information</h3>
+<section id="unvollständige-information" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="unvollständige-information"><span class="header-section-number">3.4.2</span> Unvollständige Information</h3>
 </section>
 </section>
-<section id="koalitionsspiele" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="koalitionsspiele"><span class="header-section-number">3.4</span> Koalitionsspiele</h2>
+<section id="koalitionsspiele" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="koalitionsspiele"><span class="header-section-number">3.5</span> Koalitionsspiele</h2>
 </section>
-<section id="evolutionäre-spiele" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="evolutionäre-spiele"><span class="header-section-number">3.5</span> Evolutionäre Spiele</h2>
+<section id="evolutionäre-spiele" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="evolutionäre-spiele"><span class="header-section-number">3.6</span> Evolutionäre Spiele</h2>
 
 
 </section>

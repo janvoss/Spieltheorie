@@ -1,4 +1,4 @@
-8# Nicht-kooperative Spieltheorie
+# Nicht-kooperative Spieltheorie
 
 ## Einleitung und begriffliche Einordnung
 
@@ -351,7 +351,9 @@ print(Nash_GG_filtered)
 
 Angenommen, beide Spieler streben ein Nash-Gleichgewicht oben links an
 
-Für Spieler 1 muss dann gelten
+
+**Für Spieler 1 muss dann gelten**
+
 $E_o\geq E_u$
 
 Wenn er davon ausgeht, dass Spieler 2 mit einer Wahrscheinlichkeit von $p$ versehentlich rechts statt links spielt, heißt das
@@ -370,7 +372,9 @@ mit $(B-D-A+C) <0$
 
 $\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}$
 
-Für Spieler 2 muss dann gelten
+
+**Für Spieler 2 muss dann gelten**
+
 $E_l\geq E_r$
 
 $(1-p)a+pb \geq (1-p)c+pd$
@@ -387,9 +391,150 @@ mit $(c-d-a+b)\neq 0$
 
 $p \leq \frac{c-a}{(c-d-a+b)}=\frac{a-c}{(a-b-c+d)}$
 
+```{python}
+#| echo: true
+#| eval: false
+
+# Wahrscheinlichkeiten ausrechnen
+
+from sympy import Symbol, solve, Eq
+
+symbols = [Symbol(name) for name in 'ABCDabcdp']
+A, B, C, D, a, b, c, d, p = symbols  # Entpacken und als separate Variablen speichern
+
+# Beide streben ol an
+
+E_o= (1-p)*A+p*C
+
+E_u= (1-p)*B + p*D
+
+sol = solve(Eq(E_o, E_u), p)
+print(sol)
+
+E_l = (1-p)*a + p*b
+E_r = (1-p)*c + p*d
+
+sol = solve(Eq(E_l, E_r),p)
+print(sol)
+
+```
 
 
 ### Gemischte Strategien
+
+- Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein
+
+- Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)
+
+```{python}
+#| eval: false
+
+# Wahrscheinlichkeiten ausrechnen
+
+from sympy import Symbol, solve, Eq
+
+symbols = [Symbol(name) for name in 'ABCDabcdp']
+A, B, C, D, a, b, c, d, p = symbols  # Auspacken in verschiedene Variablen
+
+
+#p_l
+E_o= p*A+(1-p)*C
+
+E_u= p*B  + (1-p)*D
+
+sol = solve(Eq(E_o, E_u), p)
+print(sol)
+
+#p_o
+
+E_l = p*a + (1-p)*b
+E_r = p*c + (1-p)*d
+
+sol = solve(Eq(E_l, E_r),p)
+print(sol)
+```
+
+```{python}
+#| eval: false
+
+import numpy as np
+import random
+
+# Zufällige Ganzzahlen zwischen 0 und 9 generieren
+A = random.randint(0, 9)
+B = random.randint(0, 9)
+C = random.randint(0, 9)
+D = random.randint(0, 9)
+a = random.randint(0, 9)
+b = random.randint(0, 9)
+c = random.randint(0, 9)
+d = random.randint(0, 9)
+
+# Formatierte Bimatrix ausgeben
+print("    l   r")
+print(f"o  {A},{a}  {C},{c}")
+print(f"u  {B},{b}  {D},{d}")
+
+
+# Funktionen für Nash-Bedingungen
+def is_ol_nash(A, B, a, c):
+  return "ol" if (A >= B) and (a >= c) else "not_ol"
+
+def is_ul_nash(B, A, b, d):
+  return "ul" if (B >= A) and (b >= d) else "not_ul"
+
+def is_or_nash(C, D, c, a):
+  return "or" if (C >= D) and (c >= a) else "not_or"
+
+def is_ur_nash(D, C, d, b):
+  return "ur" if (D >= C) and (d >= b) else "not_ur"
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+Cand_Nash_ol = is_ol_nash(A, B, a, c)
+Cand_Nash_ul = is_ul_nash(B, A, b, d)
+Cand_Nash_or = is_or_nash(C, D, c, a)
+Cand_Nash_ur = is_ur_nash(D, C, d, b)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "ul" or element == "or" or element == "ur":
+    Nash_GG_filtered.append(element)
+
+# Ergebnis ausgeben
+print(Nash_GG_filtered)
+
+
+# Anzahl der Nash GG
+
+Anzahl_NGG=len(Nash_GG_filtered)
+
+print(Anzahl_NGG)
+
+# Wahrscheinlichkeiten ausrechnen.
+# Dabei jeweils den Fall Division duch 0 aussschließen
+
+#p_l
+if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
+
+#print(round(p_l, 2))
+
+#p_o
+if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
+
+#print(round(p_o, 2))
+
+
+# Ausgabe Abhängig von Bedingungen
+
+if (#Anzahl_NGG == 1 or 
+    p_o < 0 or p_l < 0 or
+            p_o > 1 or p_l > 1 or
+            (a - b - c + d) == 0 or
+            (A - B - C + D) == 0): print("Kein Nash-Gleichgewicht in gemischten Strategien")
+else:   print(f"p_l= {round(p_l, 2)}, p_o= {(round(p_o, 2))}")
+```
 
 ## Sequenzielle Spiele
 
