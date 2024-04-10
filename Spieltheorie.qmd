@@ -349,6 +349,28 @@ print(Nash_GG_filtered)
 
 - Wie hoch darf die Fehlerwahrscheinlichkeit des Gegenspielers sein, damit das Nash-Gleichgewicht noch die richtige Strategie impliziert?
 
+Angenommen, beide Spieler streben ein Nash-Gleichgewicht oben links an
+
+Für Spieler 1 muss dann gelten
+$E_o\geq E_u$
+
+Wenn er davon ausgeht, dass Spieler 2 mit einer Wahrscheinlichkeit von $p$ versehentlich rechts statt links spielt, heißt das
+
+$(1-p)A+pC \geq (1-p)B+pD$ 
+
+$\iff A-pA+pC\geq B-pB+pD$
+
+$\iff A-p(A-C) \geq B-p(B-D)$
+$ \iff p(B-D)-p(A-C) \geq B-A$
+
+$ \iff p(B-D-A+C)\geq B-A$
+
+mit $(B-D-A+C) <0$
+
+$\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}$
+
+
+
 ### Gemischte Strategien
 
 ## Sequenzielle Spiele
