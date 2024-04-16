@@ -508,9 +508,8 @@ print(Nash_GG_filtered)
 
 # Anzahl der Nash GG
 
-Anzahl_NGG=len(Nash_GG_filtered)
-
-print(Anzahl_NGG)
+#Anzahl_NGG=len(Nash_GG_filtered)
+#print(Anzahl_NGG)
 
 # Wahrscheinlichkeiten ausrechnen.
 # Dabei jeweils den Fall Division duch 0 aussschließen
