@@ -537,6 +537,9 @@ else:   print(f"p_l= {round(p_l, 2)}, p_o= {(round(p_o, 2))}")
 
 ## Sequenzielle Spiele
 
+Spieler spielen nacheinander
+
+
 ### Vollständige Information
 
 ### Unvollständige Information

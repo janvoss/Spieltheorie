@@ -258,3 +258,57 @@ B&D\\
 \end{tikzpicture}
 
 ```
+
+
+```{tikz Baum-Grundstruktur}
+
+
+\renewcommand*\familydefault{\sfdefault} %Serifenlose Schrift als Standard
+
+\tikzset{
+	treenode/.style = {shape=rectangle, rounded corners,
+		draw, align=center,
+		top color=white, bottom color=blue!20},
+	root/.style     = {treenode, font=\ttfamily\normalsize, bottom color=red!30},
+	env/.style      = {treenode, font=\ttfamily\normalsize},
+	dummy/.style    = {circle,draw}
+} %Einige Vorgaben für die Entscheidungsbäume Farben und env werden aber nicht genutzt.
+
+
+	
+\begin{tikzpicture}
+	[
+	grow                    = right,
+	level 1/.style={sibling distance=10em},
+	level 2/.style={sibling distance=6em},
+	level distance          = 12em,
+	edge from parent/.style = {draw},
+	every node/.style       = {font=\normalsize},
+	sloped
+	]
+	\node [dummy, label=below:{K1}, label=above:{Spieler\,1}]{}
+	child { node(K3) [dummy, label=below:{K3}, label=:{}] {}
+		child { node [dummy, label=below:{K7}, label=right:{D, d}] {}     	
+			edge from parent node [below] {rechts} }
+		child { node [dummy, label=below:{K6}, label=right:{B, b}] {}
+			edge from parent node [above]
+			{links}
+		}
+		edge from parent node [below] {unten} 
+	}
+	child { node(K2) [dummy, label=below:{K2}, label=:{Spieler\,2}]{}
+		child { node [dummy, label=below:{K5}, label=right:{C, c}] {}     	
+			edge from parent node [below] {rechts} }
+		child { node [dummy, label=below:{K4}, label=right:{A, a}] {}
+			edge from parent node [above]
+			{links}
+		}
+		edge from parent node [above] 
+		{oben}
+	};
+%	\draw[dashed] (K2) to (K3);
+\end{tikzpicture}
+
+
+```
+
