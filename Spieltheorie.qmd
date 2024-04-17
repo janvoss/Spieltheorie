@@ -537,16 +537,59 @@ else:   print(f"p_l= {round(p_l, 2)}, p_o= {(round(p_o, 2))}")
 
 ## Sequenzielle Spiele
 
-Spieler spielen nacheinander
+Spieler spielen nacheinander.
 
 
 ### Vollständige Information
+
+Annahme: Alle Spieler kennen alle Auszahlungen und sehen alle bislang erfolgten Spielzüge
+
+Darstellung des Spiels mittels eines Spielbaums
+
+
+![Grundstruktur eines Spielbaums](figure/Baum-Grundstruktur-1.png){width="50%"}
+
+
+#### Rückwärtsinduktion
+
+Lösen des Spiels "von hinten nach vorn"
+
+##### Beispiele
+
+![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-a-1.png){width="50%"}
+
+Hier kommen noch mehr Beispiele
+
+##### Bedingungen für ein Nash-Gleichgewicht
+
+Zunächst vereinfachende Annahme: $a\neq c\ \text{und}\ b \neq d$
+
+
+Ja, was sind die Bedingungen?
+
+[Hier: Implementierung in Python]
+
+#### Teilspielperfektheit
+
+- Teilspielperfektheit verlangt, dass jeder Spieler jeden Zug so ausführt, dass das Ergebnis des Zuges seinen Interessen nicht schadet. 
+
+- Ein Teilspiel beginnt in einem Knoten und enthält alle nachfolgenden Knoten
+
+- Für später: Ein Teilspiel darf nachfolgende Informationsmengen nicht teilen. Es gehören also immer alle Knoten einer Informationsmenge zu einem Teilspiel
+
+
+Beispiel: Unglaubwürdige Drohung
+
+![Unglaubwürdige Drohung](figure/Baum-Unglaubwürdige-Drohung-1.png){width="50%"}
+
+#### Selbstbindung 
 
 ### Unvollständige Information
 
 ## Koalitionsspiele
 
 ## Evolutionäre Spiele
+
 
 
 
