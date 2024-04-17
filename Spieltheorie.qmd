@@ -10,7 +10,6 @@
 
 ![Allgemeines Struktur eines Spiels](figure/Allgemeine-Struktur.png){width="50%"}
 
-
 ### Reine Strategien
 
 #### Definition Nash-Gleichgewicht
@@ -25,13 +24,13 @@ Intuition: Ein Nash-Gleichgewicht liegt vor, wenn kein Spieler mehr die Möglich
 
 In der Matrix oben heißt dass, das geprüft werden muss
 
-$A	\geq B \land a  \geq c$ $\rightarrow$ **ol**
+$A \geq B \land a \geq c$ $\rightarrow$ **ol**
 
-$B	\geq A \land b  \geq d$ $\rightarrow$ **ul**
+$B \geq A \land b \geq d$ $\rightarrow$ **ul**
 
-$C	\geq D \land c  \geq a$ $\rightarrow$ **or**
+$C \geq D \land c \geq a$ $\rightarrow$ **or**
 
-$D	\geq C \land d  \geq b$ $\rightarrow$ **ur**
+$D \geq C \land d \geq b$ $\rightarrow$ **ur**
 
 Es kann kein oder ein Nash-Gleichgewicht existieren oder mehrere Nash-Gleichgewichte
 
@@ -89,10 +88,10 @@ for element in Nash_GG:
 #print(Nash_GG_filtered)
 
 ```
+
 ```{python}
 print(Nash_GG_filtered)
 ```
-
 
 ##### Koordinationsspiel
 
@@ -149,7 +148,6 @@ for element in Nash_GG:
 # Ergebnis ausgeben
 print(Nash_GG_filtered)
 ```
-
 
 ##### Chicken Game
 
@@ -208,7 +206,6 @@ print(Nash_GG_filtered)
 
 ```
 
-
 ##### Geschlechterkampf
 
 ![Geschlechterkampf](figure/Geschlechterkampf-1.png){width="50%"}
@@ -265,7 +262,6 @@ for element in Nash_GG:
 print(Nash_GG_filtered)
 
 ```
-
 
 ##### Gefangenendilemma
 
@@ -324,33 +320,31 @@ for element in Nash_GG:
 print(Nash_GG_filtered)
 ```
 
-
 #### Wiederholte Spiele
 
-- Ausgangspunkt Gefangenendilemma mit $B>A>D>C$ und $c>a>d>b$
+-   Ausgangspunkt Gefangenendilemma mit $B>A>D>C$ und $c>a>d>b$
 
-- Erwartungswert der Kooperation für Spieler 1: $E^1_k\approx \frac{A}{1-p}$
+-   Erwartungswert der Kooperation für Spieler 1: $E^1_k\approx \frac{A}{1-p}$
 
-- Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}\approx B+ \frac{D}{1-p}-D$
+-   Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}\approx B+ \frac{D}{1-p}-D$
 
+-   Erwartungswert der Kooperation für Spieler 2: $E^2_k\approx \frac{a}{1-p}$
 
-- Erwartungswert der Kooperation für Spieler 2: $E^2_k\approx \frac{a}{1-p}$
+-   Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{d}{1-p}-d$
 
-- Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{d}{1-p}-d$
+-   Kooperation durch Spieler 1 wenn $p\geq \frac{B-A}{B-D}$
 
-- Kooperation durch Spieler 1 wenn $p\geq \frac{B-A}{B-D}$
-- Kooperation durch Spieler 2 wenn $p\geq \frac{c-a}{c-d}$
+-   Kooperation durch Spieler 2 wenn $p\geq \frac{c-a}{c-d}$
 
 #### Trembling Hand
 
-- Idee: Manche Nash-Gleichgewichte sind riskant
+-   Idee: Manche Nash-Gleichgewichte sind riskant
 
-- Wenn der Gegenspieler "versehentlich" eine falsche Strategie spielt, dann macht man evtl hohe Verluste
+-   Wenn der Gegenspieler "versehentlich" eine falsche Strategie spielt, dann macht man evtl hohe Verluste
 
-- Wie hoch darf die Fehlerwahrscheinlichkeit des Gegenspielers sein, damit das Nash-Gleichgewicht noch die richtige Strategie impliziert?
+-   Wie hoch darf die Fehlerwahrscheinlichkeit des Gegenspielers sein, damit das Nash-Gleichgewicht noch die richtige Strategie impliziert?
 
 Angenommen, beide Spieler streben ein Nash-Gleichgewicht oben links an
-
 
 **Für Spieler 1 muss dann gelten**
 
@@ -358,7 +352,7 @@ $E_o\geq E_u$
 
 Wenn er davon ausgeht, dass Spieler 2 mit einer Wahrscheinlichkeit von $p$ versehentlich rechts statt links spielt, heißt das
 
-$(1-p)A+pC \geq (1-p)B+pD$ 
+$(1-p)A+pC \geq (1-p)B+pD$
 
 $\iff A-pA+pC\geq B-pB+pD$
 
@@ -371,7 +365,6 @@ $\iff p(B-D-A+C)\geq B-A$
 mit $(B-D-A+C) <0$
 
 $\iff p \leq \frac{B-A}{B-A-D+C}=\frac{A-B}{A-B-C+D}$
-
 
 **Für Spieler 2 muss dann gelten**
 
@@ -419,12 +412,11 @@ print(sol)
 
 ```
 
-
 ### Gemischte Strategien
 
-- Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein
+-   Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein
 
-- Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)
+-   Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)
 
 ```{python}
 #| eval: false
@@ -539,16 +531,13 @@ else:   print(f"p_l= {round(p_l, 2)}, p_o= {(round(p_o, 2))}")
 
 Spieler spielen nacheinander.
 
-
 ### Vollständige Information
 
 Annahme: Alle Spieler kennen alle Auszahlungen und sehen alle bislang erfolgten Spielzüge
 
 Darstellung des Spiels mittels eines Spielbaums
 
-
 ![Grundstruktur eines Spielbaums](figure/Baum-Grundstruktur-1.png){width="50%"}
-
 
 #### Rückwärtsinduktion
 
@@ -558,38 +547,38 @@ Lösen des Spiels "von hinten nach vorn"
 
 ![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-a-1.png){width="50%"}
 
-Hier kommen noch mehr Beispiele
+
+![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-b-1.png){width="50%"}
 
 ##### Bedingungen für ein Nash-Gleichgewicht
 
 Zunächst vereinfachende Annahme: $a\neq c\ \text{und}\ b \neq d$
 
-
 Ja, was sind die Bedingungen?
 
-[Hier: Implementierung in Python]
+**ol**: $a>c \land ((A>B\ \land\ b>d) \lor (A>D\ \land\ d>b))$
+**or**: $c>a \land ((C>B\ \land\ b>d) \lor (C>D\ \land\ d>b))$
+**ul**: $b>d \land ((B>A\ \land\ a>c) \lor (B>C\ \land\ c>a))$
+**ur**: $d>b \land ((D>A\ \land\ a>c) \lor (D>C\ \land\ c>a))$
+
+Hier: Implementierung in Python
 
 #### Teilspielperfektheit
 
-- Teilspielperfektheit verlangt, dass jeder Spieler jeden Zug so ausführt, dass das Ergebnis des Zuges seinen Interessen nicht schadet. 
+-   Teilspielperfektheit verlangt, dass jeder Spieler jeden Zug so ausführt, dass das Ergebnis des Zuges seinen Interessen nicht schadet.
 
-- Ein Teilspiel beginnt in einem Knoten und enthält alle nachfolgenden Knoten
+-   Ein Teilspiel beginnt in einem Knoten und enthält alle nachfolgenden Knoten
 
-- Für später: Ein Teilspiel darf nachfolgende Informationsmengen nicht teilen. Es gehören also immer alle Knoten einer Informationsmenge zu einem Teilspiel
-
+-   Für später: Ein Teilspiel darf nachfolgende Informationsmengen nicht teilen. Es gehören also immer alle Knoten einer Informationsmenge zu einem Teilspiel
 
 Beispiel: Unglaubwürdige Drohung
 
 ![Unglaubwürdige Drohung](figure/Baum-Unglaubwürdige-Drohung-1.png){width="50%"}
 
-#### Selbstbindung 
+#### Selbstbindung
 
 ### Unvollständige Information
 
 ## Koalitionsspiele
 
 ## Evolutionäre Spiele
-
-
-
-

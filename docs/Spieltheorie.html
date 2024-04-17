@@ -284,15 +284,15 @@ window.Quarto = {
 <p><span class="math inline">\(u_{i}\left(s_{i}^{*},s_{-i}^{*}\right)\geq u_{i}\left(s_{i},s_{-i}^{*}\right)\mbox{ für alle }i,\mbox{ }s_{i}\in S_{i}\)</span></p>
 <p>Intuition: Ein Nash-Gleichgewicht liegt vor, wenn kein Spieler mehr die Möglichkeit hat, seine Situation durch eine <strong>nur eigene</strong> Entscheidungsänderung zu verbessern.</p>
 <p>In der Matrix oben heißt dass, das geprüft werden muss</p>
-<p><span class="math inline">\(A  \geq B \land a  \geq c\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ol</strong></p>
-<p><span class="math inline">\(B  \geq A \land b  \geq d\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ul</strong></p>
-<p><span class="math inline">\(C  \geq D \land c  \geq a\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>or</strong></p>
-<p><span class="math inline">\(D  \geq C \land d  \geq b\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ur</strong></p>
+<p><span class="math inline">\(A \geq B \land a \geq c\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ol</strong></p>
+<p><span class="math inline">\(B \geq A \land b \geq d\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ul</strong></p>
+<p><span class="math inline">\(C \geq D \land c \geq a\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>or</strong></p>
+<p><span class="math inline">\(D \geq C \land d \geq b\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>ur</strong></p>
 <p>Es kann kein oder ein Nash-Gleichgewicht existieren oder mehrere Nash-Gleichgewichte</p>
 </section>
 <section id="einperiodige-spiele" class="level4" data-number="3.3.2.2">
 <h4 data-number="3.3.2.2" class="anchored" data-anchor-id="einperiodige-spiele"><span class="header-section-number">3.3.2.2</span> Einperiodige Spiele</h4>
-<div id="b64eef30" class="cell" data-execution_count="1">
+<div id="f167b787" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -346,11 +346,11 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  6,5  3,6
-u  2,0  1,2</code></pre>
+o  8,1  8,5
+u  5,3  2,9</code></pre>
 </div>
 </div>
-<div id="f606594e" class="cell" data-execution_count="2">
+<div id="f113e6d2" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -367,7 +367,7 @@ u  2,0  1,2</code></pre>
 <figcaption>Koordinationsspiel</figcaption>
 </figure>
 </div>
-<div id="d69ccfaa" class="cell" data-execution_count="3">
+<div id="2f822a05" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -435,7 +435,7 @@ u  5,5  0,0
 <figcaption>Chicken Game</figcaption>
 </figure>
 </div>
-<div id="7aa00467" class="cell" data-execution_count="4">
+<div id="c63d4f62" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -489,8 +489,8 @@ u  5,5  0,0
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  6,6  2,8
-u  8,2  0,1
+o  6,7  3,9
+u  9,4  0,0
 ['ul', 'or']</code></pre>
 </div>
 </div>
@@ -503,7 +503,7 @@ u  8,2  0,1
 <figcaption>Geschlechterkampf</figcaption>
 </figure>
 </div>
-<div id="904f0111" class="cell" data-execution_count="5">
+<div id="59cf5400" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -557,8 +557,8 @@ u  8,2  0,1
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  9,6  4,5
-u  2,2  6,8
+o  8,7  5,3
+u  2,1  7,8
 ['ol', 'ur']</code></pre>
 </div>
 </div>
@@ -571,7 +571,7 @@ u  2,2  6,8
 <figcaption>Gefangenendilemma</figcaption>
 </figure>
 </div>
-<div id="3cc6202b" class="cell" data-execution_count="6">
+<div id="36fd7780" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -625,8 +625,8 @@ u  2,2  6,8
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>    l   r
-o  7,8  1,9
-u  9,1  3,4
+o  6,7  0,9
+u  8,1  4,3
 ['ur']</code></pre>
 </div>
 </div>
@@ -671,7 +671,7 @@ u  9,1  3,4
 <p><span class="math inline">\(\iff p(c-d-a+b) \geq c-a\)</span></p>
 <p>mit <span class="math inline">\((c-d-a+b)\neq 0\)</span></p>
 <p><span class="math inline">\(p \leq \frac{c-a}{(c-d-a+b)}=\frac{a-c}{(a-b-c+d)}\)</span></p>
-<div id="2cc321f0" class="cell" data-execution_count="7">
+<div id="98b1292f" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeiten ausrechnen</span></span>
@@ -705,7 +705,7 @@ u  9,1  3,4
 <li><p>Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein</p></li>
 <li><p>Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)</p></li>
 </ul>
-<div id="0003fce0" class="cell" data-execution_count="8">
+<div id="da089786" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeiten ausrechnen</span></span>
@@ -733,7 +733,7 @@ u  9,1  3,4
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="23957118" class="cell" data-execution_count="9">
+<div id="68f382c3" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -840,13 +840,19 @@ u  9,1  3,4
 <figcaption>Beispiel für Rückwärtsinduktion</figcaption>
 </figure>
 </div>
-<p>Hier kommen noch mehr Beispiele</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure/Baum-Rückwärtsinduktion-b-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Beispiel für Rückwärtsinduktion</figcaption>
+</figure>
+</div>
 </section>
 <section id="bedingungen-für-ein-nash-gleichgewicht" class="level5" data-number="3.4.1.1.2">
 <h5 data-number="3.4.1.1.2" class="anchored" data-anchor-id="bedingungen-für-ein-nash-gleichgewicht"><span class="header-section-number">3.4.1.1.2</span> Bedingungen für ein Nash-Gleichgewicht</h5>
 <p>Zunächst vereinfachende Annahme: <span class="math inline">\(a\neq c\ \text{und}\ b \neq d\)</span></p>
 <p>Ja, was sind die Bedingungen?</p>
-<p>[Hier: Implementierung in Python]</p>
+<p><strong>ol</strong>: <span class="math inline">\(a&gt;c \land ((A&gt;B\ \land\ b&gt;d) \lor (A&gt;D\ \land\ d&gt;b))\)</span> <strong>or</strong>: <span class="math inline">\(c&gt;a \land ((C&gt;B\ \land\ b&gt;d) \lor (C&gt;D\ \land\ d&gt;b))\)</span> <strong>ul</strong>: <span class="math inline">\(b&gt;d \land ((B&gt;A\ \land\ a&gt;c) \lor (B&gt;C\ \land\ c&gt;a))\)</span> <strong>ur</strong>: <span class="math inline">\(d&gt;b \land ((D&gt;A\ \land\ a&gt;c) \lor (D&gt;C\ \land\ c&gt;a))\)</span></p>
+<p>Hier: Implementierung in Python</p>
 </section>
 </section>
 <section id="teilspielperfektheit" class="level4" data-number="3.4.1.2">
