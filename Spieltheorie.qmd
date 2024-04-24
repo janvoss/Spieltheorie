@@ -557,6 +557,12 @@ Ja, was sind die Bedingungen?
 
 **ol**: $a>c \land ((A>B\ \land\ b>d) \lor (A>D\ \land\ d>b))$
 
+**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d))$
+
+**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))$
+
+**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))$
+
 ```{r, eval=F, include=F}
 
 **or**: $c>a \land ((C>B\ \land\ b>d) \lor (C>D\ \land\ d>b))$
