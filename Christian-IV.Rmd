@@ -1,0 +1,194 @@
+---
+title: "Steuern unter Christian IV von Dänemark"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# {-}
+
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">To collect taxes, Christian IV of Denmark asked captains of ships crossing the Øresund to estimate the value of their cargo, which was applied as the tax base without further audit. But the king also claimed the right to buy the entire cargo at exactly that price.</p>&mdash; Paul Hünermund (@PHuenermund) <a href="https://twitter.com/PHuenermund/status/1528795431274262530?ref_src=twsrc%5Etfw">May 23, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+
+# {-}
+
+
+```{tikz,  fig.ext = 'png', cache=T, echo=F,  out.width="40%"}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+
+\begin{tikzpicture}
+
+\sffamily % Keine Serifen
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=2.2cm},row sep=0.35cm,column sep=0.2cm] (m) {
+ 20& -80\\ 
+ 80& 180\\
+ 10&  10\\ 
+ 90&  90\\
+ 5 &  55\\
+95 &  45\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw[transform canvas= {yshift=.8cm}] (m.east) -- (m.west);
+\draw[transform canvas= {yshift=-.8cm}] (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Steuer};
+\node[above=5pt of b,anchor=base] {Steuer plus Kauf};
+
+\coordinate (c) at ($(m.north west)!0.15!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.5!(m.south west)$);
+\coordinate (e) at ($(m.north west)!0.85!(m.south west)$);
+
+%\node[left=0pt of c, red]{c};
+\node[left=12pt of c,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu hoch};
+\node[left=12pt of d,text width=1.5cm,rotate=90,align=center,anchor=center]  {wahr};
+\node[left=12pt of e,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu niedrig};
+
+
+
+\node[above=18pt of m.north] (Spaltenspieler) {Christian IV};
+\node[left=30pt of m.west,rotate=90,align=center,anchor=center] {Kapitän};
+
+
+%\node[above=5pt of Spaltenspieler]  {Steuern unter Christian IV von Dänemark};
+
+\end{tikzpicture}
+
+```
+
+
+**Annahmen**
+
+```{r echo=F, message=F, warning=F}
+
+library(tidyverse)
+library(knitr)
+
+df <- data.frame(Objekt=c("Wert der Ladung",
+                          "Steuersatz",
+                          "Angesetzter zu hoher Wert",
+                          "Angesetzter zu niedriger Wert"),
+                 Annahme=c("100",
+                           "10%",
+                           "200",
+                           "50"))
+kable(df)
+```
+
+
+**Neue Annahme**: Zu hoher Wert = 1000
+
+```{tikz,  fig.ext = 'png', cache=T, echo=F,  out.width="40%"}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+
+\begin{tikzpicture}
+
+\sffamily % Keine Serifen
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=2.2cm},row sep=0.35cm,column sep=0.2cm] (m) {
+ 100& -800\\ 
+ 0& 900\\
+ 10&  10\\ 
+ 90&  90\\
+ 5 &  55\\
+95 &  45\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw[transform canvas= {yshift=.8cm}] (m.east) -- (m.west);
+\draw[transform canvas= {yshift=-.8cm}] (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Steuer};
+\node[above=5pt of b,anchor=base] {Steuer plus Kauf};
+
+\coordinate (c) at ($(m.north west)!0.15!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.5!(m.south west)$);
+\coordinate (e) at ($(m.north west)!0.85!(m.south west)$);
+
+%\node[left=0pt of c, red]{c};
+\node[left=12pt of c,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu hoch};
+\node[left=12pt of d,text width=1.5cm,rotate=90,align=center,anchor=center]  {wahr};
+\node[left=12pt of e,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu niedrig};
+
+
+
+\node[above=18pt of m.north] (Spaltenspieler) {Christian IV};
+\node[left=30pt of m.west,rotate=90,align=center,anchor=center] {Kapitän};
+
+
+%\node[above=5pt of Spaltenspieler]  {Steuern unter Christian IV von Dänemark};
+
+\end{tikzpicture}
+
+```
+
+
+**Neue Annahme**: Zu hoher Wert = 1000, zu niedriger Wert = 10
+
+```{tikz,  fig.ext = 'png', cache=T, echo=F,  out.width="40%"}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+
+\begin{tikzpicture}
+
+\sffamily % Keine Serifen
+
+\renewcommand{\familydefault}{\sfdefault} 
+
+\matrix[matrix of math nodes,every odd row/.style={align=right},every even row/.style={align=left},every node/.style={text width=2.2cm},row sep=0.35cm,column sep=0.2cm] (m) {
+ 100& -800\\ 
+ 0& 900\\
+ 10&  10\\ 
+ 90&  90\\
+ 1 &  91\\
+99 &  9\\
+};
+\draw (m.north east) rectangle (m.south west);
+\draw (m.north) -- (m.south);
+\draw[transform canvas= {yshift=.8cm}] (m.east) -- (m.west);
+\draw[transform canvas= {yshift=-.8cm}] (m.east) -- (m.west);
+
+\coordinate (a) at ($(m.north west)!0.25!(m.north east)$);
+\coordinate (b) at ($(m.north west)!0.75!(m.north east)$);
+\node[above=5pt of a,anchor=base] {Steuer};
+\node[above=5pt of b,anchor=base] {Steuer plus Kauf};
+
+\coordinate (c) at ($(m.north west)!0.15!(m.south west)$);
+\coordinate (d) at ($(m.north west)!0.5!(m.south west)$);
+\coordinate (e) at ($(m.north west)!0.85!(m.south west)$);
+
+%\node[left=0pt of c, red]{c};
+\node[left=12pt of c,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu hoch};
+\node[left=12pt of d,text width=1.5cm,rotate=90,align=center,anchor=center]  {wahr};
+\node[left=12pt of e,text width=1.5cm,rotate=90,align=center,anchor=center]  {zu niedrig};
+
+
+
+\node[above=18pt of m.north] (Spaltenspieler) {Christian IV};
+\node[left=30pt of m.west,rotate=90,align=center,anchor=center] {Kapitän};
+
+
+%\node[above=5pt of Spaltenspieler]  {Steuern unter Christian IV von Dänemark};
+
+\end{tikzpicture}
+
+```
+
+

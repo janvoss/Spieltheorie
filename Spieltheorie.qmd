@@ -547,7 +547,6 @@ Lösen des Spiels "von hinten nach vorn"
 
 ![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-a-1.png){width="50%"}
 
-
 ![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-b-1.png){width="50%"}
 
 ##### Bedingungen für ein Nash-Gleichgewicht
@@ -557,11 +556,103 @@ Zunächst vereinfachende Annahme: $a\neq c\ \text{und}\ b \neq d$
 Ja, was sind die Bedingungen?
 
 **ol**: $a>c \land ((A>B\ \land\ b>d) \lor (A>D\ \land\ d>b))$
+
+```{r, eval=F, include=F}
+
 **or**: $c>a \land ((C>B\ \land\ b>d) \lor (C>D\ \land\ d>b))$
+
 **ul**: $b>d \land ((B>A\ \land\ a>c) \lor (B>C\ \land\ c>a))$
+
 **ur**: $d>b \land ((D>A\ \land\ a>c) \lor (D>C\ \land\ c>a))$
 
+```
+
 Hier: Implementierung in Python
+
+```{python}
+import numpy as np
+import random
+
+random.seed(123) # Für reproduzierbare Ergebnisse ggf. fixieren
+
+# Zufällige Ganzzahlen zwischen 0 und 9 generieren
+#A = random.randint(0, 9)
+#B = random.randint(0, 9)
+#C = random.randint(0, 9)
+#D = random.randint(0, 9)
+#a = random.randint(0, 9)
+#b = random.randint(0, 9)
+#c = random.randint(0, 9)
+#d = random.randint(0, 9)
+
+#A = 1
+#B = 0
+#C = 0
+#D = 0
+#a = 1
+#b = 0
+#c = 0
+#d = 0
+
+# Zufallszahlen, aber alle unterschiedlich
+choices = np.arange(10)
+
+# Generate unique random integers for uppercase variables
+Parameter = np.random.choice(choices, size=8, replace=False)
+A, B, C, D, a, b, c, d = Parameter
+
+
+# Formatierte Bimatrix ausgeben
+#print("    l   r")
+#print(f"o  {A},{a}  {C},{c}")
+#print(f"u  {B},{b}  {D},{d}")
+
+
+# Spielbaum ausgeben
+
+print(f"ol: {A}, {a}")
+print(f"or: {C}, {c}")
+print(f"ul: {B}, {b}")
+print(f"ur: {D}, {d}")
+
+# Funktionen für Nash-Bedingungen
+# Spieler 2 (a) entscheidet l/r, Spieler 1 (A) entscheidet o/u
+def is_ol_nash(A, B, D, a, b, c, d):
+  return "ol" if ((a > c) and ((A>= B and b> d) or
+              (A >= D and d>=b))) else "not_ol"
+
+def is_or_nash( B, C, D, a, b, c, d):
+  return "or" if (c>a and ((C>= B and b>=d) or
+              (C >= D and d>b))) else "not_or"
+
+
+def is_ul_nash(A, B, C,  a, b, c, d):
+  return "ul" if (b>=d and ((B>= A and a>= c) or
+              (B >= C and c>=a))) else "not_ul"
+
+
+def is_ur_nash(A,  C, D, a, b, c, d):
+  return "ur" if (d>=b and ((D>= A and a>= c) or
+              (D >= C and c>=a))) else "not_ur"
+
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+
+Cand_Nash_ol = is_ol_nash(A, B,    D, a, b, c, d)
+Cand_Nash_or = is_or_nash(   B, C, D, a, b, c, d)
+Cand_Nash_ul = is_ul_nash(A, B, C,    a, b, c, d)
+Cand_Nash_ur = is_ur_nash(A,    C, D, a, b, c, d)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "or" or element == "ul" or element == "ur":
+    Nash_GG_filtered.append(element)
+
+# Ergebnis ausgeben
+print(Nash_GG_filtered)
+```
 
 #### Teilspielperfektheit
 
