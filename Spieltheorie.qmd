@@ -53,9 +53,7 @@ c = random.randint(0, 9)
 d = random.randint(0, 9)
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -114,9 +112,7 @@ c = C
 d = D
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -170,9 +166,7 @@ c = random.randint(8, 9)
 d = random.randint(0, 1)
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -227,9 +221,7 @@ c = random.randint(3, 5)
 d = random.randint(8, 9)
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -285,9 +277,7 @@ c = random.randint(8, 9)
 d = random.randint(2, 4)
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -463,9 +453,7 @@ c = random.randint(0, 9)
 d = random.randint(0, 9)
 
 # Formatierte Bimatrix ausgeben
-print("    l   r")
-print(f"o  {A},{a}  {C},{c}")
-print(f"u  {B},{b}  {D},{d}")
+print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
 
 # Funktionen für Nash-Bedingungen
@@ -616,10 +604,7 @@ A, B, C, D, a, b, c, d = Parameter
 
 # Spielbaum ausgeben
 
-print(f"ol: {A}, {a}")
-print(f"or: {C}, {c}")
-print(f"ul: {B}, {b}")
-print(f"ur: {D}, {d}")
+print(f" ol: {A}, {a}\n or: {C}, {c}\n ul: {B}, {b}\n ur: {D}, {d}")
 
 # Funktionen für Nash-Bedingungen
 # Spieler 2 (a) entscheidet l/r, Spieler 1 (A) entscheidet o/u
@@ -672,7 +657,13 @@ Beispiel: Unglaubwürdige Drohung
 
 ![Unglaubwürdige Drohung](figure/Baum-Unglaubwürdige-Drohung-1.png){width="50%"}
 
+
+Hier: Tafelaufschrieb Markteintrittsspiel
+
 #### Selbstbindung
+
+
+Hier: Sonderabbildung Weltvernichtungsbombe
 
 ### Unvollständige Information
 
