@@ -314,8 +314,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  1,6  6,7
- u  6,1  7,4</code></pre>
+ o  4,0  3,0
+ u  7,6  9,1</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -357,7 +357,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['ur']</code></pre>
+<pre><code>['ul']</code></pre>
 </div>
 </div>
 <section id="koordinationsspiel" class="level5" data-number="3.3.2.2.1">
@@ -459,8 +459,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  6,7  4,8
- u  9,2  1,1</code></pre>
+ o  7,6  3,9
+ u  9,2  0,0</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -528,8 +528,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  8,7  3,5
- u  2,0  6,9</code></pre>
+ o  9,6  3,3
+ u  2,2  7,9</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -597,8 +597,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  7,6  0,8
- u  9,0  4,4</code></pre>
+ o  5,5  0,8
+ u  9,1  2,3</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -905,10 +905,10 @@ window.Quarto = {
 <span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f" ol: </span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>a<span class="sc">}</span><span class="ch">\n</span><span class="ss"> or: </span><span class="sc">{</span>C<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>c<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ul: </span><span class="sc">{</span>B<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ur: </span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> ol: 9, 7
- or: 4, 8
- ul: 5, 1
- ur: 0, 2</code></pre>
+<pre><code> ol: 8, 5
+ or: 6, 9
+ ul: 3, 4
+ ur: 1, 2</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -979,6 +979,112 @@ window.Quarto = {
 </section>
 <section id="unvollständige-information" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="unvollständige-information"><span class="header-section-number">3.4.2</span> Unvollständige Information</h3>
+<section id="alles-beobachtbar-aber-auszahlungen-können-gleich-sein" class="level4" data-number="3.4.2.1">
+<h4 data-number="3.4.2.1" class="anchored" data-anchor-id="alles-beobachtbar-aber-auszahlungen-können-gleich-sein"><span class="header-section-number">3.4.2.1</span> Alles beobachtbar, aber Auszahlungen können gleich sein</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spielbaum vollständige Information</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#random.seed(123) # Für reproduzierbare Ergebnisse ggf. fixieren</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Zufällige Ganzzahlen zwischen 0 und 9 generieren</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">9</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatierte Bimatrix ausgeben</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co">#print("    l   r")</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f"o  {A},{a}  {C},{c}")</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f"u  {B},{b}  {D},{d}")</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Spielbaum ausgeben</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f" ol: </span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>a<span class="sc">}</span><span class="ch">\n</span><span class="ss"> or: </span><span class="sc">{</span>C<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>c<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ul: </span><span class="sc">{</span>B<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ur: </span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> ol: 0, 4
+ or: 1, 0
+ ul: 4, 1
+ ur: 6, 6</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Annahme: Spieler 2 sieht Zug von Spieler 1.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Beide Spieler kennen alle Auszahlungen</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Spieler 2 zieht nach Spieler 1</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktionen für Nash-Bedingungen</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Spieler 2 (a) entscheidet l/r, Spieler 1 (A) entscheidet o/u</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktionen für Nash-Bedingungen</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ol_nash(A, B, C, D, a, b, c, d):</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ol"</span> <span class="cf">if</span> (a <span class="op">&gt;</span> c <span class="kw">and</span> ((A<span class="op">&gt;=</span> B <span class="kw">and</span> b<span class="op">&gt;=</span>d)  <span class="kw">or</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>                            (A <span class="op">&gt;=</span> D <span class="kw">and</span> d<span class="op">&gt;=</span>b)) <span class="kw">or</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>                 (a<span class="op">==</span>c <span class="kw">and</span> ((b<span class="op">&gt;</span>d  <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>B) <span class="kw">or</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>                           (d<span class="op">&gt;</span>b  <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>D) <span class="kw">or</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>                           (d<span class="op">==</span>b <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>(B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span>)))) <span class="cf">else</span> <span class="st">"not_ol"</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_or_nash(A, B, C, D, a, b, c, d):</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"or"</span> <span class="cf">if</span> (c <span class="op">&gt;</span> a <span class="kw">and</span> ((C<span class="op">&gt;=</span> B <span class="kw">and</span> b<span class="op">&gt;=</span>d)  <span class="kw">or</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>                            (C <span class="op">&gt;=</span> D <span class="kw">and</span> d<span class="op">&gt;=</span>b)) <span class="kw">or</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>                 (c<span class="op">==</span>a <span class="kw">and</span> ((b<span class="op">&gt;</span>d  <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>B) <span class="kw">or</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>                           (d<span class="op">&gt;</span>b  <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>D) <span class="kw">or</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>                           (d<span class="op">==</span>b <span class="kw">and</span> (A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>(B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span>)))) <span class="cf">else</span> <span class="st">"not_or"</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ul_nash(A, B, C, D, a, b, c, d):</span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ul"</span> <span class="cf">if</span> (b <span class="op">&gt;</span> d <span class="kw">and</span> ((B<span class="op">&gt;=</span> A <span class="kw">and</span> a<span class="op">&gt;=</span>c)  <span class="kw">or</span></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>                            (B <span class="op">&gt;=</span> C <span class="kw">and</span> c<span class="op">&gt;=</span>a)) <span class="kw">or</span></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>                 (b<span class="op">==</span>d  <span class="kw">and</span> ((a<span class="op">&gt;</span>c  <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>A) <span class="kw">or</span></span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>                           (c<span class="op">&gt;</span>a  <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>C) <span class="kw">or</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>                           (a<span class="op">==</span>c <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>(A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span>)))) <span class="cf">else</span> <span class="st">"not_ul"</span></span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_ur_nash(A, B, C, D, a, b, c, d):</span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="st">"ur"</span> <span class="cf">if</span> (d <span class="op">&gt;</span> b <span class="kw">and</span> ((D<span class="op">&gt;=</span> A <span class="kw">and</span> a<span class="op">&gt;=</span>c)  <span class="kw">or</span></span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>                            (D <span class="op">&gt;=</span> C <span class="kw">and</span> c<span class="op">&gt;=</span>a)) <span class="kw">or</span></span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>                 (d<span class="op">==</span>b <span class="kw">and</span> ((a<span class="op">&gt;</span>c  <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>A) <span class="kw">or</span></span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a>                           (c<span class="op">&gt;</span>a  <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>C) <span class="kw">or</span></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>                           (a<span class="op">==</span>c <span class="kw">and</span> (B<span class="op">+</span>D)<span class="op">/</span><span class="dv">2</span><span class="op">&gt;=</span>(A<span class="op">+</span>C)<span class="op">/</span><span class="dv">2</span>)))) <span class="cf">else</span> <span class="st">"not_ur"</span></span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Nash-Bedingungen überprüfen und Strings zuweisen</span></span>
+<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ol <span class="op">=</span> is_ol_nash(A, B, C, D, a, b, c, d)</span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>Cand_Nash_or <span class="op">=</span> is_or_nash(A, B, C, D, a, b, c, d)</span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ul <span class="op">=</span> is_ul_nash(A, B, C, D, a, b, c, d)</span>
+<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a>Cand_Nash_ur <span class="op">=</span> is_ur_nash(A, B, C, D, a, b, c, d)</span>
+<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Ergebnisse kombinieren und NAs entfernen</span></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>Nash_GG <span class="op">=</span> np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])</span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>Nash_GG_filtered <span class="op">=</span> []</span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> element <span class="kw">in</span> Nash_GG:</span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> element <span class="op">==</span> <span class="st">"ol"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"or"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"ul"</span> <span class="kw">or</span> element <span class="op">==</span> <span class="st">"ur"</span>:</span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a>    Nash_GG_filtered.append(element)</span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a><span class="co"># Ergebnis ausgeben</span></span>
+<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>['ur']</code></pre>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="koalitionsspiele" class="level2" data-number="3.5">
