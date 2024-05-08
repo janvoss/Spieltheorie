@@ -669,7 +669,33 @@ Hier: Sonderabbildung Weltvernichtungsbombe
 
 #### Alles beobachtbar, aber Auszahlungen können gleich sein
 
+![Auszahlungen von Spieler 1 sind gleich](figure/Baum-Gleiche-Auszahlungen-S1-1.png){width="50%"}
+$\rightarrow$ Spieler 1 muss sich irgendwie entscheiden, aber Spieler 2 kann die Entscheidung sehen.
+
+
+![Auszahlungen von Spieler 2 sind gleich](figure/Baum-Gleiche-Auszahlungen-S2-1.png){width="50%"}
+
+$\rightarrow$ Spieler 1 kann nicht antizipieren, was Spieler 2 im Fall "unten" macht. 
+
+$\rightarrow$ Kriterium für Entscheidung unter Risiko
+
+Mögliche Kriterien:
+
+- **Erwartungswert**
+- Erwartungsnutzen
+- Maximin
+- $\dots$
+
+Hier unterstellt: Erwartungswertkriterium
+
+Die Bedingungen für ein Nash-Gleichgewicht bei sequenziellen Spielen lauten dann:
+
+
+ja wie?
+
 ```{python}
+#| include: false
+
 # Spielbaum vollständige Information
 import numpy as np
 import random
