@@ -670,6 +670,7 @@ Hier: Sonderabbildung Weltvernichtungsbombe
 #### Alles beobachtbar, aber Auszahlungen können gleich sein
 
 ![Auszahlungen von Spieler 1 sind gleich](figure/Baum-Gleiche-Auszahlungen-S1-1.png){width="50%"}
+
 $\rightarrow$ Spieler 1 muss sich irgendwie entscheiden, aber Spieler 2 kann die Entscheidung sehen.
 
 
