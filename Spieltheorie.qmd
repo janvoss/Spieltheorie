@@ -787,7 +787,86 @@ for element in Nash_GG:
 print(Nash_GG_filtered)
 ```
 
+#### Zug von Spieler 1 ist für Spieler 2 unsichtbar
 
+
+![Baum Zug 1 unsichtbar ](figure/Baum-Zug1-unsichtbar-1.png)
+
+```{python}
+#|echo: true
+#|eval: false
+
+
+import numpy as np
+import random
+
+#random.seed(123) # Für reproduzierbare Ergebnisse ggf. fixieren
+
+# Zufällige Ganzzahlen zwischen 0 und 9 generieren
+
+A, B, C, D, a, b, c, d = random.choices(range(10), k=8)
+
+
+# Formatierte Bimatrix ausgeben
+#print("    l   r")
+#print(f"o  {A},{a}  {C},{c}")
+#print(f"u  {B},{b}  {D},{d}")
+
+
+# Spielbaum ausgeben
+
+print(f" ol: {A}, {a}\n or: {C}, {c}\n ul: {B}, {b}\n ur: {D}, {d}")
+
+
+# Annahme: Spieler 2 sieht Zug von Spieler 1 nicht
+
+
+# Kommentare zur Strategie
+
+
+
+# Funktionen für Nash-Bedingungen
+# Spieler 2 (a) entscheidet l/r, Spieler 1 (A) entscheidet o/u 
+
+#def is_ol_nash(A, B, C, D, a, b, c, d):
+#  return "ol" if ...
+#              else "not_ol"
+
+#def is_or_nash(A, B, C, D, a, b, c, d):
+ # return "or" if... 
+  #          else "not_or"
+
+
+#def is_ul_nash(A, B, C, D, a, b, c, d):
+#  return "ul" if ...
+ #             else "not_ul"
+
+
+#def is_ur_nash(A, B, C, D, a, b, c, d):
+#  return "ur" if ...
+ #             else "not_ur"
+
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+
+Cand_Nash_ol = is_ol_nash(A, B, C, D, a, b, c, d)
+Cand_Nash_or = is_or_nash(A, B, C, D, a, b, c, d)
+Cand_Nash_ul = is_ul_nash(A, B, C, D, a, b, c, d)
+Cand_Nash_ur = is_ur_nash(A, B, C, D, a, b, c, d)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "or" or element == "ul" or element == "ur":
+    Nash_GG_filtered.append(element)
+    
+#Ergebnis ausgeben
+# print(Nash_GG_filtered)
+```
+
+
+#### Typ von Spieler 1 (und damit die Menge seiner Auszahlungen) ist für Spieler 2 unsichtbar
 ## Koalitionsspiele
 
 ## Evolutionäre Spiele
