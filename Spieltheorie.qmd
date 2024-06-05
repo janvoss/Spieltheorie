@@ -326,6 +326,115 @@ print(Nash_GG_filtered)
 
 -   Kooperation durch Spieler 2 wenn $p\geq \frac{c-a}{c-d}$
 
+
+```{python}
+#| eval: false
+
+
+from sympy import Symbol, solve, Eq
+
+A = Symbol('A')
+B = Symbol('B')
+C = Symbol('C')
+D = Symbol('D')
+a = Symbol('a')
+b = Symbol('b')
+c = Symbol('c')
+d = Symbol('d')
+p = Symbol('p')
+
+# Ungleichung aufstellen
+
+E_1K = A/(1-p)
+
+
+E_1NK = B+ D/(1-p)-D
+
+
+Bedingung = Eq(E_1K, E_1NK)
+
+
+sol1=solve(Bedingung, p) # wie löse ich das als Ungleichung?
+
+print(sol1)
+
+E_2K = a/(1-p)
+
+E_2NK = c+ d/(1-p) -d
+
+Bedingung = Eq(E_2K, E_2NK)
+
+sol2 = solve(Bedingung, p)
+print(sol2)
+```
+
+
+```{python}
+#| eval: false
+
+
+import numpy as np
+
+import random
+
+# Zufällige Ganzzahlen zwischen 0 und 9 generieren
+A = random.randint(5, 7)
+B = random.randint(8, 9)
+C = random.randint(0, 1)
+D = random.randint(2, 4)
+a = random.randint(5, 8)
+b = random.randint(0, 1)
+c = random.randint(8, 9)
+d = random.randint(2, 4)
+
+# Formatierte Bimatrix ausgeben
+print("    l   r")
+print(f"o  {A},{a}  {C},{c}")
+print(f"u  {B},{b}  {D},{d}")
+
+
+# Funktionen für Nash-Bedingungen
+def is_ol_nash(A, B, a, c):
+  return "ol" if (A >= B) and (a >= c) else "not_ol"
+
+def is_ul_nash(B, A, b, d):
+  return "ul" if (B >= A) and (b >= d) else "not_ul"
+
+def is_or_nash(C, D, c, a):
+  return "or" if (C >= D) and (c >= a) else "not_or"
+
+def is_ur_nash(D, C, d, b):
+  return "ur" if (D >= C) and (d >= b) else "not_ur"
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+Cand_Nash_ol = is_ol_nash(A, B, a, c)
+Cand_Nash_ul = is_ul_nash(B, A, b, d)
+Cand_Nash_or = is_or_nash(C, D, c, a)
+Cand_Nash_ur = is_ur_nash(D, C, d, b)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "ul" or element == "or" or element == "ur":
+    Nash_GG_filtered.append(element)
+
+# Ergebnis ausgeben
+print(Nash_GG_filtered)
+
+# Kritisches p für Kooperation
+
+p_krit = (B-A)/(B - D)
+#print(round(p_krit,3))
+print(f"Für Kooperation durch Spieler 1 muss die Wahrscheinlichkeit für eine weitere Runde mindestens {str(round(p_krit,3)).replace('.',',')} betragen.")
+
+p_krit = (c-a)/(c - d)
+#print(round(p_krit,3))
+print(f"Für Kooperation durch Spieler 2 muss die Wahrscheinlichkeit für eine weitere Runde mindestens {str(round(p_krit,3)).replace('.',',')} betragen.")
+
+```
+
+
 #### Trembling Hand
 
 -   Idee: Manche Nash-Gleichgewichte sind riskant
@@ -694,6 +803,15 @@ Die Bedingungen für ein Nash-Gleichgewicht bei sequenziellen Spielen lauten dan
 
 ja wie?
 
+
+**ol**: $a>c \land ((A\geq B\ \land\ b \geq d) \lor (A \geq  D\ \land\ d \geq b) ) \lor a=c \land ((b>d \land (\frac{A+C}{2} \geq B)\lor (d>b \land \frac{A+C}{2}\geq D) \lor (b=d \land(\frac{A+C}{2}\geq \frac{B+D}{2})))$
+
+**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d))$
+
+**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))$
+
+**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))$
+
 ```{python}
 #| include: false
 
@@ -791,10 +909,15 @@ print(Nash_GG_filtered)
 
 
 ![Baum Zug 1 unsichtbar ](figure/Baum-Zug1-unsichtbar-1.png)
+- Fehlende Information für Spieler 2 kein Problem, wenn er eine dominante Alternative hat oder wenn alle Auszahlungen für ihn gleich sind.
+
+- Fehlende Information für Spieler 2 kein Problem, wenn Spieler 1 eine dominante Alternative hat.
+
+- Wenn Information nicht vorliegt, Entscheidungskriterium unter Risiko nutzen. Hier: Erwartungswert
 
 ```{python}
 #|echo: true
-#|eval: false
+#| eval: false
 
 
 import numpy as np
@@ -862,11 +985,21 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
     
 #Ergebnis ausgeben
-# print(Nash_GG_filtered)
+print(Nash_GG_filtered)
 ```
 
 
 #### Typ von Spieler 1 (und damit die Menge seiner Auszahlungen) ist für Spieler 2 unsichtbar
+
+
+s. Tafelaufschrieb
+
+Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
+
+- Separierende Gleichgewichte: Spieler 1 offenart durch seine Entscheidung, von welchem Typ er ist
+
+- Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
+
 ## Koalitionsspiele
 
 ## Evolutionäre Spiele
