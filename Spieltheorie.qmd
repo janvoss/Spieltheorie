@@ -996,7 +996,7 @@ s. Tafelaufschrieb
 
 Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
-- Separierende Gleichgewichte: Spieler 1 offenart durch seine Entscheidung, von welchem Typ er ist
+- Separierende Gleichgewichte: Spieler 1 offenbart durch seine Entscheidung, von welchem Typ er ist
 
 - Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
 
