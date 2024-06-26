@@ -14,4 +14,28 @@
 
 ## Umgang mit Risiken
 
+### Erwartungsnutzentheorie 
+
+- Erwartungswert als Kriterium unplausibel: St. Petersburg Paradox 
+
+- Stattdessen: Erwartungsnutzen
+- Nutzen des Erwartunswerts $\neq$ Erwartungswert des Nutzens ($U(EW)\neq EW(U)$)
+
+- Axiome der Erwartungsnutzentheorie:
+
+  - **Vollständigkeit**: FÜr alle Alternativen $A$ und $B$ gilt entweder $A \succeq B$ oder $A \preceq B$ oder beide Bedingungen
+  
+  - **Transitivität**: Aus $A \preceq B$ und $B \preceq C$ folgt $A \preceq C$
+  
+  - **Stetitgkeit**: Für alle Alternativen $A, B, C$ mit $A \preceq B$ und $B \preceq C$ existiert eine Wahrscheinlichkeit $p$, sodass gilt $pA+(1-p)C \sim B$
+  
+  - **Unabhängigkeit**: Für alle Alternativen $A, B, C$ mit $A \preceq B$ gilt $pA+(1-p)C \preceq pB+(1-p)C$ 
+
+
+
+### Allais-Paradoxon
+
+
+
+
 ## Kritische Diskussion der Verhaltensökonomik

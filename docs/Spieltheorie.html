@@ -233,6 +233,19 @@ window.Quarto = {
   </ul></li>
   <li><a href="#koalitionsspiele" id="toc-koalitionsspiele" class="nav-link" data-scroll-target="#koalitionsspiele"><span class="header-section-number">3.5</span> Koalitionsspiele</a></li>
   <li><a href="#evolutionäre-spiele" id="toc-evolutionäre-spiele" class="nav-link" data-scroll-target="#evolutionäre-spiele"><span class="header-section-number">3.6</span> Evolutionäre Spiele</a></li>
+  <li><a href="#verhaltensökonomik" id="toc-verhaltensökonomik" class="nav-link" data-scroll-target="#verhaltensökonomik"><span class="header-section-number">4</span> Verhaltensökonomik</a>
+  <ul class="collapse">
+  <li><a href="#einleitung" id="toc-einleitung" class="nav-link" data-scroll-target="#einleitung"><span class="header-section-number">4.1</span> Einleitung</a></li>
+  <li><a href="#flat-rate-bias" id="toc-flat-rate-bias" class="nav-link" data-scroll-target="#flat-rate-bias"><span class="header-section-number">4.2</span> Flat-rate bias</a></li>
+  <li><a href="#mental-accounting" id="toc-mental-accounting" class="nav-link" data-scroll-target="#mental-accounting"><span class="header-section-number">4.3</span> Mental Accounting</a></li>
+  <li><a href="#prospect-theory" id="toc-prospect-theory" class="nav-link" data-scroll-target="#prospect-theory"><span class="header-section-number">4.4</span> Prospect Theory</a></li>
+  <li><a href="#status-quo-bias" id="toc-status-quo-bias" class="nav-link" data-scroll-target="#status-quo-bias"><span class="header-section-number">4.5</span> Status-quo bias</a></li>
+  <li><a href="#umgang-mit-risiken" id="toc-umgang-mit-risiken" class="nav-link" data-scroll-target="#umgang-mit-risiken"><span class="header-section-number">4.6</span> Umgang mit Risiken</a>
+  <ul class="collapse">
+  <li><a href="#erwartungsnutzen" id="toc-erwartungsnutzen" class="nav-link" data-scroll-target="#erwartungsnutzen"><span class="header-section-number">4.6.1</span> Erwartungsnutzen</a></li>
+  <li><a href="#allais-paradoxon" id="toc-allais-paradoxon" class="nav-link" data-scroll-target="#allais-paradoxon"><span class="header-section-number">4.6.2</span> Allais-Paradoxon</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -314,8 +327,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  8,1  7,7
- u  0,7  1,0</code></pre>
+ o  9,2  5,6
+ u  9,9  2,4</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -357,7 +370,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['or']</code></pre>
+<pre><code>['ul', 'or']</code></pre>
 </div>
 </div>
 <section id="koordinationsspiel" class="level5" data-number="3.3.2.2.1">
@@ -390,8 +403,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  0,0  4,4
- u  4,4  0,0</code></pre>
+ o  0,0  3,3
+ u  3,3  0,0</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -459,8 +472,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  6,7  4,8
- u  9,2  0,1</code></pre>
+ o  6,5  2,8
+ u  8,4  0,0</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -528,8 +541,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  9,6  3,3
- u  2,0  7,8</code></pre>
+ o  8,7  5,4
+ u  1,0  7,8</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -597,8 +610,8 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     l    r
- o  6,6  1,8
- u  9,0  2,4</code></pre>
+ o  6,6  0,9
+ u  9,1  2,3</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -1008,10 +1021,10 @@ window.Quarto = {
 <span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f" ol: </span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>a<span class="sc">}</span><span class="ch">\n</span><span class="ss"> or: </span><span class="sc">{</span>C<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>c<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ul: </span><span class="sc">{</span>B<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>b<span class="sc">}</span><span class="ch">\n</span><span class="ss"> ur: </span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> ol: 3, 5
- or: 9, 4
- ul: 0, 8
- ur: 7, 6</code></pre>
+<pre><code> ol: 5, 4
+ or: 1, 2
+ ul: 7, 9
+ ur: 3, 0</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
@@ -1054,7 +1067,7 @@ window.Quarto = {
 <span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Nash_GG_filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>['ol']</code></pre>
+<pre><code>['ul']</code></pre>
 </div>
 </div>
 </section>
@@ -1225,8 +1238,48 @@ window.Quarto = {
 </section>
 <section id="evolutionäre-spiele" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="evolutionäre-spiele"><span class="header-section-number">3.6</span> Evolutionäre Spiele</h2>
+</section>
+<section id="verhaltensökonomik" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Verhaltensökonomik</h1>
+<section id="einleitung" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="einleitung"><span class="header-section-number">4.1</span> Einleitung</h2>
+</section>
+<section id="flat-rate-bias" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="flat-rate-bias"><span class="header-section-number">4.2</span> Flat-rate bias</h2>
+</section>
+<section id="mental-accounting" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="mental-accounting"><span class="header-section-number">4.3</span> Mental Accounting</h2>
+</section>
+<section id="prospect-theory" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="prospect-theory"><span class="header-section-number">4.4</span> Prospect Theory</h2>
+</section>
+<section id="status-quo-bias" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="status-quo-bias"><span class="header-section-number">4.5</span> Status-quo bias</h2>
+</section>
+<section id="umgang-mit-risiken" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="umgang-mit-risiken"><span class="header-section-number">4.6</span> Umgang mit Risiken</h2>
+<section id="erwartungsnutzen" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="erwartungsnutzen"><span class="header-section-number">4.6.1</span> Erwartungsnutzen</h3>
+<ul>
+<li><p>Erwartungswert als Kriterium unplausibel: St.&nbsp;Petersburg Paradox</p></li>
+<li><p>Stattdessen: Erwartungsnutzen</p></li>
+<li><p>Nutzen des Erwartunswerts <span class="math inline">\(\neq\)</span> Erwartungswert des Nutzens (<span class="math inline">\(U(EW)\neq EW(U)\)</span>)</p></li>
+<li><p>Axiome der Erwartungsnutzentheorie:</p>
+<ul>
+<li><p><strong>Vollständigkeit</strong>: FÜr alle Alternativen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> gilt entweder <span class="math inline">\(A \succeq B\)</span> oder <span class="math inline">\(A \preceq B\)</span> oder beide Bedingungen</p></li>
+<li><p><strong>Transitivität</strong>: Aus <span class="math inline">\(A \preceq B\)</span> und <span class="math inline">\(B \preceq C\)</span> folgt <span class="math inline">\(A \preceq C\)</span></p></li>
+<li><p><strong>Stegitgkeit</strong>: Für alle Alternativen <span class="math inline">\(A, B, C\)</span> mit <span class="math inline">\(A \preceq B\)</span> und <span class="math inline">\(B \preceq C\)</span> existiert eine Wahrscheinlichkeit <span class="math inline">\(p\)</span>, sodass gilt <span class="math inline">\(pA+(1-p)C \sim B\)</span></p></li>
+<li><p><strong>Unabhängigkeit</strong>: Für alle Alternativen <span class="math inline">\(A, B, C\)</span> mit <span class="math inline">\(A \preceq B\)</span> gilt <span class="math inline">\(pA+(1-p)C \preceq pB+(1-p)C\)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="allais-paradoxon" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="allais-paradoxon"><span class="header-section-number">4.6.2</span> Allais-Paradoxon</h3>
+<p>```</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -161,7 +190,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#die-prospect-theory" id="toc-die-prospect-theory" class="nav-link" data-scroll-target="#die-prospect-theory"><span class="header-section-number">4.4</span> Die Prospect Theory</a></li>
   <li><a href="#mental-accounting" id="toc-mental-accounting" class="nav-link" data-scroll-target="#mental-accounting"><span class="header-section-number">4.5</span> Mental Accounting</a></li>
   <li><a href="#der-status-quo-bias" id="toc-der-status-quo-bias" class="nav-link" data-scroll-target="#der-status-quo-bias"><span class="header-section-number">4.6</span> Der Status-quo Bias</a></li>
-  <li><a href="#umgang-mit-risiken" id="toc-umgang-mit-risiken" class="nav-link" data-scroll-target="#umgang-mit-risiken"><span class="header-section-number">4.7</span> Umgang mit Risiken</a></li>
+  <li><a href="#umgang-mit-risiken" id="toc-umgang-mit-risiken" class="nav-link" data-scroll-target="#umgang-mit-risiken"><span class="header-section-number">4.7</span> Umgang mit Risiken</a>
+  <ul class="collapse">
+  <li><a href="#erwartungsnutzentheorie" id="toc-erwartungsnutzentheorie" class="nav-link" data-scroll-target="#erwartungsnutzentheorie"><span class="header-section-number">4.7.1</span> Erwartungsnutzentheorie</a></li>
+  <li><a href="#allais-paradoxon" id="toc-allais-paradoxon" class="nav-link" data-scroll-target="#allais-paradoxon"><span class="header-section-number">4.7.2</span> Allais-Paradoxon</a></li>
+  </ul></li>
   <li><a href="#kritische-diskussion-der-verhaltensökonomik" id="toc-kritische-diskussion-der-verhaltensökonomik" class="nav-link" data-scroll-target="#kritische-diskussion-der-verhaltensökonomik"><span class="header-section-number">4.8</span> Kritische Diskussion der Verhaltensökonomik</a></li>
   </ul>
 </nav>
@@ -208,6 +241,24 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="umgang-mit-risiken" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="umgang-mit-risiken"><span class="header-section-number">4.7</span> Umgang mit Risiken</h2>
+<section id="erwartungsnutzentheorie" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="erwartungsnutzentheorie"><span class="header-section-number">4.7.1</span> Erwartungsnutzentheorie</h3>
+<ul>
+<li><p>Erwartungswert als Kriterium unplausibel: St.&nbsp;Petersburg Paradox</p></li>
+<li><p>Stattdessen: Erwartungsnutzen</p></li>
+<li><p>Nutzen des Erwartunswerts <span class="math inline">\(\neq\)</span> Erwartungswert des Nutzens (<span class="math inline">\(U(EW)\neq EW(U)\)</span>)</p></li>
+<li><p>Axiome der Erwartungsnutzentheorie:</p>
+<ul>
+<li><p><strong>Vollständigkeit</strong>: FÜr alle Alternativen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> gilt entweder <span class="math inline">\(A \succeq B\)</span> oder <span class="math inline">\(A \preceq B\)</span> oder beide Bedingungen</p></li>
+<li><p><strong>Transitivität</strong>: Aus <span class="math inline">\(A \preceq B\)</span> und <span class="math inline">\(B \preceq C\)</span> folgt <span class="math inline">\(A \preceq C\)</span></p></li>
+<li><p><strong>Stetitgkeit</strong>: Für alle Alternativen <span class="math inline">\(A, B, C\)</span> mit <span class="math inline">\(A \preceq B\)</span> und <span class="math inline">\(B \preceq C\)</span> existiert eine Wahrscheinlichkeit <span class="math inline">\(p\)</span>, sodass gilt <span class="math inline">\(pA+(1-p)C \sim B\)</span></p></li>
+<li><p><strong>Unabhängigkeit</strong>: Für alle Alternativen <span class="math inline">\(A, B, C\)</span> mit <span class="math inline">\(A \preceq B\)</span> gilt <span class="math inline">\(pA+(1-p)C \preceq pB+(1-p)C\)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="allais-paradoxon" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="allais-paradoxon"><span class="header-section-number">4.7.2</span> Allais-Paradoxon</h3>
+</section>
 </section>
 <section id="kritische-diskussion-der-verhaltensökonomik" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="kritische-diskussion-der-verhaltensökonomik"><span class="header-section-number">4.8</span> Kritische Diskussion der Verhaltensökonomik</h2>

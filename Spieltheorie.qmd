@@ -1003,3 +1003,8 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 ## Koalitionsspiele
 
 ## Evolutionäre Spiele
+
+```
+
+
+
