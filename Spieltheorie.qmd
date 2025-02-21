@@ -1000,9 +1000,22 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 - Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
 
-## Koalitionsspiele
+[## Koalitionsspiele]:
 
 ## Evolutionäre Spiele
+
+[https://eckhartarnold.de/papers/2009_Vorlesung_Entscheidungstheorie/node127.html]:
+
+### Idee
+
+### Erfolg von Strategien
+[Tournaments]:
+
+
+### Evolution von Strategien
+[Simulationen,  Kriterien für stabile Strategien]:
+
+### Diskussion und Ausblick
 
 ```
 
