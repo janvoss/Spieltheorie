@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Spieltheorie und Verhaltensökonomik"
-  subtitle: "Sommersemester 2024" 
+  subtitle: "Sommersemester 2025" 
   author: "Prof. Dr. Jan S. Voßwinkel"
   language:  _language.yml
   repo-url: https://github.com/janvoss/Spieltheorie.git
