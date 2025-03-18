@@ -2,8 +2,6 @@
 
 ## Einleitung und begriffliche Einordnung
 
-## Das Nash-Gleichgewicht
-
 ## Simultane Spiele
 
 ### Grundsätzliche Struktur eines Spiels
