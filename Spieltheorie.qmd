@@ -25,10 +25,10 @@ geom_text(x= 1.5, y= 2   , label='c') +\
 geom_text(x=  .5, y=  .75, label='C') +\
 geom_text(x= 1.5, y=-1   , label='d') +\
 geom_text(x=  .5, y=-2.25, label='D') +\
-geom_text(x=-1  , y= 3.3 , label='left')+\
-geom_text(x= 1  , y= 3.3 , label='right')+\
-geom_text(x=-2.2, y= 1.375, angle=90, label='top')+\
-geom_text(x=-2.2, y=-1.625, angle=90, label='bottom')+\
+geom_text(x=-1  , y= 3.3 , label='links)+\
+geom_text(x= 1  , y= 3.3 , label='rechts')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='oben')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='unten')+\
 geom_text(x= 0 , y= 4 ,
           fontface = "bold", label='Player 2')+\
 geom_text(x=-2.7 , y= 0 , angle=90,
