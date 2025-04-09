@@ -79,6 +79,9 @@ import numpy as np
 import random
 
 # Zufällige Ganzzahlen zwischen 0 und 9 generieren
+
+seed(123)
+
 A = random.randint(0, 9)
 B = random.randint(0, 9)
 C = random.randint(0, 9)
