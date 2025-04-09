@@ -89,7 +89,40 @@ c = random.randint(0, 9)
 d = random.randint(0, 9)
 
 # Formatierte Bimatrix ausgeben
-print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
+# print(f"     l    r\n o  {A},{a}  {C},{c}\n # u  {B},{b}  {D},{d}")
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='links)+\
+geom_text(x= 1  , y= 3.3 , label='rechts')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='oben')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='unten')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Player 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Player 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen in einem simultanen Spiel #,
+    # caption = 'Caption'
+)
+
 
 
 # Funktionen für Nash-Bedingungen
