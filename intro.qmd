@@ -1,6 +1,16 @@
 # Einleitung
 
-## Ökomomische Modellierung menschlichen Verhaltens
+## Modul: Analyse von Kooperations- und Konfliktstrukturen
+
+- Unter welchen Bedingugungen gelingt Kooperation im Team
+
+- Wie gelingt es, Konfliktstrukturen aufzubrechen, um Kooperation zu ermöglichen?
+
+- Wann ist Kooperation rational?
+
+- Berücksichtigung &bdquo;menschlicher Schwächen&ldquo;
+
+## Ökonomische Modellierung menschlichen Verhaltens
 
   - Methodologischer Individualismus  
   - Situationslogik erlaubt Verknüpfung von Situation, Zielen und Handlung
@@ -16,23 +26,3 @@
   * Rationalität als Behauptung über einen Sachverhalt
   * Rationalität als Analysegrammatik
   
-
-## Formen des Wettbewerbs
-
-  -Vollkommener Wettbewerb auf Märkten
-  - Innovationswettbewerb
-  - Entdeckungswettbewerb
-  - $\dots$
-  
-## Arenen des Wettbewerbs
-
-  - Märkte
-  - Organisationen
-  
-    - durch Märkte diszipliniert (Unternehmen)
-    - nicht durch Märkte diszipliniert (Behörden, Vereine, $\dots$)
-    
-## Fazit zum Modul
-    
-$\rightarrow$ Im Modul befassen wir uns mit Wettbewerb in unterschiedlichen Kontexten  
-$\rightarrow$ Basis der Überlegungen sind (unterschiedliche) Konzepte über menschliches Verhalten

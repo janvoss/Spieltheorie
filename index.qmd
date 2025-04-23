@@ -22,10 +22,12 @@ generate_svg(qr, filename = "qr-titel.svg")
 
 - Unterlagen: <https://janvoss.github.io/Spieltheorie/>
 
-- Modul: 203-039 Wettbewerb und Staat I ([Modulhandbuch](https://www.hfwu.de/fileadmin/user_upload/FAVM/VWL/modulhandbuch/Modulhandbuch_spob_vwl_2015_wise_Stand_2016_WiSe.pdf))
+- Modul: 209-031 Sustainable Co-Creation (Green Startups, Planet Centric Design,
+Spieltheorie, Verhaltensökonomik)
+ ([Modulhandbuch](https://www.hfwu.de/fileadmin/user_upload/FAVM/ZuB/Module/Modulhandbuch_spob_zub_2022_WiSe_Stand_2022_WiSe.pdf))
 
-- Weitere Veranstaltung im ModuL: Industrie- und Regulierungsökonomik, Wettbewerbspolitik
+- Weitere Veranstaltung im ModuL: Sustainable Co-Creation
 
-- Prüfungsleistung: K60, diese VL davon 50%
+- Prüfungsleistung: K60,diese VL (50% des Moduls)
 
 :::

@@ -479,24 +479,39 @@ print(Nash_GG_filtered)
 
 -   Ausgangspunkt Gefangenendilemma mit $B>A>D>C$ und $c>a>d>b$
 
+- Nash-Gleichgewicht dann unten rechts mit der Auszahlung D, d
+
+- Effizient wäre oben links mit Ausuahlung A, a
+
+- Tit for Tat: Kooperiere in der ersten Runde, erwidere danach die Strategiewahl des Gegenspielers reziprok
+
+- Dadurch "Bestrafung" für unkooperatives Verhalten möglich
+
+- Funktioniert das immer?
+
+- Funktioniert nicht bei bekannter endlicher Anzahl von Runden
+
 - In jeder Runde wird mit der Wahrscheinlichkeit $p$ eine weitere Runde gespielt.
 
-- Erwartungswert der Kooperationsgeflecht für $T$ Perioden
+- Erwartungswert der Kooperationsgeflecht für $T$ Perioden (die Annahme einer endlichen Anzahl von Perioden wird gleich wieder aufgegeben)
 
   $E^1_k=\sum_{t=0}^T A \times p^t$
 
-  Hilfsüberlegung: $(1-p)E^1_k = (1-p)\sum_{t=0}^T A \times p^t=A(\sum_{t=0}^T p^t - \sum_{t=0}^T p^{t+1})\\
-=A(\sum_{t=0}^T p^t - \sum_{t=1}^{T+1}p^{t})\\
-= A(1-p^{T+1})$
-  $\iff E^1_k=\frac{A(1-p^{T+1})}{1-p}$
+  Hilfsüberlegung: $(1-p)E^1_k = (1-p)\sum_{t=0}^T A \times p^t=A(\sum_{t=0}^T p^t - \sum_{t=0}^T p^{t+1})$
+  
+$=A(\sum_{t=0}^T p^t - \sum_{t=1}^{T+1}p^{t})$
+
+$= A(1-p^{T+1})$
+
+$\iff E^1_k=\frac{A(1-p^{T+1})}{1-p}$
 
   $$\boxed{\lim_{T \to \infty}{E^1_k}=\frac{A}{1-p}}$$
 
--   Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}\approx B+ \frac{D}{1-p}-D$
+-   Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}= B+ \frac{D}{1-p}-D$
 
--   Erwartungswert der Kooperation für Spieler 2: $E^2_k\approx \frac{a}{1-p}$
+-   Erwartungswert der Kooperation für Spieler 2: $E^2_k= \frac{a}{1-p}$
 
--   Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}\approx c+ \frac{d}{1-p}-d$
+-   Erwartungswert der Nicht-Kooperation für Spieler 2: $E^2_{nk}= c+ \frac{d}{1-p}-d$
 
 -   Kooperation durch Spieler 1 wenn $p\geq \frac{B-A}{B-D}$
 
