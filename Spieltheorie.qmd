@@ -481,7 +481,16 @@ print(Nash_GG_filtered)
 
 - In jeder Runde wird mit der Wahrscheinlichkeit $p$ eine weitere Runde gespielt.
 
--   Erwartungswert der Kooperation für Spieler 1: $E^1_k\approx \frac{A}{1-p}$
+- Erwartungswert der Kooperationsgeflecht für $T$ Perioden
+
+  $E^1_k=\sum_{t=0}^T A \times p^t$
+
+  Hilfsüberlegung: $(1-p)E^1_k = (1-p)\sum_{t=0}^T A \times p^t=A(\sum_{t=0}^T p^t - \sum_{t=0}^T p^{t+1})\\
+=A(\sum_{t=0}^T p^t - \sum_{t=1}^{T+1}p^{t})\\
+= A(1-p^{T+1})$
+  $\iff E^1_k=\frac{A(1-p^{T+1})}{1-p}$
+
+  $$\boxed{\lim_{T \to \infty}{E^1_k}=\frac{A}{1-p}}$$
 
 -   Erwartungswert der Nicht-Kooperation für Spieler 1: $E^1_{nk}\approx B+ \frac{D}{1-p}-D$
 
