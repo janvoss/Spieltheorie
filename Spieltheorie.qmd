@@ -253,7 +253,7 @@ print(Nash_GG_filtered)
 
 ##### Chicken Game
 
-![Chicken Game](figure/Chicken-Game-1.png){width="50%"}
+[![Chicken Game](figure/Chicken-Game-1.png){width="50%"}]::
 
 ```{python}
 
@@ -272,7 +272,11 @@ c = random.randint(8, 9)
 d = random.randint(0, 1)
 
 # Formatierte Bimatrix ausgeben
-print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
+# print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
+
+plot = create_plot()
+
+plot
 
 
 # Funktionen für Nash-Bedingungen
@@ -308,7 +312,7 @@ print(Nash_GG_filtered)
 
 ##### Geschlechterkampf
 
-![Geschlechterkampf](figure/Geschlechterkampf-1.png){width="50%"}
+[![Geschlechterkampf](figure/Geschlechterkampf-1.png){width="50%"}]::
 
 ```{python}
 
@@ -327,8 +331,11 @@ c = random.randint(3, 5)
 d = random.randint(8, 9)
 
 # Formatierte Bimatrix ausgeben
-print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
+# print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
+plot = create_plot()
+
+plot
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -363,7 +370,7 @@ print(Nash_GG_filtered)
 
 ##### Gefangenendilemma
 
-![Gefangenendilemma](figure/Gefangenendilemma-1.png){width="50%"}
+[![Gefangenendilemma](figure/Gefangenendilemma-1.png){width="50%"}]::
 
 ```{python}
 
@@ -383,8 +390,11 @@ c = random.randint(8, 9)
 d = random.randint(2, 4)
 
 # Formatierte Bimatrix ausgeben
-print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
+# print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
 
+plot = create_plot()
+
+plot
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -415,6 +425,55 @@ for element in Nash_GG:
 # Ergebnis ausgeben
 print(Nash_GG_filtered)
 ```
+
+##### Spiel ohne Gleichgewicht
+
+```{python}
+
+import numpy as np
+import random
+
+while True:
+    A = random.randint(0, 9)
+    a = random.randint(0, 9)
+    B = random.randint(0, 9)
+    b = random.randint(0, 9)
+    C = random.randint(0, 9)
+    c = random.randint(0, 9)
+    D = random.randint(0, 9)
+    d = random.randint(0, 9)
+
+    # Bedingungen prüfen
+    cond1 = (A >= B) and (a >= c)
+    cond2 = (B >= A) and (b >= d)
+    cond3 = (C >= D) and (c >= a)
+    cond4 = (D >= C) and (d >= b)
+
+    # Wenn keine Bedingung erfüllt ist, Schleife beenden
+    if not (cond1 or cond2 or cond3 or cond4):
+        break
+
+plot = create_plot()
+
+plot
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+Cand_Nash_ol = is_ol_nash(A, B, a, c)
+Cand_Nash_ul = is_ul_nash(B, A, b, d)
+Cand_Nash_or = is_or_nash(C, D, c, a)
+Cand_Nash_ur = is_ur_nash(D, C, d, b)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "ul" or element == "or" or element == "ur":
+    Nash_GG_filtered.append(element)
+
+# Ergebnis ausgeben
+print(Nash_GG_filtered)
+```
+
 
 #### Wiederholte Spiele
 
