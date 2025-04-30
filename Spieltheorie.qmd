@@ -628,6 +628,52 @@ print(f"Für Kooperation durch Spieler 2 muss die Wahrscheinlichkeit für eine w
 
 #### Trembling Hand
 
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+import random
+
+random.seed(246)
+
+while True:
+    A = random.randint(0, 9)
+    a = random.randint(0, 9)
+    B = random.randint(0, 9)
+    b = random.randint(0, 9)
+   # C = random.randint(0, 9)
+    C=-20
+    c = random.randint(0, 9)
+    D = random.randint(0, 9)
+    d = random.randint(0, 9)
+
+    # Bedingungen prüfen
+    cond1 = (A > B) and (a >= c) # NGG ol
+    cond2 = (D  > C) and (A > D) and (a > d)
+
+    # Wenn beide Bedingung erfüllt ist, Schleife beenden
+    if  (cond1 and cond2):
+        break
+
+# Ausgabe der Zahlen
+#print(f"A={A}, a={a}, B={B}, b={b}, C={C}, c={c}, D={D}, d={d}")
+
+# Formatierte Bimatrix ausgeben
+#print("    l   r")
+#print(f"o  {A},{a}  {C},{c}")
+#print(f"u  {B},{b}  {D},{d}")
+
+
+plot = create_plot()
+
+plot
+
+
+```
+
+
 -   Idee: Manche Nash-Gleichgewichte sind riskant
 
 -   Wenn der Gegenspieler "versehentlich" eine falsche Strategie spielt, dann macht man evtl hohe Verluste
