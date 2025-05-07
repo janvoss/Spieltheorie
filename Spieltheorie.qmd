@@ -750,9 +750,143 @@ print(sol)
 
 ### Gemischte Strategien
 
--   Es könnte sinnvoll sein, zufällig zu spielen, um nicht vorhersehbar zu sein
+- Wenn es entweder kein Nash-Gleichgewicht (in reinen Strategien) gibt oder mehrere Nash-Gleichgewichte, dann lässt sich das Handeln der Spielenden nicht gut vorhersagen
 
--   Gesucht sind die Wahrscheinlichkeiten, bei denen der Gegenspieler indifferent ist in der Wahl seiner Handlungsmöglichkeiten (also seine Lage durch cleveres Spielen nicht verbessern kann)
+- Aus der Perspektive jedes Spielenden ist das Handeln des Gegenübers eine Zufallsvariable. Mit einer bestimmten Wahrscheinlichkeit wählt das Gegenüber eine seiner Strategien.
+
+- Den Zufall kann man aber näher charakterisieren, wenn man sich überlegt, **welche Wahrscheinlichkeiten ein rationales Gegenüber wählen würde**.
+
+- Ein rationales Gegenüber wählt die Wahrscheinlichkeiten so, dass der spielende Akteur keine Möglichkeit mehr hat, seine Situation durch die Wahl seiner Strategie zu verbessern. 
+- Jede spielende Person wählt die Wahrscheinlichkeiten für ihre Handlung also so, dass das jeweilige Gegenüber indifferent ist in der Wahl seiner Handlungen.
+
+- Es muss also gelten: $$E_o=E_u$$
+$$\iff p_l A+(1-p_l)C=p_lB+(1-p_l)D$$
+
+
+$$\iff p_l A + C-p_lC=p_lB+D-p_lD$$
+
+$$\iff p_l(A-C)+C=p_l(B-D)+D$$
+
+$$\iff p_l(A-C-B+D)=D-C$$
+$$\boxed{p_l=\frac{D-C}{A-B-C+D}}$$
+$$E_l=E_r$$
+
+$$\iff p_o a+(1-p_o)b=p_o c + (1-p_o)d$$
+
+$$\iff p_o a+b-p_ob=p_oc+d-p_od$$
+$$\iff p_o(a-b)+b=p_o(c-d)+d$$
+
+$$\iff p_o(a-b-c+d)=d-b$$
+
+$$\iff \boxed{p_o=\frac{d-b}{a-b-c+d}}$$
+
+
+
+```{python}
+#| message: false
+#| warning: false
+
+import numpy as np
+import random
+from lets_plot import *
+
+random.seed(12)
+
+while True:
+    A = random.randint(0, 9)
+    a = random.randint(0, 9)
+    B = random.randint(0, 9)
+    b = random.randint(0, 9)
+    C = random.randint(0, 9)
+    c = random.randint(0, 9)
+    D = random.randint(0, 9)
+    d = random.randint(0, 9)
+
+    # Bedingungen prüfen: Keine dominante Strategien
+    cond1 = (A >= B) and (C >= D)
+    cond2 = (B >= A) and (D >= C)
+    cond3 = (a >= c) and (b >= d)
+    cond4 = (c >= a) and (d >= b)
+
+    # Wenn keine Bedingung erfüllt ist, Schleife beenden
+    if not (cond1 or cond2 or cond3 or cond4):
+        break
+
+plot = create_plot()
+
+plot
+
+
+
+# Funktionen für Nash-Bedingungen
+def is_ol_nash(A, B, a, c):
+  return "ol" if (A >= B) and (a >= c) else "not_ol"
+
+def is_ul_nash(B, A, b, d):
+  return "ul" if (B >= A) and (b >= d) else "not_ul"
+
+def is_or_nash(C, D, c, a):
+  return "or" if (C >= D) and (c >= a) else "not_or"
+
+def is_ur_nash(D, C, d, b):
+  return "ur" if (D >= C) and (d >= b) else "not_ur"
+
+# Nash-Bedingungen überprüfen und Strings zuweisen
+Cand_Nash_ol = is_ol_nash(A, B, a, c)
+Cand_Nash_ul = is_ul_nash(B, A, b, d)
+Cand_Nash_or = is_or_nash(C, D, c, a)
+Cand_Nash_ur = is_ur_nash(D, C, d, b)
+
+# Ergebnisse kombinieren und NAs entfernen
+Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+Nash_GG_filtered = []
+for element in Nash_GG:
+  if element == "ol" or element == "ul" or element == "or" or element == "ur":
+    Nash_GG_filtered.append(element)
+
+
+
+# Ergebnis ausgeben
+if Nash_GG_filtered == []:
+   print('Es gibt kein Nash-Gleichgewicht in reinen Strategien')
+
+else:
+   print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
+
+
+
+# Anzahl der Nash GG
+
+#Anzahl_NGG=len(Nash_GG_filtered)
+#print(Anzahl_NGG)
+
+# Wahrscheinlichkeiten ausrechnen.
+# Dabei jeweils den Fall Division duch 0 aussschließen
+
+#p_l
+if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
+
+#print(round(p_l, 2))
+
+#p_o
+if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
+
+#print(round(p_o, 2))
+
+
+# Ausgabe Abhängig von Bedingungen
+
+if (#Anzahl_NGG == 1 or
+    p_o < 0 or p_l < 0 or
+            p_o > 1 or p_l > 1 or
+            (a - b - c + d) == 0 or
+            (A - B - C + D) == 0):
+    print("Kein Nash-Gleichgewicht in gemischten Strategien")
+else:   print(f"Gemischte Strategien: p_o= {round(p_o, 2)}, p_l= {round(p_l, 2)}")
+```
+
+
+
 
 ```{python}
 #| eval: false
@@ -782,84 +916,6 @@ sol = solve(Eq(E_l, E_r),p)
 print(sol)
 ```
 
-```{python}
-#| eval: false
-
-import numpy as np
-import random
-
-# Zufällige Ganzzahlen zwischen 0 und 9 generieren
-A = random.randint(0, 9)
-B = random.randint(0, 9)
-C = random.randint(0, 9)
-D = random.randint(0, 9)
-a = random.randint(0, 9)
-b = random.randint(0, 9)
-c = random.randint(0, 9)
-d = random.randint(0, 9)
-
-# Formatierte Bimatrix ausgeben
-print(f"     l    r\n o  {A},{a}  {C},{c}\n u  {B},{b}  {D},{d}")
-
-
-# Funktionen für Nash-Bedingungen
-def is_ol_nash(A, B, a, c):
-  return "ol" if (A >= B) and (a >= c) else "not_ol"
-
-def is_ul_nash(B, A, b, d):
-  return "ul" if (B >= A) and (b >= d) else "not_ul"
-
-def is_or_nash(C, D, c, a):
-  return "or" if (C >= D) and (c >= a) else "not_or"
-
-def is_ur_nash(D, C, d, b):
-  return "ur" if (D >= C) and (d >= b) else "not_ur"
-
-# Nash-Bedingungen überprüfen und Strings zuweisen
-Cand_Nash_ol = is_ol_nash(A, B, a, c)
-Cand_Nash_ul = is_ul_nash(B, A, b, d)
-Cand_Nash_or = is_or_nash(C, D, c, a)
-Cand_Nash_ur = is_ur_nash(D, C, d, b)
-
-# Ergebnisse kombinieren und NAs entfernen
-Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
-Nash_GG_filtered = []
-for element in Nash_GG:
-  if element == "ol" or element == "ul" or element == "or" or element == "ur":
-    Nash_GG_filtered.append(element)
-
-# Ergebnis ausgeben
-print(Nash_GG_filtered)
-
-
-# Anzahl der Nash GG
-
-#Anzahl_NGG=len(Nash_GG_filtered)
-#print(Anzahl_NGG)
-
-# Wahrscheinlichkeiten ausrechnen.
-# Dabei jeweils den Fall Division duch 0 aussschließen
-
-#p_l
-if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
-
-#print(round(p_l, 2))
-
-#p_o
-if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
-
-#print(round(p_o, 2))
-
-
-# Ausgabe Abhängig von Bedingungen
-
-if (#Anzahl_NGG == 1 or 
-    p_o < 0 or p_l < 0 or
-            p_o > 1 or p_l > 1 or
-            (a - b - c + d) == 0 or
-            (A - B - C + D) == 0): print("Kein Nash-Gleichgewicht in gemischten Strategien")
-else:   print(f"p_l= {round(p_l, 2)}, p_o= {(round(p_o, 2))}")
-```
 
 ## Sequenzielle Spiele
 
