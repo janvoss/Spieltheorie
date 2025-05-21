@@ -919,19 +919,19 @@ print(sol)
 
 ## Sequenzielle Spiele
 
-Spieler spielen nacheinander.
+Spieler spielen nacheinander. Dabei kann man die Fälle unterscheiden, dass die Spieler ihre vorherigen Züge sehen können oder nicht oder unvollständig. Man kann ebenso die Fälle unterscheiden, dass sie die Auszahlungen der Mitspieler kennen oder nicht oder unvollständig informiert sind.
 
-### Vollständige Information
+### Vollständige Informationd
 
 Annahme: Alle Spieler kennen alle Auszahlungen und sehen alle bislang erfolgten Spielzüge
 
-Darstellung des Spiels mittels eines Spielbaums
+Darstellung des Spiels mittels eines Spielbaums. Die Benennung der Auszahlungen mit $A,a$ für oben rechts usw. folgt der Darstellung für simultane Spiele.
 
 ![Grundstruktur eines Spielbaums](figure/Baum-Grundstruktur-1.png){width="50%"}
 
 #### Rückwärtsinduktion
 
-Lösen des Spiels "von hinten nach vorn"
+Sequenzielle Spiele wereden 	&bdquo;von hinten nach vorn&ldquo; gelöst. Man löst zunächst alle Entscheidungen der Vorrunde, dann die der Runde davor usw. Auf diese Weise vollzieht man nach, dass rationale Spieler die rationalen Entscheidungen ihrer Mitspieler antizipieren. 
 
 ##### Beispiele
 
@@ -943,7 +943,6 @@ Lösen des Spiels "von hinten nach vorn"
 
 Zunächst vereinfachende Annahme: $a\neq c\ \text{und}\ b \neq d$
 
-Ja, was sind die Bedingungen?
 
 **ol**: $a>c \land ((A>B\ \land\ b>d) \lor (A>D\ \land\ d>b))$
 
@@ -953,17 +952,7 @@ Ja, was sind die Bedingungen?
 
 **ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))$
 
-```{r, eval=F, include=F}
 
-**or**: $c>a \land ((C>B\ \land\ b>d) \lor (C>D\ \land\ d>b))$
-
-**ul**: $b>d \land ((B>A\ \land\ a>c) \lor (B>C\ \land\ c>a))$
-
-**ur**: $d>b \land ((D>A\ \land\ a>c) \lor (D>C\ \land\ c>a))$
-
-```
-
-Hier: Implementierung in Python
 
 ```{python}
 import numpy as np
@@ -993,7 +982,7 @@ random.seed(123) # Für reproduzierbare Ergebnisse ggf. fixieren
 # Zufallszahlen, aber alle unterschiedlich
 choices = np.arange(10)
 
-# Generate unique random integers for uppercase variables
+# Generate unique random integers for variables
 Parameter = np.random.choice(choices, size=8, replace=False)
 A, B, C, D, a, b, c, d = Parameter
 
@@ -1064,17 +1053,17 @@ Hier: Tafelaufschrieb Markteintrittsspiel
 
 #### Selbstbindung
 
-
-Hier: Sonderabbildung Weltvernichtungsbombe
+Hier: Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie
 
 ### Unvollständige Information
 
-#### Alles beobachtbar, aber Auszahlungen können gleich sein
+#### Alles beobachtbar, aber Auszahlungen für Spieler 1 u/o 2 können gleich sein
 
 ![Auszahlungen von Spieler 1 sind gleich](figure/Baum-Gleiche-Auszahlungen-S1-1.png){width="50%"}
 
 $\rightarrow$ Spieler 1 muss sich irgendwie entscheiden, aber Spieler 2 kann die Entscheidung sehen.
 
+$\rightarrow$ Unproblematischer Fall
 
 ![Auszahlungen von Spieler 2 sind gleich](figure/Baum-Gleiche-Auszahlungen-S2-1.png){width="50%"}
 
@@ -1094,16 +1083,16 @@ Hier unterstellt: Erwartungswertkriterium
 Die Bedingungen für ein Nash-Gleichgewicht bei sequenziellen Spielen lauten dann:
 
 
-ja wie?
+[ja wie?]::
 
 
 **ol**: $a>c \land ((A\geq B\ \land\ b \geq d) \lor (A \geq  D\ \land\ d \geq b) ) \lor a=c \land ((b>d \land (\frac{A+C}{2} \geq B)\lor (d>b \land \frac{A+C}{2}\geq D) \lor (b=d \land(\frac{A+C}{2}\geq \frac{B+D}{2})))$
 
-**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d))$
+**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d)) \lor a=c \land ((b>d \land (\frac{A+C}{2} \geq B)\lor (d>b \land \frac{A+C}{2}\geq D) \lor (b=d \land(\frac{A+C}{2}\geq \frac{B+D}{2})))$
 
-**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))$
+**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))\lor b=d \land ((a>c \land (\frac{B+D}{2} \geq A)\lor (c>a \land \frac{B+D}{2}\geq C) \lor (b=d \land(\frac{B+D}{2}\geq \frac{A+C}{2})))$
 
-**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))$
+**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))\lor b=d \land ((a>c \land (\frac{B+D}{2} \geq A)\lor (c>a \land \frac{B+D}{2}\geq C) \lor (b=d \land(\frac{B+D}{2}\geq \frac{A+C}{2})))$
 
 ```{python}
 #| include: false
@@ -1200,17 +1189,20 @@ print(Nash_GG_filtered)
 
 #### Zug von Spieler 1 ist für Spieler 2 unsichtbar
 
+Durch eine gestrichelte Linie im Spielbaum werdn die Knoten verbunden, die ein Spieler nicht voneinander unterscheiden kann. Die spielende Person weiß also nicht, ob sie sich in dem einen Knoten am einen Ende der gestrichelten Linie befindet oder am anderen Ende.
+
 
 ![Baum Zug 1 unsichtbar ](figure/Baum-Zug1-unsichtbar-1.png)
-- Fehlende Information für Spieler 2 kein Problem, wenn er eine dominante Alternative hat oder wenn alle Auszahlungen für ihn gleich sind.
+- Fehlende Information ist für Spieler 2 kein Problem, wenn er eine dominante Alternative hat oder wenn alle Auszahlungen für ihn gleich sind.
 
-- Fehlende Information für Spieler 2 kein Problem, wenn Spieler 1 eine dominante Alternative hat.
+- Fehlende Information für Spieler 2 ist auch kein Problem, wenn Spieler 1 eine dominante Alternative hat.
 
 - Wenn Information nicht vorliegt, Entscheidungskriterium unter Risiko nutzen. Hier: Erwartungswert
 
 ```{python}
-#|echo: true
+#|echo: false
 #| eval: false
+#| include: false
 
 
 import numpy as np
