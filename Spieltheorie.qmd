@@ -114,7 +114,7 @@ geom_text(x=-2.2, y=-1.625, angle=90, label='unten')+\
 geom_text(x= 0 , y= 4 ,
           fontface = "bold", label='Spieler 2')+\
 geom_text(x=-2.7 , y= 0 , angle=90,
-          fontface = "bold", label='SPieler 1')+\
+          fontface = "bold", label='Spieler 1')+\
 geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
 geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
 geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
@@ -124,7 +124,9 @@ geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
 theme_void()+\
 labs(title='Auszahlungen in einem simultanen Spiel')
 
+```
 
+```{python}
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -158,7 +160,7 @@ for element in Nash_GG:
 ```
 
 ```{python}
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 ```
 
 ##### Koordinationsspiel
@@ -219,7 +221,9 @@ def create_plot():
 plot = create_plot()
 
 plot
+```
 
+```{python}
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -248,7 +252,7 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
 
 # Ergebnis ausgeben
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 ```
 
 ##### Chicken Game
@@ -278,6 +282,9 @@ plot = create_plot()
 
 plot
 
+```
+
+```{python}
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -306,7 +313,7 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
 
 # Ergebnis ausgeben
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 
 ```
 
@@ -336,6 +343,9 @@ d = random.randint(8, 9)
 plot = create_plot()
 
 plot
+```
+
+```{python}
 
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
@@ -364,7 +374,7 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
 
 # Ergebnis ausgeben
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 
 ```
 
@@ -396,6 +406,10 @@ plot = create_plot()
 
 plot
 
+```
+
+```{python}
+
 # Funktionen für Nash-Bedingungen
 def is_ol_nash(A, B, a, c):
   return "ol" if (A >= B) and (a >= c) else "not_ol"
@@ -423,7 +437,7 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
 
 # Ergebnis ausgeben
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 ```
 
 ##### Spiel ohne Gleichgewicht
@@ -457,6 +471,10 @@ plot = create_plot()
 
 plot
 
+```
+
+```{python}
+
 # Nash-Bedingungen überprüfen und Strings zuweisen
 Cand_Nash_ol = is_ol_nash(A, B, a, c)
 Cand_Nash_ul = is_ul_nash(B, A, b, d)
@@ -471,7 +489,7 @@ for element in Nash_GG:
     Nash_GG_filtered.append(element)
 
 # Ergebnis ausgeben
-print(Nash_GG_filtered)
+print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 ```
 
 
@@ -921,7 +939,7 @@ print(sol)
 
 Spieler spielen nacheinander. Dabei kann man die Fälle unterscheiden, dass die Spieler ihre vorherigen Züge sehen können oder nicht oder unvollständig. Man kann ebenso die Fälle unterscheiden, dass sie die Auszahlungen der Mitspieler kennen oder nicht oder unvollständig informiert sind.
 
-### Vollständige Informationd
+### Vollständige Information
 
 Annahme: Alle Spieler kennen alle Auszahlungen und sehen alle bislang erfolgten Spielzüge
 
