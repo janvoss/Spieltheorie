@@ -1087,7 +1087,7 @@ Hier: [Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie](https://n
 # Python
 
 A= 1
-a= 2
+a= 1
 B= -1
 b= -1
 C= 1
@@ -1135,7 +1135,7 @@ labs(title='Auszahlungen im Szenario mit Weltvernichtungsbombe')
 
 **Kalkül der USA:**
 
-$E_{kA}=(1-p_{\text{UdSSR}}) 1 + p_{\text{UdSSR}} 1 =1 $
+$E_{kA}=(1-p_{\text{UdSSR}}) 1 + p_{\text{UdSSR}} 1 =1$
 
 $E_A=(1-p_{\text{UdSSR}}) (-1) + p_{\text{UdSSR}} 2$
 
@@ -1150,7 +1150,7 @@ $\iff p_{\text{UdSSR}} \leq \frac{2}{3}$
 
 **Kalkül der UdSSR**
 
-$E_{aB}=(1-p_{\text{USA}}) 1 + p_{\text{USA}} -1 = 1-2p_{\text{USA}}$
+$E_{aB}=(1-p_{\text{USA}}) 1 + p_{\text{USA}} (-1) = 1-2p_{\text{USA}}$
 
 $E_{naB}= (1-p_{\text{USA}}) 1 + p_{\text{USA}} 0 = 1-p_{\text{USA}}$
 
