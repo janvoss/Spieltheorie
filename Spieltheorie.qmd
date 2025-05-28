@@ -1071,7 +1071,101 @@ Hier: Tafelaufschrieb Markteintrittsspiel
 
 #### Selbstbindung
 
-Hier: Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie
+Hier: [Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie](https://neo.hfwu.de/sendfile.php?force_download=1&type=0&file_id=c47cc228ea9b922bd29c873be1980fa3&file_name=Baum_Weltvernichtung_komplett.pdf)
+
+- Automatisierung der Drohung erzeugt erwünschte Glaubwürdigkeit
+
+- Aber: Automatisierung ist riskant, wenn Fehler möglich sind.
+
+- Trembling Hand Überlegungen
+
+
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+A= 1
+a= 2
+B= -1
+b= -1
+C= 1
+c= 1
+D= 2
+d= 0
+
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='automatische Bombe')+\
+geom_text(x= 1  , y= 3.3 , label='nichtautomatische Bombe')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='Kein Angriff')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='Angriff')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='UdSSR')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='USA')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen im Szenario mit Weltvernichtungsbombe')
+
+```
+- Zwei Nash-Gleichgewichte
+
+- Zunächst das Gleichgewicht oben links
+
+- Wie ist es einzuschätzen, wenn beide Spieler mit einer Wahrscheinlichkeit $p_i$ mit $i \in (\text{USA, UdSSR})$ einen Fehler machen?
+
+**Kalkül der USA:**
+
+$E_{kA}=(1-p_{\text{UdSSR}}) 1 + p_{\text{UdSSR}} 1 =1 $
+
+$E_A=(1-p_{\text{UdSSR}}) (-1) + p_{\text{UdSSR}} 2$
+
+$=-1 + p_{\text{UdSSR}} +2 p_{\text{UdSSR}}=-1+ 3 p_{\text{UdSSR}}$
+
+$E_{kA}\geq E_A$
+
+$1\geq -1+ 3 p_{\text{UdSSR}}$
+
+$\iff p_{\text{UdSSR}} \leq \frac{2}{3}$
+
+
+**Kalkül der UdSSR**
+
+$E_{aB}=(1-p_{\text{USA}}) 1 + p_{\text{USA}} -1 = 1-2p_{\text{USA}}$
+
+$E_{naB}= (1-p_{\text{USA}}) 1 + p_{\text{USA}} 0 = 1-p_{\text{USA}}$
+
+$E_{aB} \geq E_{naB}$
+
+$1-2p_{\text{USA}} \geq 1-p_{\text{USA}}$
+
+$\iff p_{\text{USA}} \leq 0$
+
+
+$\rightarrow$ das Gleichgewicht ist nicht trembling-Hand-perfekt
+
+Wie sieht es mit dem anderen Gleichgewichht aus? 
+
+Probieren Sie es aus!
 
 ### Unvollständige Information
 
