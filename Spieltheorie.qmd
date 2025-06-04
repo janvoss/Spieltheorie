@@ -1401,7 +1401,7 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 - Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
 
-![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar-1.png)
+![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar-1.png) 
 
 
 [## Koalitionsspiele]::
@@ -1421,7 +1421,6 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 ### Diskussion und Ausblick
 
-```
 
 
 

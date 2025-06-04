@@ -660,19 +660,19 @@ sloped
 \node [dummy, label=below:{K1}, label=above:{Zufall}]{}
 child { node [dummy, label=below:{K3}, label=:{}] {}
     child { node (K7) [dummy, label=below:{K7}] {} 
-        child { node [dummy, label=below:{K11}, label=right:{\(6\enspace 5\)}]{}
+        child { node [dummy, label=below:{K15}, label=right:{\(6\enspace 5\)}]{}
         edge from parent node [below] {rechts}
         }
-        child {node [dummy, label=below:{K10}, label=right:{\(7 \enspace 6\)}]{}
-        edge from parent node [above]{rechts}
+        child {node [dummy, label=below:{K14}, label=right:{\(7 \enspace 6\)}]{}
+        edge from parent node [above]{links}
         }
         edge from parent node [below] {unten} 
     }
     child { node (K6) [dummy, label=below:{K6}] {}
-        child {node[dummy, label=below:{K9}, label=right:{\(3 \enspace 9\)}]{}
-        edge from parent node [below]{links}
+        child {node[dummy, label=below:{K13}, label=right:{\(3 \enspace 9\)}]{}
+        edge from parent node [below]{rechts}
         }
-        child {node [dummy, label=below:{K8}, label=right:{\(5 \enspace 4\)}]{}
+        child {node [dummy, label=below:{K12}, label=right:{\(5 \enspace 4\)}]{}
         edge from parent node [above]{links}
         }
         edge from parent node [above]{oben}
@@ -681,19 +681,19 @@ child { node [dummy, label=below:{K3}, label=:{}] {}
 }
 child {node[dummy, label=below:{K2}, label=above:{Spieler 1}]{}
     child {node (K5) [dummy, label=below:{K5}, label=right:]{}
-        child {node[dummy, label=below:{K15}, label=right:{\(2 \enspace 6\)}]{}
+        child {node[dummy, label=below:{K11}, label=right:{\(2 \enspace 6\)}]{}
         edge from parent node [below]{rechts}
         }
-        child {node[dummy, label=below:{K14}, label=right:{\(4 \enspace 4\)}]{}
+        child {node[dummy, label=below:{K10}, label=right:{\(4 \enspace 4\)}]{}
         edge from parent node [above]{links}
         }
         edge from parent node[below]{unten}
     }
     child {node (K4) [dummy, label=below:{K4}, label=above:{Spieler 2}]{}
-        child {node[dummy, label=below:{K13}, label=right:{\(8 \enspace 5\)}]{}
+        child {node[dummy, label=below:{K9}, label=right:{\(8 \enspace 5\)}]{}
         edge from parent node [below]{rechts}
         }
-        child {node[dummy, label=below:{K12}, label=right:{\(9 \enspace 7\)}]{}
+        child {node[dummy, label=below:{K8}, label=right:{\(9 \enspace 7\)}]{}
         edge from parent node [above]{links}
         }
         edge from parent node [above]{oben}
