@@ -1167,6 +1167,10 @@ Wie sieht es mit dem anderen Gleichgewichht aus?
 
 Probieren Sie es aus!
 
+$E_A=$
+
+$E_{kA}=$
+
 ### Unvollständige Information
 
 #### Alles beobachtbar, aber Auszahlungen für Spieler 1 u/o 2 können gleich sein
@@ -1396,6 +1400,9 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 - Separierende Gleichgewichte: Spieler 1 offenbart durch seine Entscheidung, von welchem Typ er ist
 
 - Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
+
+![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar-1.png)
+
 
 [## Koalitionsspiele]::
 
