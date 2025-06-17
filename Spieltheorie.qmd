@@ -1404,6 +1404,10 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 ![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar-1.png) 
 
 
+![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar2.png) 
+
+[Dateinamen prüfen]::
+
 [## Koalitionsspiele]::
 
 ## Evolutionäre Spiele
