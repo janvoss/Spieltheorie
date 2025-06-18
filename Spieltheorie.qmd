@@ -1404,9 +1404,21 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 ![Typ Spieler 1 unsichtbar. Separierendes Gleichgewicht](figure/Baum-Typ-unsichtbar-1.png) 
 
 
-![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar2.png) 
+![Typ Spieler 1 unsichtbar. Pooling-Gleichgewicht](figure/Baum-Typ-unsichtbar2-1.png) 
 
-[Dateinamen prüfen]::
+- Das Verhalten des Spielers 1 lässt jetzt keinen Schluss mehr auf seinen Typ zu.
+
+- Entscheidung unter Risiko (hier: Erwartungswert für Spieler 2 berechnen)
+
+  - $E_l=0,6 \times 7 + 0,4 \times 4=5,8$
+
+  - $E_r=0,6 \times 5 + 0,4 \times 9=6,6$
+
+- Der Erwartungswert für "rechts" ist also höher als der für "links"
+
+
+![Typ Spieler 1 unsichtbar. Signalspiel](figure/Baum-Typ-unsichtbar3-1.png) 
+
 
 [## Koalitionsspiele]::
 

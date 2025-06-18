@@ -787,3 +787,80 @@ child {node[dummy, label=below:{K2}, label=above:{Spieler 1}]{}
 
 ```
 
+```{tikz Baum-Typ-unsichtbar3}
+
+
+
+\renewcommand*\familydefault{\sfdefault} %Serifenlose Schrift als Standard
+
+\tikzset{
+        treenode/.style = {shape=rectangle, rounded corners,
+                draw, align=center,
+                top color=white, bottom color=blue!20},
+        root/.style     = {treenode, font=\ttfamily\normalsize, bottom color=red!30},
+        env/.style      = {treenode, font=\ttfamily\normalsize},
+        dummy/.style    = {circle,draw}
+} %Einige Vorgaben für die Entscheidungsbäume Farben und env werden aber nicht genutzt.
+
+   \begin{tikzpicture}
+[
+grow                    = right,
+level 1/.style={sibling distance=15em},
+level 2/.style={sibling distance=8em},
+level 3/.style={sibling distance=4em},
+level 4/.style={sibling distance=2em},  % Neue Ebene für zusätzliche Knoten
+level distance          = 12em,
+edge from parent/.style = {draw},
+every node/.style       = {font=\normalsize},
+sloped
+]
+\node [dummy, label=below:{K1}, label=above:{Zufall}]{}
+child { node [dummy, label=below:{K3}, label=:{}] {}
+    child { node (K7) [dummy, label=below:{K7}] {} 
+        child { node [dummy, label=below:{K15}, label=right:{\(0\enspace 0\)}]{}
+        edge from parent node [below] {rechts}
+        }
+        child {node [dummy, label=below:{K14}, label=right:{\(180 \enspace -60\)}]{}
+        edge from parent node [above]{links}
+        }
+        edge from parent node [below] {unten} 
+    }
+    child { node (K6) [dummy, label=below:{K6}] {}
+        child {node[dummy, label=below:{K13}, label=right:{\(0 \enspace 0\)}]{}
+        edge from parent node [below]{rechts}
+        }
+        child {node [dummy, label=below:{K12}, label=right:{\(10 \enspace -10\)}]{}
+        edge from parent node [above]{links}
+        }
+        edge from parent node [above]{oben}
+    }
+    edge from parent node [below] {$p=0,3$: Typ 2} 
+}
+child {node[dummy, label=below:{K2}, label=above:{Spieler 1}]{}
+    child {node (K5) [dummy, label=below:{K5}, label=right:]{}
+        child {node[dummy, label=below:{K11}, label=right:{\(0 \enspace 0\)}]{}
+        edge from parent node [below]{rechts}
+        }
+        child {node[dummy, label=below:{K10}, label=right:{\(50 \enspace 40\)}]{}
+        edge from parent node [above]{links}
+        }
+        edge from parent node[below]{unten}
+    }
+    child {node (K4) [dummy, label=below:{K4}, label=above:{Spieler 2}]{}
+        child {node[dummy, label=below:{K9}, label=right:{\(0 \enspace 0\)}]{}
+        edge from parent node [below]{rechts}
+        }
+        child {node[dummy, label=below:{K8}, label=right:{\(40 \enspace 50\)}]{}
+        edge from parent node [above]{links}
+        }
+        edge from parent node [above]{oben}
+    }
+    edge from parent node [above]{$p= 0,7$: Typ 1}
+}
+;
+\draw[dashed] (K5) to[out=230] (K7);
+\draw[dashed] (K4) to[out=230] (K6);
+
+\end{tikzpicture} 
+
+```
