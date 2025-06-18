@@ -1401,7 +1401,7 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 - Pooling Gleichgewichte: Man kann kann aus dem Handeln des Spielers 1 nicht auf seinen Typ schließen
 
-![Typ Spieler 1 unsichtbar](figure/Baum-Typ-unsichtbar-1.png) 
+![Typ Spieler 1 unsichtbar. Separierendes Gleichgewicht](figure/Baum-Typ-unsichtbar-1.png) 
 
 
 [## Koalitionsspiele]::
@@ -1410,14 +1410,49 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 [https://eckhartarnold.de/papers/2009_Vorlesung_Entscheidungstheorie/node127.html]:
 
-### Idee
+- Modell zur Beschreibung der Verbreitung bestimmter Strategien in Populationen basierend auf relativer Fitness  
 
-### Erfolg von Strategien
-[Tournaments]:
+- Unterscheidet sich von klassischer Spieltheorie durch Fokus auf evolutionäre Selektion statt rationaler Entscheidungen  
+
+- **Grundkonzepte der evolutionären Spieltheorie**  
+  - Betrachtet Populationen mit unterschiedlichen Verhaltensstrategien  
+
+  - Frequenzabhängige Selektion: Fitness hängt von Populationszusammensetzung ab  
+
+  - Drei evolutionäre Grundprinzipien:  
+    - Replikation  
+    - Selektion  
+    - Mutation (in Grundmodellen oft vernachlässigt)  
+
+  - Mathematische Beschreibung durch Normalformspiele mit Auszahlungsmatrix $U = [u_{ij}]$  
+
+  - Hier: 2 Spielertypen $i=1,2$
+
+- **Replikatordynamik-Gleichung**  
+  - Kontinuierliche Differentialgleichung für unendliche (oder zumindest sehr große) Populationen:  
+$$\dot{p}_i = p_i \left(f_i(P_t) - \bar{f}(P_t)\right)$$
+    - $P_t$: Zusammensetzung der Population zum Zeitpunkt $t$
+    - $p_i$: Anteil der Strategie-i-Spieler  
+    - $f_i(P_t)$: Fitness der Strategie $i$ zum Zeitpunkt $t$
+    - $\bar{f}(P_t)$: Durchschnittliche Populationsfitness zum Zeitpunkt $t$  
+  - Fitnessberechnung:
+
+$$f_1(P_t) = p_1 u_{11} + (1-p_1) u_{12}$$
+$$f_2(P_t) = p_1 u_{21} + (1-p_1) u_{22}$$
+
+  - Durchschnittsfitness:  
+
+$$\bar{f}(P_t) = p_1 f_1(P_t) + (1-p_1) f_2(P_t)$$
+
+- Kernaussage: Der Anteil der Population, der eine überdurchschnittlicher Fitness aufweist, wächst, der andere schrumpft.
+
+- Grundsätzlich möglich
+
+  - Randlösungen: Eine Strategie setzt sich komplett durch
+  
+  - Stabile Anteile der Strategien
 
 
-### Evolution von Strategien
-[Simulationen,  Kriterien für stabile Strategien]::
 
 ### Diskussion und Ausblick
 
