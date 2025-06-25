@@ -1418,7 +1418,13 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 
 ![Typ Spieler 1 unsichtbar. Signalspiel](figure/Baum-Typ-unsichtbar3-1.png) 
+- Spieler 2 spielt "rechts", wenn "unten"
 
+- Spieler 2 spielt "links", wenn "oben"
+
+- Spieler 1 spielt "oben", wenn Typ 1
+
+- Spieler 1 spielt "unten", wenn Typ 2
 
 [## Koalitionsspiele]::
 
@@ -1470,10 +1476,476 @@ $$\bar{f}(P_t) = p_1 f_1(P_t) + (1-p_1) f_2(P_t)$$
   
   - Stabile Anteile der Strategien
 
-###  xxx
+### Einige Spiele
+
+#### Koordinationsspiel
+
+- Im (klassischen) Koordinationsspiel gibt es  ein Gleichgewicht in gemischten Strategien
+
+- In einem evolutionären (klassischen) Koordinationsspiel sind drei Fälle in Abhängigkeit der Ausgangsverteilung der Strategien möglich
+
+  - Die Anteile der Strategien entsprechen den Wahrscheinlichkeiten des Gleichgewichts in gemischten Strategien
+
+  - Die Anteile der Strategien konvergieren gegen das eine Nash-Gleichgewicht in reinen Strategien
+
+  - Die Anteile konvergieren gegen das andere Gleichgewicht
+  
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+
+A= 1
+a= 1
+B= 0
+b= 0
+C= 0
+c= 0
+D= 1
+d= 1
+
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='I')+\
+geom_text(x= 1  , y= 3.3 , label='II')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='I')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='II')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Spieler 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Spieler 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen in einem Koordinationsspiel')
+```
+  
+
+```{python}
+#| message: false
+#| warning: false
+
+#p_l
+if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
+
+#print(round(p_l, 2))
+
+#p_o
+if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
+
+#print(round(p_o, 2))
+
+
+# Ausgabe Abhängig von Bedingungen
+
+if (#Anzahl_NGG == 1 or
+    p_o < 0 or p_l < 0 or
+            p_o > 1 or p_l > 1 or
+            (a - b - c + d) == 0 or
+            (A - B - C + D) == 0):
+    print("Kein Nash-Gleichgewicht in gemischten Strategien")
+else:   print(f"Gemischte Strategien: p_o= {round(p_o, 2)}, p_l= {round(p_l, 2)}")
+```
+
+Für dieses Spiel beträgt im Gleichgewicht in gemischten Strategien $p_I=p_II=0,5$
+
+- Erster Fall: Schon zu Beginn des Spiels entsprechen die Populationsanteile diesen Werten und die Replikatordynamik ist deterministisch. Dann ist die Zusammensetzung der Population stabil.
+
+- Zweiter Fall: Schon zu Beginn des Spiels entsprechen die Populationsanteile diesen Werten und die Replikatordynamik ist stochastisch. Dann ist die Zusammensetzung der Population instabil und konvergiert gegen $p_I=0$ oder gegen $p_I=1$.
+
+- Dritter Fall: Zu Beginn des Spiels gilt $p_I \neq 0.5$. Dann konvergiert gegen $p_I=0$ oder gegen $p_I=1$, je nachdem ob zu Beginn $p_I$ kleiner oder größer $0,5$ war.
+
+```{python}
+#| message: false
+#| warning: false
+
+import sympy as sp
+import numpy as np
+from lets_plot import *
+
+# Symbolische Berechnung des Gleichgewichts mit sympy
+p = sp.symbols('p')
+F_II = p * D + (1 - p) * B
+F_I = p * C + (1 - p) * A
+equilibrium_eq = sp.Eq(F_II, F_I)
+equilibrium_p = sp.solve(equilibrium_eq, p)[0]
+print(f"Das Gleichgewicht liegt bei p = {equilibrium_p}")
+
+# Parameter für die Simulation
+generations = 100
+p_value = 0.5  # Startanteil der Strategie II
+q_value=1-p_value
+dt = 0.1
+p_values = [p_value]
+q_values = [q_value]
+sigma=0
+
+# Simulation
+for _ in range(generations):
+    F_II_val = p_value * D + (1 - p_value) * B
+    F_I_val = p_value * C + (1 - p_value) * A
+    F_avg = p_value * F_II_val + (1 - p_value) * F_I_val
+    dp_dt = p_value * (F_II_val - F_avg) + np.random.normal(loc=0, scale=sigma) # noise
+    p_value += dp_dt * dt
+    p_values.append(p_value)
+    q_values.append(1-p_value)
+
+# Daten für den Plot vorbereiten
+
+data = {
+    'Generation': list(range(generations + 1))*2,
+    'Strategien': [item for item in ["Strategie I","Strategie II"] for _ in range (generations + 1)],
+    'Anteile'   : q_values + p_values
+}
+
+# print(data)
+
+# Plot mit lets-plot
+
+LetsPlot.setup_html()
+
+p = (ggplot(data, aes(x='Generation', y='Anteile', color='Strategien')) +
+     geom_line() +
+     geom_hline(yintercept=float(equilibrium_p), color='red', linetype='dashed', size=1) +
+     ggtitle('Evolution im Koordinationsspiel') +
+     xlab('Generation') +
+     ylab('Anteil der Strategien') +
+     theme_minimal() #+
+ #    + geom_text(x=11, y=float(equilibrium_p) + 0.05,
+  #               label=f'Gleichgewicht p = #{round(equilibrium_p, 2)}', color='red')
+)
+
+# Plot anzeigen
+p.show()
+```
+
+
+```{python}
+#| message: false
+#| warning: false
+
+import numpy as np
+import sympy as sp
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+
+# Symbolische Berechnung des Gleichgewichts mit sympy
+p = sp.symbols('p')
+F_II = p * D + (1 - p) * B
+F_I = p * C + (1 - p) * A
+equilibrium_eq = sp.Eq(F_II, F_I)
+equilibrium_p = sp.solve(equilibrium_eq, p)[0]
+print(f"Das Gleichgewicht liegt bei p = {equilibrium_p}")
+
+
+
+seeds = list(range(3,7))
+plots = []
+
+runde = 0
+
+for seed in seeds:
+    # Parameter (Beispielwerte, bitte ggf. anpassen)
+
+    runde= runde+1
+
+    generations = 100
+ #   A, B, C, D = 1, 2, 3, 4
+    sigma = 0.1
+    dt = 0.1
+  #  equilibrium_p = 0.5  # Beispielwert
+
+    np.random.seed(seed)
+    p_value = 0.5
+    p_values = [p_value]
+    q_values = [1 - p_value]
+
+    # Simulation
+    for _ in range(generations):
+        F_II_val = p_value * D + (1 - p_value) * B
+        F_I_val = p_value * C + (1 - p_value) * A
+        F_avg = p_value * F_II_val + (1 - p_value) * F_I_val
+        dp_dt = p_value * (F_II_val - F_avg) + np.random.normal(loc=0, scale=sigma)
+        p_value += dp_dt * dt
+        p_values.append(p_value)
+        q_values.append(1 - p_value)
+
+    # Daten für den Plot vorbereiten
+    data = {
+        'Generation': list(range(generations + 1)) * 2,
+        'Strategien': [item for item in ["Strategie I", "Strategie II"] for _ in range(generations + 1)],
+        'Anteile': q_values + p_values
+    }
+
+    # Plot erstellen
+    p = (
+        ggplot(data, aes(x='Generation', y='Anteile', color='Strategien')) +
+        geom_line() +
+        geom_hline(yintercept=float(equilibrium_p), color='red', linetype='dashed', size=1) +
+        ggtitle(f'Runde {runde}') +
+        xlab('Generation') +
+        ylab('Anteil der Strategien') +
+        theme_minimal() #+
+    #    geom_text(x=44, y=float(equilibrium_p) + 0.05,
+    #              label=f'Gleichgewicht p = {round(equilibrium_p, 2)}', color='red')
+    )
+    plots.append(p)
+
+# Plots im 2x2-Grid anzeigen
+gggrid(plots, ncol=2)
+```
+
+#### Anti-Koordinationsspiel
+
+Koordinationsspiele mit asymmetrischen Nash-Gleichgewichten nennt man auch Anti-Koordinationsspiel.
+
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+
+A= 0
+a= 0
+B= 1
+b= 1
+C= 1
+c= 1
+D= 0
+d= 0
+
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='I')+\
+geom_text(x= 1  , y= 3.3 , label='II')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='I')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='II')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Spieler 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Spieler 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen in einem Anti-Koordinationsspiel')
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+#p_l
+if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
+
+#print(round(p_l, 2))
+
+#p_o
+if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
+
+#print(round(p_o, 2))
+
+
+# Ausgabe Abhängig von Bedingungen
+
+if (#Anzahl_NGG == 1 or
+    p_o < 0 or p_l < 0 or
+            p_o > 1 or p_l > 1 or
+            (a - b - c + d) == 0 or
+            (A - B - C + D) == 0):
+    print("Kein Nash-Gleichgewicht in gemischten Strategien")
+else:   print(f"Gemischte Strategien: p_o= {round(p_o, 2)}, p_l= {round(p_l, 2)}")
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+import sympy as sp
+import numpy as np
+from lets_plot import *
+
+# Symbolische Berechnung des Gleichgewichts mit sympy
+p = sp.symbols('p')
+F_II = p * D + (1 - p) * B
+F_I = p * C + (1 - p) * A
+equilibrium_eq = sp.Eq(F_II, F_I)
+equilibrium_p = sp.solve(equilibrium_eq, p)[0]
+print(f"Das Gleichgewicht liegt bei p = {equilibrium_p}")
+
+# Parameter für die Simulation
+generations = 100
+p_value = 0.5  # Startanteil der Strategie II
+q_value=1-p_value
+dt = 0.1
+p_values = [p_value]
+q_values = [q_value]
+
+sigma=0
+
+
+# Simulation
+for _ in range(generations):
+    F_II_val = p_value * D + (1 - p_value) * B
+    F_I_val = p_value * C + (1 - p_value) * A
+    F_avg = p_value * F_II_val + (1 - p_value) * F_I_val
+    dp_dt = p_value * (F_II_val - F_avg)  + np.random.normal(loc=0, scale=sigma) # noise
+    p_value += dp_dt * dt
+    p_values.append(p_value)
+    q_values.append(1-p_value)
+
+# Daten für den Plot vorbereiten
+
+data = {
+    'Generation': list(range(generations + 1))*2,
+    'Strategien': [item for item in ["Strategie I","Strategie II"] for _ in range (generations + 1)],
+    'Anteile'   : q_values + p_values
+}
+
+# print(data)
+
+# Plot mit lets-plot
+
+LetsPlot.setup_html()
+
+p = (ggplot(data, aes(x='Generation', y='Anteile', color='Strategien')) +
+     geom_line() +
+     geom_hline(yintercept=float(equilibrium_p), color='red', linetype='dashed', size=1) +
+     ggtitle('Evolution im Anti-Koordinationsspiel') +
+     xlab('Generation') +
+     ylab('Anteil der Strategien') +
+     theme_minimal() #+
+ #    + geom_text(x=11, y=float(equilibrium_p) + 0.05,
+ #                label=f'Gleichgewicht p = {round(equilibrium_p, 2)}', color='red')
+)
+
+# Plot anzeigen
+p.show()
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+import numpy as np
+import sympy as sp
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+
+# Symbolische Berechnung des Gleichgewichts mit sympy
+p = sp.symbols('p')
+F_II = p * D + (1 - p) * B
+F_I = p * C + (1 - p) * A
+equilibrium_eq = sp.Eq(F_II, F_I)
+equilibrium_p = sp.solve(equilibrium_eq, p)[0]
+print(f"Das Gleichgewicht liegt bei p = {equilibrium_p}")
+
+
+
+seeds = [123, 124, 125, 126]
+plots = []
+
+runde = 0
+
+for seed in seeds:
+    # Parameter (Beispielwerte, bitte ggf. anpassen)
+    runde=runde+1
+    generations = 100
+ #   A, B, C, D = 1, 2, 3, 4
+    sigma = 0.1
+    dt = 0.1
+  #  equilibrium_p = 0.5  # Beispielwert
+
+    np.random.seed(seed)
+    p_value = 0.5
+    p_values = [p_value]
+    q_values = [1 - p_value]
+
+    # Simulation
+    for _ in range(generations):
+        F_II_val = p_value * D + (1 - p_value) * B
+        F_I_val = p_value * C + (1 - p_value) * A
+        F_avg = p_value * F_II_val + (1 - p_value) * F_I_val
+        dp_dt = p_value * (F_II_val - F_avg) + np.random.normal(loc=0, scale=sigma)
+        p_value += dp_dt * dt
+        p_values.append(p_value)
+        q_values.append(1 - p_value)
+
+    # Daten für den Plot vorbereiten
+    data = {
+        'Generation': list(range(generations + 1)) * 2,
+        'Strategien': [item for item in ["Strategie I", "Strategie II"] for _ in range(generations + 1)],
+        'Anteile': q_values + p_values
+    }
+
+    # Plot erstellen
+    p = (
+        ggplot(data, aes(x='Generation', y='Anteile', color='Strategien')) +
+        geom_line() +
+        geom_hline(yintercept=float(equilibrium_p), color='red', linetype='dashed', size=1) +
+        ggtitle(f'Runde {runde}') +
+        xlab('Generation') +
+        ylab('Anteil der Strategien') +
+        theme_minimal() #+
+      #  geom_text(x=11, y=float(equilibrium_p) + 0.05,
+      #            label=f'Gleichgewicht p = {round(equilibrium_p, 2)}', color='red')
+    )
+    plots.append(p)
+
+# Plots im 2x2-Grid anzeigen
+gggrid(plots, ncol=2)
+```
+
+Der Evolutionsprozess konvergiert immer gegen die Anteile entsprechend des Nash-Gleichgewichts in gemischten Strategien
+
+#### Falke-Tauben-Spiel
+
+Fällt vermutlich aus Zeitgründen aus
 
 ### Diskussion und Ausblick
 
+- Wofür (evolutionäre) Spieltheorie?
 
+- Nur eine Heuristik?
+
+- Ist das so wenig?
 
 
