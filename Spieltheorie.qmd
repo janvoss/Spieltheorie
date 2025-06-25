@@ -1426,6 +1426,8 @@ Grundsätzlich zwei verschiedene Typen von Gleichgewichten:
 
 [https://eckhartarnold.de/papers/2009_Vorlesung_Entscheidungstheorie/node127.html]:
 
+### Grundlagen
+
 - Modell zur Beschreibung der Verbreitung bestimmter Strategien in Populationen basierend auf relativer Fitness  
 
 - Unterscheidet sich von klassischer Spieltheorie durch Fokus auf evolutionäre Selektion statt rationaler Entscheidungen  
@@ -1468,7 +1470,7 @@ $$\bar{f}(P_t) = p_1 f_1(P_t) + (1-p_1) f_2(P_t)$$
   
   - Stabile Anteile der Strategien
 
-
+###  xxx
 
 ### Diskussion und Ausblick
 

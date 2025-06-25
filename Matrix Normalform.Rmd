@@ -829,7 +829,7 @@ child { node [dummy, label=below:{K3}, label=:{}] {}
         child {node[dummy, label=below:{K13}, label=right:{\(0 \enspace 0\)}]{}
         edge from parent node [below]{rechts}
         }
-        child {node [dummy, label=below:{K12}, label=right:{\(10 \enspace -10\)}]{}
+        child {node [dummy, label=below:{K12}, label=right:{\(-10 \enspace -10\)}]{}
         edge from parent node [above]{links}
         }
         edge from parent node [above]{oben}
