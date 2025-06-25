@@ -1641,6 +1641,8 @@ p.show()
 ```{python}
 #| message: false
 #| warning: false
+#| fig-cap: Evolution im Koordinationsspiel mit noise
+
 
 import numpy as np
 import sympy as sp
@@ -1862,6 +1864,7 @@ p.show()
 ```{python}
 #| message: false
 #| warning: false
+#| fig-cap: Evolution im Anti-Koordinationsspiel mit noise
 
 import numpy as np
 import sympy as sp
