@@ -4,6 +4,31 @@
 
 ## Unrealistische Annahmen vs. realistische Modellierung
 
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+
+set.seed(123)
+Anzahl <- 150
+
+df <- data.frame(Farbe=c(rep("rot", Anzahl), rep("blau", Anzahl))
+) %>% mutate(x=(ifelse(Farbe=="rot", 0, 1)),
+              y=0)
+# head(df)
+
+df %>% ggplot(aes(x,y, color=Farbe))+
+geom_jitter(width= 1.3, alpha=.5, size=3)+
+scale_color_manual(values=c("blue", "red"))+
+theme_void()+
+labs(title="Rote und blaue Punkte",
+     caption="Abbildung: Jan S. Voßwinkel")
+```
+
+Und jetzt reden wir über @Musgrave81
+
 ## Flat-Rate Bias
 
 ## Die Prospect Theory

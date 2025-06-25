@@ -1938,7 +1938,135 @@ Der Evolutionsprozess konvergiert immer gegen die Anteile entsprechend des Nash-
 
 #### Falke-Tauben-Spiel
 
-Fällt vermutlich aus Zeitgründen aus
+```{python}
+#| warning: false
+#| message: false
+
+# Python
+
+
+A= 2
+a= 2
+B= 4
+b= 0
+C= 0
+c= 4
+D= -1
+d= -1
+
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='Taube')+\
+geom_text(x= 1  , y= 3.3 , label='Falke')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='Taube')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='Falke')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Spieler 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Spieler 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen Tauben und Falken')
+```
+
+```{python}
+#| warning: false
+#| message: false
+
+#p_l
+if (A - B - C + D)!=0: p_l = ( D-C)/(A - B - C + D)
+
+#print(round(p_l, 2))
+
+#p_o
+if (-b + d)/(a - b - c + d)!=0: p_o = (-b + d)/(a - b - c + d)
+
+#print(round(p_o, 2))
+
+
+# Ausgabe Abhängig von Bedingungen
+
+if (#Anzahl_NGG == 1 or
+    p_o < 0 or p_l < 0 or
+            p_o > 1 or p_l > 1 or
+            (a - b - c + d) == 0 or
+            (A - B - C + D) == 0):
+    print("Kein Nash-Gleichgewicht in gemischten Strategien")
+else:   print(f"Gemischte Strategien: p_o= {round(p_o, 2)}, p_l= {round(p_l, 2)}")
+```
+
+```{python}
+#| message: false
+#| warning: false
+
+import sympy as sp
+from lets_plot import *
+
+# Symbolische Berechnung des Gleichgewichts mit sympy
+p = sp.symbols('p')
+F_falke = p * D + (1 - p) * B
+F_taube = p * C + (1 - p) * A
+equilibrium_eq = sp.Eq(F_falke, F_taube)
+equilibrium_p = sp.solve(equilibrium_eq, p)[0]
+print(f"Das Gleichgewicht liegt bei p = {equilibrium_p}")
+
+# Parameter für die Simulation
+generations = 100
+p_value = 0.2  # Startanteil der Falken
+dt = 0.1
+p_values = [p_value]
+
+# Simulation
+for _ in range(generations):
+    F_falke_val = p_value * D + (1 - p_value) * B
+    F_taube_val = p_value * C + (1 - p_value) * A
+    F_avg = p_value * F_falke_val + (1 - p_value) * F_taube_val
+    dp_dt = p_value * (F_falke_val - F_avg)
+    p_value += dp_dt * dt
+    p_values.append(p_value)
+
+# Daten für den Plot vorbereiten
+data = {
+    'Generation': list(range(generations + 1)),
+    'Anteil_Falken': p_values
+}
+
+# Plot mit lets-plot
+
+LetsPlot.setup_html()
+
+p = (ggplot(data, aes(x='Generation', y='Anteil_Falken')) +
+     geom_line(color='blue', size=1, tooltips=layer_tooltips().line('@Anteil_Falken')) +
+     geom_hline(yintercept=float(equilibrium_p), color='red', linetype='dashed', size=1) +
+     ggtitle('Evolution im Falke-Tauben-Spiel') +
+     xlab('Generation') +
+     ylab('Anteil der Falken') +
+     theme_minimal() #+
+    # + geom_text(x=11, y=float(equilibrium_p) + 0.05,
+     #            label=f'Gleichgewicht p = {round(equilibrium_p, 2)}', #color='red')
+)
+
+# Plot anzeigen
+p.show()
+```
+
 
 ### Diskussion und Ausblick
 
