@@ -242,7 +242,6 @@ ggplot(df, aes(x = p, y = w, color = gamma)) +
 
 ```
 
-
 ## Mental Accounting
 
 s. Tafelaufschrieb
