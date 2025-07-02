@@ -749,6 +749,60 @@ Spiel
 </div>
 </div>
 <p>Tafelaufschrieb</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wahrscheinlichkeitsdreiecke</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="dv">300</span> <span class="co"># Schritte p1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>su <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="co"># Schritte u</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">p1=</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out=</span>s1), su), <span class="co"># X-Achse</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">u =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="sc">-</span><span class="fl">3.9</span>, <span class="dv">3</span>, <span class="at">length.out=</span>su), <span class="at">each=</span>s1) <span class="co">#, # Einzelne Indifferenzkurven</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Steigung = rep(.5),  each=s1*su</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Steigung=</span> (u<span class="sc">+</span><span class="dv">4</span>)<span class="sc">^</span><span class="dv">2-9</span>, <span class="co"># Steigung ändert sich mit jeder Indifferenzkurve. Konkrete zahlen sind "gebastelt"</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">p3=</span>u <span class="sc">+</span> Steigung <span class="sc">*</span>p1, <span class="co"># Gleichung für Indifferenzkurven</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>              ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(Steigung,  u)<span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(p3<span class="sc">&lt;=</span><span class="dv">1</span><span class="sc">-</span>p1 <span class="sc">&amp;</span> p3<span class="sc">&gt;=</span><span class="dv">0</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># head(df)</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Punkte</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>Punkte <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Namen=</span><span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                         <span class="at">x=</span><span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">06</span>, .<span class="dv">84</span>, .<span class="dv">90</span>),</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                         <span class="at">y=</span><span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">1</span>, <span class="dv">0</span>, .<span class="dv">1</span>))</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co"># head(Punkte)</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafik</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>df<span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(p1, p3, <span class="at">group=</span>u))<span class="sc">+</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_abline</span>(<span class="at">slope=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">intercept=</span><span class="dv">1</span>, <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">linewidth=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_hline</span>(<span class="at">yintercept=</span> <span class="dv">0</span>, <span class="at">color=</span> <span class="st">"blue"</span>, <span class="at">linewidth=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_vline</span>(<span class="at">xintercept=</span> <span class="dv">0</span>, <span class="at">color=</span> <span class="st">"blue"</span>,  <span class="at">linewidth=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_point</span>(<span class="at">data=</span>Punkte, <span class="fu">aes</span>(x, y, <span class="at">group=</span>Namen), <span class="at">size=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="fl">0.01</span>,<span class="fl">0.01</span>)</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="fl">0.01</span>,<span class="fl">0.01</span>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>       <span class="co"># expand_limits(x = 0, y = 0)+</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Verhaltensoekonomik_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="kritische-diskussion-der-verhaltensökonomik" class="level2" data-number="4.8">

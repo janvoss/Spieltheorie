@@ -366,4 +366,52 @@ df%>% ggplot(aes(p1, p3, group=u))+
 
 Tafelaufschrieb
 
+```{r}
+#| message: false
+#| warning: false
+
+# Wahrscheinlichkeitsdreiecke
+library(tidyverse)
+
+s1 <- 300 # Schritte p1
+
+su <- 100 # Schritte u
+
+df <- data.frame(
+         p1= rep(seq(0, 1, length.out=s1), su), # X-Achse
+         u = rep(seq(-3.9, 3, length.out=su), each=s1) #, # Einzelne Indifferenzkurven
+        # Steigung = rep(.5),  each=s1*su
+         ) %>%
+  mutate(Steigung= (u+4)^2-9, # Steigung ändert sich mit jeder Indifferenzkurve. Konkrete zahlen sind "gebastelt"
+    p3=u + Steigung *p1, # Gleichung für Indifferenzkurven
+              ) %>%
+      group_by(Steigung,  u)%>%
+      filter(p3<=1-p1 & p3>=0)
+
+# head(df)
+
+# Punkte
+
+Punkte <- data.frame(Namen=c("A", "B", "C", "D"),
+                         x=c(0, .06, .84, .90),
+                         y=c(0, .1, 0, .1))
+
+# head(Punkte)
+
+# Grafik
+
+df%>% ggplot(aes(p1, p3, group=u))+
+        geom_line()+
+        geom_abline(slope=-1, intercept=1, color="blue", linewidth=1)+
+        geom_hline(yintercept= 0, color= "blue", linewidth=1)+
+        geom_vline(xintercept= 0, color= "blue",  linewidth=1)+
+        geom_point(data=Punkte, aes(x, y, group=Namen), size=2)+
+        scale_x_continuous(limits = c(0, 1), expand=c(0.01,0.01)
+) +
+        scale_y_continuous(limits = c(0, 1), expand=c(0.01,0.01)
+) +
+       # expand_limits(x = 0, y = 0)+
+        theme_light()
+```
+
 ## Kritische Diskussion der Verhaltensökonomik
