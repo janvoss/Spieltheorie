@@ -168,6 +168,10 @@ lines_df <- data.frame(x = x_vals, y = y_vals)
 
 ### Wahrscheinlichkeitsgewichtung
 
+- Im Rahmen der Prospect Theory geht man davon aus, dass Entscheidungen nicht unmittelbar auf Wahrscheinlichkeiten beruhen, sondern auf Gewichtungen $w(p)$, die eine Funktion der Wahrscheinlichkeit sind
+
+- Dabei werden kleine Wahrscheinlichkeiten übergewichtet und hohe Wahrscheinlichkeiten untergewichtet
+
 ```{r}
 #| message: false
 #| warning: false
@@ -202,6 +206,8 @@ ggplot(df, aes(x = p)) +
   #scale_y_continuous(breaks = seq(0, 1, 0.1)) +
   theme_minimal()
 ```
+
+Eine mögliche Form der Gewichtung:  
 
 $w(p) = \frac{p^{\gamma}}{\left[ p^{\gamma} + (1-p)^{\gamma} \right]^{1/\gamma}}$
 
@@ -263,15 +269,101 @@ s. Tafelaufschrieb
   
   - **Transitivität**: Aus $A \preceq B$ und $B \preceq C$ folgt $A \preceq C$
   
-  - **Stetitgkeit**: Für alle Alternativen $A, B, C$ mit $A \preceq B$ und $B \preceq C$ existiert eine Wahrscheinlichkeit $p$, sodass gilt $pA+(1-p)C \sim B$
+  - **Stetigkeit**: Für alle Alternativen $A, B, C$ mit $A \preceq B$ und $B \preceq C$ existiert eine Wahrscheinlichkeit $p$, sodass gilt $pA+(1-p)C \sim B$
   
   - **Unabhängigkeit**: Für alle Alternativen $A, B, C$ mit $A \preceq B$ gilt $pA+(1-p)C \preceq pB+(1-p)C$ 
 
 
+Verlauf des Erwartungsnutzens (s. Tafelaufschrieb)
 
 ### Allais-Paradoxon
 
 
+```{r}
+#| message: false
+#| warning: false
 
+
+library(knitr)
+library(tidyverse)
+library(kableExtra)
+
+df <- data.frame(Farbe=c("schwarz", "weiß", "rot"),
+                  Anzahl=c(10, 89, 1),
+                 A=c(1000, 1000, 1000),
+                 B=c(5000, 1000, 0),
+                 C=c(1000, 0, 1000),
+                 D=c(5000, 0, 0)
+)
+
+# head(df)
+
+kable(df, "html") %>%
+add_header_above(c("Urne" = 2, "Spiel" = 4), line = FALSE)
+
+
+```
+
+- Welches Spiel wird bevorzugt? 
+
+  - A vs. B
+  
+  - C vs. D
+  
+- Erwartungsnutzentheorie: Konsistenz des Vergleichs (wenn A (B), dann C (D))
+
+- Empirie: A, aber D
+
+
+- Wie kann das sein?
+
+```{r}
+#| message: false
+#| warning: false
+
+# Wahrscheinlichkeitsdreiecke
+library(tidyverse)
+
+s1 <- 110 # Schritte p1
+
+su <- 35 # Schritte u
+
+df <- data.frame(
+         p1= rep(seq(0, 1, length.out=s1), su), # X-Achse
+         u = rep(seq(-2.9, 1, length.out=su), each=s1), # Einzelne Indifferenzkurven
+         Steigung = rep(c(.3, 2.5),  each=s1*su) # Steigungen der Indifferenzkurven #(p1 und u werden automatisch verdoppelt?)
+) %>% mutate(p3=u + Steigung *p1, # Gleichung für Indifferenzkurven
+              label=ifelse(Steigung==.3, "flach", "steil")) %>%
+      group_by(Steigung,  u)%>%
+      filter(p3<=1-p1 & p3>=0)
+
+# head(df)
+
+# Punkte
+
+Punkte <- data.frame(Namen=c("A", "B", "C", "D"),
+                         x=c(0, .06, .84, .90),
+                         y=c(0, .1, 0, .1))
+
+# head(Punkte)
+
+# Grafik
+
+df%>% ggplot(aes(p1, p3, group=u))+
+        geom_line()+
+        geom_abline(slope=-1, intercept=1, color="blue", linewidth=1)+
+        geom_hline(yintercept= 0, color= "blue", linewidth=1)+
+        geom_vline(xintercept= 0, color= "blue",  linewidth=1)+
+        geom_point(data=Punkte, aes(x, y, group=Namen), size=2)+
+        scale_x_continuous(limits = c(0, 1), expand=c(0.01,0.01)
+) +
+        scale_y_continuous(limits = c(0, 1), expand=c(0.01,0.01)
+) +
+       # expand_limits(x = 0, y = 0)+
+        theme_light()+
+        facet_wrap(~label)
+```
+
+Tafelaufschrieb
 
 ## Kritische Diskussion der Verhaltensökonomik
