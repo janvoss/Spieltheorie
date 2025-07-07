@@ -1,0 +1,163 @@
+# Übungsaufgaben {-}
+
+1. 
+
+  a. Bitte geben Sie für die folgenden Spiele jeweils an, ob es kein, ein oder mehrere Nash-Gleichgewichte in reinen Strategien gibt, und benennen Sie diese.
+  
+  a. Bitte geben Sie die Nash-Gleichgewichte in gemischten Strategien an. 
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Spiele für Übungsaufgaben"
+
+import numpy as np
+import random
+import pandas as pd
+
+from lets_plot import *
+from IPython.display import display, HTML
+
+LetsPlot.setup_html()
+
+
+def create_plot(a, A, b, B, c, C, d, D, Aufgabe):
+    LetsPlot.setup_html()
+    return (
+        ggplot() +
+        geom_text(x=-0.5, y=2, label=a) +
+        geom_text(x=-1.5, y=0.75, label=A) +
+        geom_text(x=-0.5, y=-1, label=b) +
+        geom_text(x=-1.5, y=-2.25, label=B) +
+        geom_text(x=1.5, y=2, label=c) +
+        geom_text(x=0.5, y=0.75, label=C) +
+        geom_text(x=1.5, y=-1, label=d) +
+        geom_text(x=0.5, y=-2.25, label=D) +
+        geom_text(x=-1, y=3.3, label='links') +
+        geom_text(x=1, y=3.3, label='rechts') +
+        geom_text(x=-2.2, y=1.375, angle=90, label='oben') +
+        geom_text(x=-2.2, y=-1.625, angle=90, label='unten') +
+        geom_text(x=0 , y=4 , fontface="bold", label='Spieler 2') +
+        geom_text(x=-2.7 , y=0 , angle=90 , fontface="bold", label='Spieler 1') +
+        geom_segment(x=-2, xend=2, y=0, yend=0) +
+        geom_segment(x=-2, xend=2, y=3, yend=3) +
+        geom_segment(x=-2, xend=2, y=-3, yend=-3) +
+        geom_segment(x=-2, xend=-2, y=-3, yend=3) +
+        geom_segment(x=0 , xend=0 , y=-3 , yend=3) +
+        geom_segment(x=2 , xend=2 , y=-3 , yend=3) +
+        theme_void() +
+        labs(title=f'Auszahlungen Aufgabe {Aufgabe}')
+    )
+
+myseed = 0
+Aufgabe = 0
+plots = []
+
+# ! hier Beginn der Schleife, 10 Durchgänge
+results = []
+
+for i in range(10):
+    myseed = myseed + 1
+    Aufgabe = Aufgabe + 1
+    random.seed(myseed)  # Optional für Reproduzierbarkeit
+
+    while True:
+        A = random.randint(0, 9)
+        a = random.randint(0, 9)
+        B = random.randint(0, 9)
+        b = random.randint(0, 9)
+        C = random.randint(0, 9)
+        c = random.randint(0, 9)
+        D = random.randint(0, 9)
+        d = random.randint(0, 9)
+
+        # Bedingungen prüfen: Keine dominante Strategien
+        cond1 = (A >= B) and (C >= D)
+        cond2 = (B >= A) and (D >= C)
+        cond3 = (a >= c) and (b >= d)
+        cond4 = (c >= a) and (d >= b)
+
+        # Wenn keine Bedingung erfüllt ist, Schleife beenden
+        if not (cond1 or cond2 or cond3 or cond4):
+            break
+
+    p = create_plot(a, A, b, B, c, C, d, D, Aufgabe)
+
+    # Funktionen für Nash-Bedingungen
+    def is_ol_nash(A, B, a, c):
+        return "ol" if (A >= B) and (a >= c) else "not_ol"
+
+    def is_ul_nash(B, A, b, d):
+        return "ul" if (B >= A) and (b >= d) else "not_ul"
+
+    def is_or_nash(C, D, c, a):
+        return "or" if (C >= D) and (c >= a) else "not_or"
+
+    def is_ur_nash(D, C, d, b):
+        return "ur" if (D >= C) and (d >= b) else "not_ur"
+
+    # Nash-Bedingungen überprüfen und Strings zuweisen
+    Cand_Nash_ol = is_ol_nash(A, B, a, c)
+    Cand_Nash_ul = is_ul_nash(B, A, b, d)
+    Cand_Nash_or = is_or_nash(C, D, c, a)
+    Cand_Nash_ur = is_ur_nash(D, C, d, b)
+
+    # Ergebnisse kombinieren und NAs entfernen
+    Nash_GG = np.array([Cand_Nash_ol, Cand_Nash_ul, Cand_Nash_or, Cand_Nash_ur])
+    Nash_GG_filtered = []
+    for element in Nash_GG:
+        if element in ["ol", "ul", "or", "ur"]:
+            Nash_GG_filtered.append(element)
+
+    # Anzahl der Nash GG
+    Anzahl_NGG = len(Nash_GG_filtered)
+
+    # Wahrscheinlichkeiten ausrechnen
+    p_l = None
+    p_o = None
+    if (A - B - C + D) != 0:
+        p_l = (D - C) / (A - B - C + D)
+    if (a - b - c + d) != 0:
+        p_o = (-b + d) / (a - b - c + d)
+
+    # ! Nash_GG_filtered zusammen mit Aufgabe und p_l in einem data frame speichern.
+    results.append({
+        'Aufgabe': Aufgabe,
+        'Nash_GG_filtered': ','.join(Nash_GG_filtered) if Nash_GG_filtered else 'none',
+        'p_l': round(p_l, 2) if p_l is not None else None,
+        'p_o': round(p_o, 2) if p_o is not None else None
+    })
+
+    plots.append(p)
+    display(p)
+
+# Plots ausgeben
+#display(gggrid(plots, ncol=1))
+
+
+
+# ! Data frame ausgeben
+
+results_df = pd.DataFrame(results)
+#print(results_df)
+
+results_df.columns=["Aufgabe", "Nash GG","p_l", "p_o"]
+
+#display(HTML(results_df.to_html(index=False)))
+```
+
+:::{.callout-note 
+    icon=false 
+    collapse=true }
+# Lösungen{-}
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Lösungstabelle"
+
+display(HTML(results_df.to_html(index=False)))
+```
+
+    
+:::

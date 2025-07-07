@@ -16,6 +16,7 @@ book:
     - Spieltheorie.qmd
     - Verhaltensoekonomik.qmd
     - Literatur.qmd
+    - Uebungsaufgaben.qmd
 
 bibliography: Spieltheorie.bib
 
