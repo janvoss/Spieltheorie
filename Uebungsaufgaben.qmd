@@ -141,7 +141,7 @@ for i in range(10):
 results_df = pd.DataFrame(results)
 #print(results_df)
 
-results_df.columns=["Aufgabe", "Nash GG","p_l", "p_o"]
+results_df.columns=["Spiel", "Nash GG","p_l", "p_o"]
 
 #display(HTML(results_df.to_html(index=False)))
 ```
