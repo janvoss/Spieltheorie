@@ -274,9 +274,10 @@ results_df = pd.DataFrame(results)
 display(HTML(results_df.to_html(index=False)))
 ```
 
+:::
 
 -------------
-*Ergänzende Übungsaufgaben*
+**Ergänzende Übungsaufgaben**
 
 1. Wodurch ist bei sequenziellen Spielen ein separierendes Gleichgewicht gekennzeichnet? Wodurch ein Pooling-Gleichgewicht?
 
