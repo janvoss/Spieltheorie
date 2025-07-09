@@ -273,3 +273,15 @@ results_df = pd.DataFrame(results)
 
 display(HTML(results_df.to_html(index=False)))
 ```
+
+
+-------------
+*Ergänzende Übungsaufgaben*
+
+1. Wodurch ist bei sequenziellen Spielen ein separierendes Gleichgewicht gekennzeichnet? Wodurch ein Pooling-Gleichgewicht?
+
+1. Wodurch unterscheidet sich die evolutionäre Spieltheorie von der "klassischen" Spieltheorie?
+
+1. Beschreiben Sie die Dynamik in einem evolutionären Spiel durch die Replikatordynamik.
+
+1. Wie werden nach der Prospect Theory Wahrscheinlichkeiten in Wahrscheinlichkeitsgewichte übersetzt (verbale Umschreibung reicht aus)?
