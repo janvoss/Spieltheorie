@@ -2,6 +2,119 @@
 
 ## Einleitung und begriffliche Einordnung
 
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Was macht (man mit) Spieltheorie?"
+
+import graphviz
+from IPython.display import display
+
+def create_game_theory_workflow():
+    dot = graphviz.Digraph('Spieltheorie_Workflow', comment='Wie Spieltheorie arbeitet')
+
+    # Design: Flussdiagramm von oben nach unten
+    dot.attr(rankdir='TB', size='10,12', fontname='Helvetica-Bold')
+    dot.node_attr.update(style='filled', fontname='Helvetica', shape='box', margin='0.3')
+
+    # SCHRITT 1: DIE MODELLIERUNG (Das "Wie")
+    with dot.subgraph(name='cluster_modeling') as c:
+        c.attr(label='1. REALITÄT ABSTRAHIEREN (Modellierung)', style='dashed', color='blue')
+        c.node('INPUT', 'Komplexe Interaktion\n(Markt, Sport, Politik, Team, Natur, ...)', shape='ellipse', fillcolor='#E3F2FD')
+        c.node('DEF', 'Definition des Rahmens:\n• Wer spielt mit? (Spieler)\n• Was können sie tun? (Strategien)\n• Was treibt sie an? (Auszahlungen)\n• Wie sind die Rahmenbedingungen? (Regeln)', fillcolor='#BBDEFB')
+
+    # SCHRITT 2: DIE ANALYSE-MECHANIK (Das "Wie")
+    with dot.subgraph(name='cluster_mechanics') as c:
+        c.attr(label='2. MECHANIK DER SITUATION BESTIMMEN', style='dashed', color='green')
+        c.node('TYPE', 'Klassifizierung:\n• Zeit: Gleichzeitig oder nacheinander?\n• Wissen: Wer weiß was wann?\n• Verträge: Sind Absprachen bindend?', fillcolor='#C8E6C9')
+
+    # SCHRITT 3: DIE LÖSUNGSSUCHE (Das "Wie")
+    with dot.subgraph(name='cluster_solution') as c:
+        c.attr(label='3. GLEICHGEWICHT FINDEN (Die Berechnung)', style='dashed', color='orange')
+        c.node('EQUIL', 'Suche nach Stabilität:\n"Welches Muster stellt sich ein?"\n(Nash-Gleichgewicht)', fillcolor='#FFE0B2', penwidth='2')
+
+    # SCHRITT 4: DAS ERGEBNIS (Das "Was")
+    with dot.subgraph(name='cluster_output') as c:
+        c.attr(label='4. ERKENNTNISGEWINN (Das "Was")', style='dashed', color='purple')
+        c.node('OUT', 'Anwendung & Vorhersage:\n• Wettbewerb\n• Auktionsdesigns\n• Tarifverträge\n• Kooperation in der Evolution\n• Strategische Beratung', fillcolor='#F3E5F5')
+
+    # Den Prozess verbinden
+    dot.edge('INPUT', 'DEF', label='Übersetzung in\nformale Sprache')
+    dot.edge('DEF', 'TYPE', label='Strukturierung')
+    dot.edge('TYPE', 'EQUIL', label='Mathematische\nAnalyse')
+    dot.edge('EQUIL', 'OUT', label='Ableitung von\nHandlungen')
+
+    return dot
+
+# Visualisierung anzeigen
+workflow_graph = create_game_theory_workflow()
+display(workflow_graph)
+```
+
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Zweige der Spieltheorie"
+
+import graphviz
+from IPython.display import display
+
+def create_advanced_gt_workflow():
+    dot = graphviz.Digraph('Spieltheorie_Methodik', comment='Detaillierter GT Workflow')
+
+    # Design-Settings
+    dot.attr(rankdir='LR', size='12,12', fontname='Helvetica')
+    dot.node_attr.update(style='filled', fontname='Helvetica', shape='box', margin='0.2')
+
+    # 1. INPUT: Die soziale Situation
+    dot.node('START', 'Strategische Situation\n(Interdependenz)', shape='diamond', fillcolor='#AB82FF')
+
+    # 2. DIE GABELUNG: Welches Paradigma wählen wir? (Das "Wie")
+
+    # Zweig A: Nicht-Kooperativ 
+    with dot.subgraph(name='cluster_noncoop') as c:
+        c.attr(label='Nicht-kooperative Spieltheorie', color='#E53935', fontcolor='#E53935', style='dashed')
+        c.node('NC_HOW', 'WIE: Fokus auf das Individuum.\nSuche nach stabilen Zuständen,\nwenn jeder nur an sich denkt.', fillcolor='#FFCDD2')
+        c.node('NC_WHAT', 'WAS: Vorhersage von Konflikten,\nPreiskämpfen oder dem\nVersagen von Kooperation.', fillcolor='#FFEBEE')
+
+    # Zweig C: Evolutionär 
+    with dot.subgraph(name='cluster_evo') as c:
+        c.attr(label='Evolutionäre Spieltheorie', color='#43A047', fontcolor='#43A047', style='dashed')
+        c.node('E_HOW', 'WIE: Fokus auf Selektion.\nErfolgreiche Muster (Fitness)\nverdrängen schwache Muster.', fillcolor='#C8E6C9')
+        c.node('E_WHAT', 'WAS: Verstehen von Traditionen,\nbiologischen Instinkten und\nlangfristigen Trends.', fillcolor='#E8F5E9')
+
+    # Zweig B: Kooperativ 
+    with dot.subgraph(name='cluster_coop') as c:
+        c.attr(label='Kooperative Spieltheorie', color='#1E88E5', fontcolor='#1E88E5', style='dashed')
+        c.node('C_HOW', 'WIE: Fokus auf die Gruppe.\nAnalyse von Koalitionen und\nbindenden Verträgen.', fillcolor='#BBDEFB')
+        c.node('C_WHAT', 'WAS: Faire Aufteilung von\ngemeinsamen Gewinnen und\nstabile Allianzen.', fillcolor='#E3F2FD')
+
+    # 3. LÖSUNG/OUTPUT
+    dot.node('END', 'Ergebnis: Systemstabilität\n(Gleichgewicht)', shape='ellipse', fillcolor='#FFEB3B')
+
+    # Verbindungen 
+    dot.edge('START', 'NC_HOW', label='Individuelle\nEntscheidungen')
+    dot.edge('NC_HOW', 'NC_WHAT')
+    dot.edge('NC_WHAT', 'END')
+
+    dot.edge('START', 'E_HOW', label='Lern- und\nSelektionsprozess')
+    dot.edge('E_HOW', 'E_WHAT')
+    dot.edge('E_WHAT', 'END')
+
+    dot.edge('START', 'C_HOW', label='Verhandelbare\nVerträge')
+    dot.edge('C_HOW', 'C_WHAT')
+    dot.edge('C_WHAT', 'END')
+
+    return dot
+
+# Visualisierung anzeigen
+advanced_gt_graph = create_advanced_gt_workflow()
+display(advanced_gt_graph)
+
+```
+
+
 ## Simultane Spiele
 
 ### Grundsätzliche Struktur eines Spiels
