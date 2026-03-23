@@ -19,6 +19,7 @@ book:
     - Uebungsaufgaben.qmd
 
 bibliography: Spieltheorie.bib
+csl: technische-universitat-dresden-betriebswirtschaftslehre-rechnungswesen-controlling.csl
 
 format:
   html:

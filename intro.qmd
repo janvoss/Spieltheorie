@@ -2,27 +2,97 @@
 
 ## Modul: Analyse von Kooperations- und Konfliktstrukturen
 
-- Unter welchen Bedingugungen gelingt Kooperation im Team
+-   Unter welchen Bedingungungen gelingt Kooperation im Team
 
-- Wie gelingt es, Konfliktstrukturen aufzubrechen, um Kooperation zu ermöglichen?
+-   Wie gelingt es, Konfliktstrukturen aufzubrechen, um Kooperation zu ermöglichen?
 
-- Wann ist Kooperation rational?
+-   Wann ist Kooperation rational?
 
-- Berücksichtigung &bdquo;menschlicher Schwächen&ldquo;
+-   Berücksichtigung „menschlicher Schwächen“
+
+```{python}
+#| message: false
+#| warning: false
+#| fig-cap: "Spieltheorie, Verhaltensökonomik und synthetische Elemente"
+
+
+import graphviz
+from IPython.display import display
+
+# Erstellung des Graphen mit Fokus auf die theoretische Triade
+dot = graphviz.Digraph(comment='Evolution der Spieltheorie',
+                       graph_attr={'rankdir':'TB', 'nodesep':'0.6', 'ranksep':'0.8', 'compound':'true'})
+
+# Globale Stile für bessere Lesbarkeit
+dot.attr('node', shape='rectangle', style='filled', fontname='Arial', fontsize='11')
+
+# --- CLUSTER 1: KLASSISCHE SPIELTHEORIE (Der normative Anker) ---
+with dot.subgraph(name='cluster_0') as c:
+    c.attr(label='I. KLASSISCHE SPIELTHEORIE', style='dotted', color='blue', fontcolor='blue')
+    c.node('HomoOec', 'Homo Oeconomicus\n(Vollkommene Rationalität)', fillcolor='#E3F2FD')
+    c.node('vNM', 'vNM-Nutzenmaximierung\n(Erwartungsnutzen)', fillcolor='#E3F2FD')
+    c.node('Nash', 'Nash-Gleichgewicht\n(Stabilität durch beste Antworten)', fillcolor='#E3F2FD')
+
+# --- CLUSTER 2: VERHALTENSÖKONOMIK (Die empirische Kritik) ---
+with dot.subgraph(name='cluster_1') as c:
+    c.attr(label='II. VERHALTENSÖKONOMIK', style='dotted', color='red', fontcolor='red')
+    c.node('Prospect', 'Prospect Theory\n(Referenzpunkte & Gewichtung)', fillcolor='#FFEBEE')
+    c.node('Biases', 'Systematische Anomalien\n(Verlustaversion, Heuristiken)', fillcolor='#FFEBEE')
+
+# --- CLUSTER 3: SYNTHESE (Die moderne Integration) ---
+with dot.subgraph(name='cluster_2') as c:
+    c.attr(label='III. SYNTHESE', style='dotted', color='darkgreen', fontcolor='darkgreen')
+    c.node('EcoRat', 'Ökologische Rationalität\n(Heuristiken als funktionale Anpassung)', fillcolor='#E8F5E9')
+    c.node('QRE', 'Quantal Response Equilibrium (QRE)\n(Statistische Modellierung von Fehlern)', fillcolor='#E8F5E9')
+
+# --- NEUE VERBINDUNGEN (Logischer Fluss) ---
+
+# Der Bruch mit der Klassik
+dot.edge('HomoOec', 'Biases', 'Empirische Evidenz\nvon Abweichungen')
+dot.edge('vNM', 'Prospect', 'andere empirische/psychologische\n Fundierung der Zielfunktion')
+
+# Die Brücke zur Synthese
+dot.edge('Biases', 'EcoRat', 'Umdeutung: Bias als\neffiziente Problemlösung')
+dot.edge('Biases', 'QRE', 'Mathematisierung\nvon Verhaltensfehlern')
+
+# Die mathematische Evolution
+dot.edge('Nash', 'QRE', 'Gleichgewichte unter der\n Annahme der Fehlbarkeit')
+dot.edge('QRE', 'EcoRat', 'Rationalität unter\nUnsicherheit & Fehlbarkeit')
+
+# Anzeige des Graphen
+display(dot)
+```
+
+::: {.callout-important icon="false" collapse="true"}
+# Der Text zum Bild {.unnumbered}
+
+Die klassische Spieltheorie basiert maßgeblich auf dem Modell des Homo Oeconomicus, welches von unbegrenzter Rationalität, unendlicher Willenskraft und reinem Eigennutzstreben der Akteure ausgeht [@beck2014behavioral]. Innerhalb dieses Paradigmas treffen Spieler bewusste Entscheidungen und wählen wechselseitig beste Antworten, um ihren erwarteten Nutzen im Sinne des von Neumann-Morgenstern-Rahmens zu maximieren [@bartholomae_spieltheorie_2020; @Winter-Spieltheorie].
+
+Demgegenüber identifiziert die Verhaltensökonomik systematische Verhaltensanomalien und psychologische Effekte wie die Prospect Theory, die Verlustaversion oder den Ankereffekt, welche belegen, dass reales menschliches Handeln oft signifikant von der strikten Rationalitätsnorm abweicht [@beck2014behavioral].
+
+Diese beiden Strömungen lassen sich jedoch durch das Konzept der ökologischen Rationalität zusammenführen, welches postuliert, dass Heuristiken keine bloßen kognitiven Mängel sind, sondern effiziente Anpassungen an eine komplexe Umwelt darstellen [@beck2014behavioral; @gigerenzer_two_2025]. In dieser Sichtweise sind viele Biases funktional und ermöglichen unter Bedingungen von Unsicherheit und Unberechenbarkeit erst die Organisation chaotischer Reize sowie eine schnelle Problemlösung [@gigerenzer_two_2025].
+
+Interessanterweise weisen auch moderne künstliche Intelligenzen in Form von großen Sprachmodellen systematische Verhaltensmuster auf, die als Verhaltensbiases bezeichnet werden können. In bestimmten Aufgaben verhalten sich fortgeschrittene Large Language Models mit zunehmender Größe und Weiterentwicklung tendenziell menschenähnlicher und weichen damit stärker vom Ideal der Erwartungsnutzentheorie ab. Solche Abweichungen lassen sich teilweise durch den Trainingsprozess mittels menschlichen Feedbacks erklären, wobei eine gezielte Instruktion der Modelle als rationaler Investor diese Biases messbar, wenn auch in begrenztem Ausmaß, reduzieren kann [@bini_behavioral_2026].
+
+Parallel dazu wurde die mathematische Spieltheorie durch Konzepte wie das Quantal Response Equilibrium erweitert, um Rationalitätsgrenzen explizit abzubilden [@Winter-Spieltheorie; @pfeiffer_spieltheorie_2021]. Dieses statistische Lösungskonzept ergänzt rationale Erwartungen um die Berücksichtigung möglicher Fehler der Akteure. Dabei gehen die Teilnehmer davon aus, dass Mitspieler in zukünftigen Runden mit einer gewissen Wahrscheinlichkeit vom Nash-Gleichgewicht abweichen werden, wobei bessere Strategien dennoch tendenziell häufiger gewählt werden als schlechtere Optionen [@pfeiffer_spieltheorie_2021].
+
+Durch die Integration dieser Fehlerwahrscheinlichkeiten nähert sich die Theorie der empirisch beobachteten Realität an und bietet eine rationale Deutung für Verhaltensweisen, die in rein klassischen Modellen als unplausibel gelten [@pfeiffer_spieltheorie_2021].
+:::
 
 ## Ökonomische Modellierung menschlichen Verhaltens
 
-  - Methodologischer Individualismus  
-  - Situationslogik erlaubt Verknüpfung von Situation, Zielen und Handlung
+-   Methodologischer Individualismus\
 
-  - Rationalität
+-   Situationslogik erlaubt Verknüpfung von Situation, Zielen und Handlung
 
-    * Strenge Rationalität
-    * Beschränkte Rationalität
-    * Verhaltensökonomik
+-   Rationalität
 
-  - Rationalität als Konzept
+    -   Strenge Rationalität
+    -   Beschränkte Rationalität
+    -   Verhaltensökonomik
 
-  * Rationalität als Behauptung über einen Sachverhalt
-  * Rationalität als Analysegrammatik
-  
+-   Rationalität als Konzept
+
+-   Rationalität als Behauptung über einen Sachverhalt
+
+-   Rationalität als Analysegrammatik
