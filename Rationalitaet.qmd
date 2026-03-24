@@ -1,3 +1,9 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
 # Rationalität
 
 ```{python}
@@ -63,65 +69,158 @@ def create_rationality_map():
 display(create_rationality_map())
 ```
 
+::: {.callout-important icon="false" collapse="true"}
+# Der Text zum Bild {.unnumbered}
 
+Die Rationalitätsannahme stellt eine der fundamentalen
+Verhaltensannahmen der Volkswirtschaftslehre dar und definiert
+rationales Handeln primär als ein zielgerichtetes Verhalten. In diesem
+theoretischen Rahmen wird unterstellt, dass Menschen klare Ziele
+verfolgen und konsequent auf diese hinarbeiten, um ihre Bedürfnisse zu
+befriedigen. Dabei macht das ökonomische Konzept der Rationalität keine
+inhaltlichen oder moralischen Vorgaben für die gewählten Ziele selbst,
+sondern bezieht sich ausschließlich auf die logische Konsistenz des
+Weges, auf dem diese Ziele erreicht werden sollen
+[@zuckarelli_mikrookonomik_2023].
 
+Eine zentrale Funktion dieser Annahme besteht in der methodischen
+Reduktion von Komplexität. Da die wirtschaftliche Realität und das
+menschliche Handeln in all ihren Facetten beinahe unendlich komplex
+sind, nutzen Ökonomen die Rationalität als Vereinfachung, um die
+wesentlichen Wirkmechanismen eines Phänomens isoliert untersuchen zu
+können. Erst durch diese Abstraktion wird menschliches Verhalten in
+ökonomischen Modellen greifbar, berechenbar und prognostizierbar
+[@zuckarelli_mikrookonomik_2023; @sellenthin2022; @conrad2016].
 
-Das Folgende ist fast wörtlich aus @detel_grundkurs_2007 S. 20 übernommen.
+Aus dieser Annahme lassen sich allgemeine Hypothesen in Form von
+Wenn-Dann-Aussagen ableiten, die eine wissenschaftliche Erklärung von
+wirtschaftlichen Zusammenhängen ermöglichen. In der neoklassischen
+Theorie bildet die Rationalitätsannahme den harten Kern des
+Forschungsprogramms, wobei Rationalität oft als Optimierung unter
+Nebenbedingungen operationalisiert wird. Dies hat die wichtige Funktion,
+ökonomische Probleme in die Sprache der Mathematik zu übersetzen, was
+insbesondere den Einsatz der Differenzialrechnung für Marginalanalysen
+erlaubt. Ein Akteur wird dabei so modelliert, als ob er eine bestimmte
+Zielfunktion, wie etwa den Nutzen oder den Gewinn, unter Beachtung von
+Restriktionen wie Einkommen oder Kosten maximiert. Ohne eine solche
+einheitliche und berechenbare Verhaltensweise ließen sich kaum
+verallgemeinerbare Aussagen über den Funktionsmechanismus der Wirtschaft
+treffen, da jede Handlung als zufällig oder unvorhersehbar erscheinen
+würde [@zuckarelli_mikrookonomik_2023; @heidbrink2017].
+
+Eng verknüpft mit der Rationalität ist das ökonomische Prinzip, das auch
+als Rationalprinzip bezeichnet wird. Es fordert die konsequente
+Vermeidung von Verschwendung beim Einsatz knapper Ressourcen. Rational
+handelnde Akteure folgen diesem Prinzip entweder in Form des
+Maximalprinzips, bei dem mit gegebenen Mitteln ein maximaler Erfolg
+angestrebt wird, oder in Form des Minimalprinzips, bei dem ein
+festgesetztes Ziel mit minimalem Aufwand erreicht werden soll. Auf diese
+Weise dient die Rationalitätsannahme als Grundlage für die Analyse der
+effizienten Allokation, also der optimalen Zuordnung knapper Güter auf
+verschiedene Verwendungsmöglichkeiten. In marktwirtschaftlichen Modellen
+führt das rationale Streben der Einzelnen nach ihrem eigenen Vorteil im
+Idealfall dazu, dass die soziale Wohlfahrt maximiert wird und Ressourcen
+dorthin gelenkt werden, wo sie den höchsten Nutzen stiften
+[@zuckarelli_mikrookonomik_2023; @heidbrink2017].
+
+Methodologisch stützt die Rationalitätsannahme zudem das Prinzip des
+methodologischen Individualismus. Dieses besagt, dass alle ökonomischen
+Phänomene und gesellschaftlichen Zustände letztlich auf die Handlungen
+und Entscheidungen einzelner Individuen zurückgeführt werden müssen.
+Durch die Unterstellung rationalen Verhaltens wird das Individuum zur
+stabilen analytischen Einheit, deren Zusammenwirken das große Ganze des
+Wirtschaftsgeschehens erklärt. Obwohl das daraus resultierende Modell
+des Homo oeconomicus häufig als unrealistisch kritisiert wird, erfüllt
+es in der Wissenschaft die Funktion eines notwendigen Referenzmaßstabs.
+Es ist für den Erfolg der Modellbildung nicht zwingend erforderlich,
+dass sich jeder Mensch in jeder Situation vollkommen rational verhält;
+es genügt, wenn sich hinreichend viele Menschen oft genug annähernd so
+verhalten, als ob sie rational handelten, um brauchbare Prognosen zu
+ermöglichen [@sellenthin2022; @zuckarelli_mikrookonomik_2023].
+
+In den letzten Jahrzehnten wurde die strenge Rationalitätsannahme durch
+Erkenntnisse der Verhaltensökonomik ergänzt und relativiert, wobei das
+Konzept der beschränkten Rationalität an Bedeutung gewonnen hat. Dieses
+erkennt an, dass Menschen aufgrund begrenzter kognitiver Kapazitäten,
+unvollständiger Informationen und zeitlicher Beschränkungen oft keine
+globalen Optima berechnen können. Statt einer Maximierung verfolgen
+Individuen in der Realität häufig einen satisfizierenden Ansatz, bei dem
+sie sich mit der ersten Handlungsoption zufrieden geben, die ein zuvor
+definiertes Anspruchsniveau erfüllt. Auch wenn diese realistischeren
+Modelle menschliche Fehlentscheidungen und die Nutzung von Heuristiken
+einbeziehen, bleibt die klassische Rationalitätsannahme als normativer
+Maßstab und Ausgangspunkt für die theoretische Analyse unverzichtbar.
+Sie stellt sicher, dass wirtschaftspolitische Maßnahmen auf einer
+logisch konsistenten Basis geplant und deren Auswirkungen auf die
+Anreizstrukturen der Akteure abgeschätzt werden
+können[@zuckarelli_mikrookonomik_2023].
+:::
+
+Das Folgende ist fast wörtlich aus @detel_grundkurs_2007 S. 20
+übernommen.
 
 ## Basisschema der Handlungserklärung
 
-1. Person $S$ wünscht, Ziel $Z$ zu realisieren.
+1.  Person $S$ wünscht, Ziel $Z$ zu realisieren.
 
-2. $S$ glaubt, die Handlung $H$ sei ein Mittel, um $Z$ zu realisieren.
+2.  $S$ glaubt, die Handlung $H$ sei ein Mittel, um $Z$ zu realisieren.
 
-3. **$S$ vollzieht Handlung $H$**.
-
+3.  $S$ vollzieht Handlung $H$.
 
 Das Basisschema ist noch unvollständig:
 
-- Was ist, wenn es für $S$ bessere Handlungen als $H$ gibt, $Z$ zu
-realisieren? Dann wäre es nicht vernünftig, $H$ zu vollziehen.
--  Was ist, wenn es $S$ $H$ gar nicht vollziehen kann?
--  Was ist, wenn $H$ mit negativen Folgen einhergeht, die schlimmer
-sind, als $Z$ nicht zu realisieren?
--  Was ist, wenn $S$ noch weitere Ziele realisieren will, die mit $Z$
-nicht vereinbar sind?
+-   Was ist, wenn es für $S$ bessere Handlungen als $H$ gibt, $Z$ zu
+    realisieren? Dann wäre es nicht vernünftig, $H$ zu vollziehen.
+-   Was ist, wenn es $S$ $H$ gar nicht vollziehen kann?
+-   Was ist, wenn $H$ mit negativen Folgen einhergeht, die schlimmer
+    sind, als $Z$ nicht zu realisieren?
+-   Was ist, wenn $S$ noch weitere Ziele realisieren will, die mit $Z$
+    nicht vereinbar sind?
 
 $\Rightarrow$ **erweitertes Schema der Handlungserklärung**
 
-
 ## Erweitertes Schema der Handlungserklärung
 
-1. $S$ hat die Absicht, Ziel $Z$ zu realisieren.
+1.  $S$ hat die Absicht, Ziel $Z$ zu realisieren.
 
-2. $S$ glaubt, dass, wenn sie Handlung $H$ vollzieht, sie somit $Z$
-realisieren kann.
+2.  $S$ glaubt, dass, wenn sie Handlung $H$ vollzieht, sie somit $Z$
+    realisieren kann.
 
-3. $S$ glaubt in der Lage zu sein, $Z$ zu realisieren und $H$ zu vollziehen.
+3.  $S$ glaubt in der Lage zu sein, $Z$ zu realisieren und $H$ zu
+    vollziehen.
 
-4. $S$ weiß, wie man $Z$ realisiert und $H$ vollzieht.
+4.  $S$ weiß, wie man $Z$ realisiert und $H$ vollzieht.
 
-4. $S$ glaubt nicht, dass es etwas Besseres gibt als $H$, um $Z$ zu
-realisieren.
+5.  $S$ glaubt nicht, dass es etwas Besseres gibt als $H$, um $Z$ zu
+    realisieren.
 
-5. $S$ glaubt nicht, dass der Vollzug von $H$ Folgen hat, die schlimmer
-sind als nicht $Z$ realisieren zu können.
+6.  $S$ glaubt nicht, dass der Vollzug von $H$ Folgen hat, die schlimmer
+    sind als nicht $Z$ realisieren zu können.
 
-6. $S$ hat nicht die Absicht, ein Ziel zu realisieren, von dem $S$
-weiß, dass es unvereinbar damit ist, $Z$ zu realisieren, und das
-sie $Z$ gegenüber vorzieht.
+7.  $S$ hat nicht die Absicht, ein Ziel zu realisieren, von dem $S$
+    weiß, dass es unvereinbar damit ist, $Z$ zu realisieren, und das sie
+    $Z$ gegenüber vorzieht.
 
-7. **$S$ vollzieht Handlung $H$.**
+8.  $S$ vollzieht Handlung $H$.
 
 ## Zwischenfazit
 
-- Erklärungen rationaler Handlungen unterstellen nicht zwangsläufig,
-dass die handelnde Person "alles richtig"  macht. 
--  Insbesondere lässt es beschränkte Handlungsmöglichkeiten zu und unvollständige
-oder fehlerhafte Informationslagen.
-- Das **Rationalprinzip** ist weniger eine Behauptung über die handelnde
-Person, sondern ein Schema, eine **"Grammatik" der Erklärung**.
+-   Erklärungen rationaler Handlungen unterstellen nicht zwangsläufig,
+    dass die handelnde Person "alles richtig" macht.
 
-- Diese Grammatik verwenden wir sowohl in der Spieltheorie als auch in der Verhaltensökonomik  
-  - Schwerpunkt **Spieltheorie**: Individuen handeln nach (dem richtigen) mathematischen Kalkül und machen höchstens zufällig Fehler  
-  - Schwerpunkt **Verhaltensökonomik**: Individuen handeln nachvollziehbar, aber nach Kalkülen, die nicht ganz "richtig" sind.
+-   Insbesondere lässt es beschränkte Handlungsmöglichkeiten zu und
+    unvollständige oder fehlerhafte Informationslagen.
+
+-   Das **Rationalprinzip** ist weniger eine Behauptung über die
+    handelnde Person, sondern ein Schema, eine **"Grammatik" der
+    Erklärung**.
+
+-   Diese Grammatik verwenden wir sowohl in der Spieltheorie als auch in
+    der Verhaltensökonomik
+
+    -   Schwerpunkt **Spieltheorie**: Individuen handeln nach (dem
+        richtigen) mathematischen Kalkül und machen höchstens zufällig
+        Fehler\
+    -   Schwerpunkt **Verhaltensökonomik**: Individuen handeln
+        nachvollziehbar, aber nach Kalkülen, die nicht ganz "richtig"
+        sind.
