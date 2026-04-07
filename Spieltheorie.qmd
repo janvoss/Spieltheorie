@@ -119,7 +119,6 @@ display(advanced_gt_graph)
 
 ### Grundsätzliche Struktur eines Spiels
 
-[![Allgemeines Struktur eines Spiels](figure/Allgemeine-Struktur.png){width="50%"}]::
 
 ```{python}
 #| message: false
@@ -275,6 +274,24 @@ for element in Nash_GG:
 ```{python}
 print(f"Nash-Gleichgewicht(e) in reinen Strategien: {', '.join(Nash_GG_filtered)}")
 ```
+
+
+:::{.callout-note 
+    icon=false 
+    collapse=true }
+# Spielegenerator {-}
+
+Hier kann man nach Nash-Gleichgewichten suchen.
+
+
+<iframe 
+  src="https://janvoss.shinyapps.io/Spielegenerator/" 
+  width="100%" 
+  height="800" 
+  title="Spielegenerator">
+</iframe>
+    
+:::
 
 ##### Koordinationsspiel
 
