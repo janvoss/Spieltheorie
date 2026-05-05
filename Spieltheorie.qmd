@@ -1069,9 +1069,9 @@ print(sol)
 
 Spieler spielen nacheinander. Dabei kann man die Fälle unterscheiden, dass die Spieler ihre vorherigen Züge sehen können oder nicht oder unvollständig. Man kann ebenso die Fälle unterscheiden, dass sie die Auszahlungen der Mitspieler kennen oder nicht oder unvollständig informiert sind.
 
-### Vollständige Information
+### Vollständige und vollkommene Information
 
-Annahme: Alle Spieler kennen alle Auszahlungen und sehen alle bislang erfolgten Spielzüge
+Annahme: Alle Spieler kennen alle Auszahlungen (vollkommen) und sehen alle bislang erfolgten Spielzüge (vollständig)
 
 Darstellung des Spiels mittels eines Spielbaums. Die Benennung der Auszahlungen mit $A,a$ für oben rechts usw. folgt der Darstellung für simultane Spiele.
 
@@ -1086,19 +1086,6 @@ Sequenzielle Spiele wereden 	&bdquo;von hinten nach vorn&ldquo; gelöst. Man lö
 ![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-a-1.png){width="50%"}
 
 ![Beispiel für Rückwärtsinduktion](figure/Baum-Rückwärtsinduktion-b-1.png){width="50%"}
-
-##### Bedingungen für ein Nash-Gleichgewicht
-
-Zunächst vereinfachende Annahme: $a\neq c\ \text{und}\ b \neq d$
-
-
-**ol**: $a>c \land ((A>B\ \land\ b>d) \lor (A>D\ \land\ d>b))$
-
-**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d))$
-
-**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))$
-
-**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))$
 
 
 
@@ -1192,7 +1179,31 @@ print(Nash_GG_filtered)
 
 -   Für später: Ein Teilspiel darf nachfolgende Informationsmengen nicht teilen. Es gehören also immer alle Knoten einer Informationsmenge zu einem Teilspiel
 
-Beispiel: Unglaubwürdige Drohung
+- Was passiert, wenn Spieler 2 gleiche Auszahlungen bei links und rechts erhält?
+
+![Auszahlungen von Spieler 2 sind gleich](figure/Baum-Gleiche-Auszahlungen-S2-1.png){width="50%"}
+
+$\rightarrow$ Spieler 1 kann nicht antizipieren, was Spieler 2 im Fall "unten" macht. 
+
+$\rightarrow$ Kriterium für Entscheidung unter Risiko
+
+Mögliche Kriterien:
+
+- **Erwartungswert**
+- Erwartungsnutzen
+- Maximin
+- $\dots$
+
+Hier unterstellt: Erwartungswertkriterium
+
+
+#### Spiele zum Üben
+
+<iframe src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IIgK60ABAB4AtJIBm1CQBMAClADmcdiMmTStUtTgaIcarrAARVtBi1OBbnEkBlVLQtwMkgGpE1NQA1kQw8OaSAJIQCkSMMFCGJEJgArh6kpy0KnD0LAAyUKxEYqS6EPr62bn5jGYWFVVVUATJEABCZaQkVuYA7gD6mrBwqbiSqQBycGJwnO6eFuOSBNRQnAsAvJNg9KQQsqiMtIlsK5ykrCaSO6n9OaTciJIAjAAM7wCkANyp6Zlmkx2OlJMCAZVmpJWu0uqQehArDwiENOIEVqkCgA3zhiCCaaEQABecFo2lEeFW602t12+0OuIIBHmnAuVxudzADxUTxeH2+fzSgMkEOaiT4DUsqGoRFIAHkyqgylYRvAACqMOCmGWkFYuMncUi01IAVk+qAAHv9hJCbTaRJw4IwAG5OmTyBR4tq0Xp8JWkCalUj+gSSECZF3uySamG0V1+KDKebsVDFIgKBTbSRTACqBQKE2RqMCZR9lR2ADEAIIFNwAURt+ky5KdSTgw1GUc9EG9vVD4ch+hdABJUyUMws5Fk4KQpqNOFxYNKdO9EABOCYADgmmulrVcOzVWBzDYmJnhTs4wFeiE3AF1G1UR0XBmjlO0o9Xa3XMgBfTKZEQ9COi6cB1q6ZDsH6ZTDgMHbwBMICSC2zDkPBOihr+ExkhA8RwLm+a0l+9aPkBIGuuBFDlNBpDDi+b6IdGzp0dwKKviWH6HsedaSL+j6AYqMGqnAGpamoOpRpqEC5PUOrsAOzSagAjuwI5jummaPvoqCScx6kTsKwoAMSSAA0kQ8QqHwbaVLkCh8F4UnGZIADqYiMCSljvLg7ygmoABMgxARQ7CvLgrx+YFeLkIiYWyBFzkaOOmYvOw-kTK8GAmqCaUTO8WU5elkiyPl2UTLlxWZdlhmDpIJnibKsgVhQlxus68T0E6pIxcK0qyuwBEFpIFp0DAWwEOwJVZRMADMoLXKc42TUV-mglAFrzFsxF1hMI1QPQWypCs1z7YdYArOKEBnXWZBOPqKh4ponD5GIMD-DVzQmVgAA-BDBP0AAnjCkNk0liMEH4FEQmi0MEwpvoMAWDD0OlTrQCgpsAqT0Kkd6SAAfDsqBY2AKi46GqR0BAwSsmAkgWI6uyas4IOpHV0K4AQxX42CuAqJIpxZEuJjOewAASfD9KSnAvFEziSBAZQkpIvBusTN73pIMmSHWfAKK03D6ka3CJp1jBaezVZbGF0JbEVADCWwzRMBBbAALBMHRbCaEwHQAbBM1hbAA7BMKhbJuky1c5uuxAbXWSAAWmIlmK-iijfYwWteJIUMw8EiDClWUbq3ePzQiXwD+WXkj25XM011zU7E27d7Ch0lcmjX9CV37NfWJXwc1-zzfAPeH1VEQqCkMjU9Ruj7BQATqwUzQfA02zDOuAvXM81Aq-M4atP09QjPY6SuRHbVU8z-QsrzxjPc8yoq9UxvdNbwLGP8zz9AH3ALNj6f3PjkMY51o61RMnWPwGcs5qFeMKOAzpZ6o3kAvJePMCChmLp-Hey9961xPozdgVYADU9sBAAHp-KIOQXfI0aNH7LxfpIDuuDv7Lz-pIAen92AdFIdYKhNDr7T0GKgV4D92BIJQcvaR9DV7BQpEQ7eGM5H3x5tIlGq9ooUE3qfVwIDL7gOFCoZgQw4AqG0F2L07R2AWm8pIVgDiLQ21YDbWMroto1hImGYU+gqbJgmvY3aEUXbsCcRMNxoJiDUC2Og70rpJAADIklMRYmxN8pYSD-zJh-fRdJ1h-QxLVKEVRqD9HDvEwwiSUlpPohxMsoY3bKMkKtYU-5RCQLMlAMgFBJAkloM4cwnTmimKgOYyxK48oZRmZIG+YiJFfD4F8VYVhFEYj2BfMBAhQxVHqhI9ZtUxkTO0OwBxDibbxUDKI8RkglkQBWRNVIOiKQTEMds0M+zJAvJMWYwYFjTk2xtkVKq1yZ4ozucs1ZlN160zeZs0B1oo6jL+QCnQQKJhFVKmCmR9zHlWEPqzSk7zrS-PGf8yZoUJhXNadS7FczRH0MhQ86Fa9qZwrpFs0lRzUWUsucC6loKGW33vni1lhKOUkrSBbZyplcIxWSZINUcALS6lqqgIgfAQbsAmhcjK0SzmzPiqCVAzg7Y23oJoM6-ReDkBWMyC0dsLbkFVYayQ+UiqpA8F4EwWcEGUjiGQJ1woXXlCBRgZ2uxvXeCzjQgNJBSDBtqqGqlxV8qhyjUsX1rSViBsTW0iBn1JBJQ0gsHpAzyQhpVeUfyGBw0+0kKmVq7wrBWAmFWeFGRKRQHhcINIEwoAqAAFZbAcTEs6KgWDBE1Lk511a0p1rytNRtGxyAttSG22unb7W9v+AO4do6XaBAnVOmd71k3ztrZc+lTa12tpWB0bdlJ6C7v7dCA9Y7j2pEnYwadFjz3NBTVewVy7b1wHXWATd1gn1h1fWtD9R7YnftPf+oUkI+IiA6Q6Xg-AqzoHYBIQsTpXTmxEGAX8d4gA66" width="100%" height="1000" title="Sequenzielle Spiele">
+
+</iframe>
+
+#### Unglaubwürdige Drohung
 
 ![Unglaubwürdige Drohung](figure/Baum-Unglaubwürdige-Drohung-1.png){width="50%"}
 
@@ -1201,7 +1212,7 @@ Hier: Tafelaufschrieb Markteintrittsspiel
 
 #### Selbstbindung
 
-Hier: [Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie](https://neo.hfwu.de/sendfile.php?force_download=1&type=0&file_id=c47cc228ea9b922bd29c873be1980fa3&file_name=Baum_Weltvernichtung_komplett.pdf)
+Hier: [Sonderabbildung Weltvernichtungsbombe aus @Winter-Spieltheorie](https://neo.hfwu.de/sendfile.php?force_download=1&type=0&file_id=04132da2a393b3f78abb0220af419a13&file_name=Baum_Weltvernichtung_komplett+%282%29.pdf)
 
 - Automatisierung der Drohung erzeugt erwünschte Glaubwürdigkeit
 
@@ -1301,44 +1312,12 @@ $E_A=$
 
 $E_{kA}=$
 
-### Unvollständige Information
+### Unvollkommene Information
 
-#### Alles beobachtbar, aber Auszahlungen für Spieler 1 u/o 2 können gleich sein
+- Zug von Spieler 1 ist für Spieler 2 unsichtbar
 
-![Auszahlungen von Spieler 1 sind gleich](figure/Baum-Gleiche-Auszahlungen-S1-1.png){width="50%"}
+- Durch eine gestrichelte Linie im Spielbaum werdn die Knoten verbunden, die ein Spieler nicht voneinander unterscheiden kann. Die spielende Person weiß also nicht, ob sie sich in dem einen Knoten am einen Ende der gestrichelten Linie befindet oder am anderen Ende.
 
-$\rightarrow$ Spieler 1 muss sich irgendwie entscheiden, aber Spieler 2 kann die Entscheidung sehen.
-
-$\rightarrow$ Unproblematischer Fall
-
-![Auszahlungen von Spieler 2 sind gleich](figure/Baum-Gleiche-Auszahlungen-S2-1.png){width="50%"}
-
-$\rightarrow$ Spieler 1 kann nicht antizipieren, was Spieler 2 im Fall "unten" macht. 
-
-$\rightarrow$ Kriterium für Entscheidung unter Risiko
-
-Mögliche Kriterien:
-
-- **Erwartungswert**
-- Erwartungsnutzen
-- Maximin
-- $\dots$
-
-Hier unterstellt: Erwartungswertkriterium
-
-Die Bedingungen für ein Nash-Gleichgewicht bei sequenziellen Spielen lauten dann:
-
-
-[ja wie?]::
-
-
-**ol**: $a>c \land ((A\geq B\ \land\ b \geq d) \lor (A \geq  D\ \land\ d \geq b) ) \lor a=c \land ((b>d \land (\frac{A+C}{2} \geq B)\lor (d>b \land \frac{A+C}{2}\geq D) \lor (b=d \land(\frac{A+C}{2}\geq \frac{B+D}{2})))$
-
-**or**: $c>a  \land ((C>D\ \land d>b) \lor (C>B\ \land b> d)) \lor a=c \land ((b>d \land (\frac{A+C}{2} \geq B)\lor (d>b \land \frac{A+C}{2}\geq D) \lor (b=d \land(\frac{A+C}{2}\geq \frac{B+D}{2})))$
-
-**ul**: $b>d \land ((B>A \land a>c)\lor(B>C \land c>a))\lor b=d \land ((a>c \land (\frac{B+D}{2} \geq A)\lor (c>a \land \frac{B+D}{2}\geq C) \lor (b=d \land(\frac{B+D}{2}\geq \frac{A+C}{2})))$
-
-**ur**: $d>b \land ((D>A \land a>c)\lor (D>C \land c>a))\lor b=d \land ((a>c \land (\frac{B+D}{2} \geq A)\lor (c>a \land \frac{B+D}{2}\geq C) \lor (b=d \land(\frac{B+D}{2}\geq \frac{A+C}{2})))$
 
 ```{python}
 #| include: false
@@ -1433,9 +1412,6 @@ for element in Nash_GG:
 print(Nash_GG_filtered)
 ```
 
-#### Zug von Spieler 1 ist für Spieler 2 unsichtbar
-
-Durch eine gestrichelte Linie im Spielbaum werdn die Knoten verbunden, die ein Spieler nicht voneinander unterscheiden kann. Die spielende Person weiß also nicht, ob sie sich in dem einen Knoten am einen Ende der gestrichelten Linie befindet oder am anderen Ende.
 
 
 ![Baum Zug 1 unsichtbar ](figure/Baum-Zug1-unsichtbar-1.png)
@@ -1443,8 +1419,7 @@ Durch eine gestrichelte Linie im Spielbaum werdn die Knoten verbunden, die ein S
 
 - Fehlende Information für Spieler 2 ist auch kein Problem, wenn Spieler 1 eine dominante Alternative hat.
 
-- Wenn Information nicht vorliegt, Entscheidungskriterium unter Risiko nutzen. Hier: Erwartungswert
-
+- Wenn Information nicht vorliegt, dann ist die Situation analog zu simultanen Spielen: Spiele in gemischten Strategien
 ```{python}
 #|echo: false
 #| eval: false
@@ -1519,6 +1494,12 @@ for element in Nash_GG:
 print(Nash_GG_filtered)
 ```
 
+
+### Spiele zum Üben
+
+<iframe src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IIgMQACALwzZc+QsVKF4iQEYMEgKqc4jCQEkyegGZQCcCey0HhEScsdPnIgK60JAHgC0Ek9XcAEwAFKABzOHYRCQlSWlJqOFCIOGoosABlVFpU0m44IkYcxAksnOp6KFcYCQAyCQBBV04ALyhuAIgwzhgoUiKADyEwAVxoiXHOWkC4SsYAGShWIldSKIgYmKmZueTU9c3N8ziSACFV0hJ0lIB3AH0w2Dhh3AmwADk4VzhOUuzUiR6FpfCKiPATDaHKHQzYEahQTi-KRveikCDeVBFXpsF4QmH4w6cUisRLSN43aZ5EpqAAMNIApABuCTYsJ8bz0IikS4wakAVlQA0Zw1G40OYqOBBOEHO3Kuwx4RHunCI1Fxw3mADfOK4uhIoBBgbRQerIQT8XCEUiUWjvDqCBZEabzQSiSTLMjhhTAlT1HSmSKxmbNhKYtxGOxRcGw6lUAAVOADNbDDSNVwmCQAck+31+ZVSmYkAGs6AQixRXtUJC10wAT6h0CJp1rtTqg6uuCSgvQ5RgUDCB0MSfLUeOJ5NgABMmgAanp7fkNhkchJAiu+3wKFZghl3gBRAQSXWBLtwGC0TgEbjkDbsACyu4PEgA4olaFeIhSr+QO34+DMIAHEYg2hEcxyTdIAGZNCaDNMy1HU9QNI1QULEt33LCBKxqPdGAiegIAvXRf0xAAfkx+0HaNhwjKNQNjBMIKJRgSDCdI41odAO30O8+kGRARToqEwMYicjFXPQJAQ3UwgkG49AA1cV0zU4fhvRoyBuQob0LFjSBZFgi17UhND3PgJAAMVSE9z30lp5I8PStwALVbLcL30uBzI3FJfneBFuG8V8vI-OAv2vIC7EOISYglXo+D2NIh0kVTpksYJqC5X5dXIHyDRmfRkK8k1qNQTLSAAeVWVBVnSR54DjPsknK3F8mNa8yWGAAWOlBVxb08k6sBaQZKjQNo15JEaigIDoQjnlK8qqtIGqJ3quBeP6WgBgyrlWuKjrPTALq+RpPrwQG7ghpG+kRQlKKJDsOxVGcV63tkVRp1KPQADdJPmIg2SLF73tBxwRF0Rg-v0Hw-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-oXagE1UArwBsQ4uVPt-tM8eVNs-91A3Vet+do0nVo03c+8AB2PkX-dIDINQTODIScXA-A4CPwEgP7HvD7frZEDQAHCUaLWLa3TvOHTfV4agYkMkarNLI6GqRgf2XEHLNgl-TYTbacJ3XfIWIkOAGkdIdIV4BoEXMYcEKAEXQjBNKAQIAAKzJAFw4LeECEMj7B8R+xILYPIK+2oODCEO+zOzdzEPIEkOGGkIkGzjkNxAICUMDH1HUM0N63uyOl0MYCLH0NxF+2MLAIoKzTMMOAsK7yjWsIRFsKkNxFOGcPBHoDcKINUI0M6W8L2V8L0PoyCKMP+xMMoOjSgPHHYGEO31dzEziIkISPBBLmSNeB4zeGUP408KyLuxyJ0LyIMOIJGyKNCNMIekvk7hiGwVwRAW1kgR7yPT4m2isHeAwV5lbUwV5Q2FOAREsCwG1kmJwXwWqj3nWk2kGBmPcW4z0CoXWxiHoUYW4U8QEJiE4XcXuKMS8TAAEWEX1EcWMWkV8U2HkRePETeOUVUS+I0SBMUXeN0VkWDAMUhM8WUVMS+IsQRJBLcxkQlAcTRKsWURcS+LcXZleNxO8UxJB0OBSjUm8GJjphIGIgshYHoG8ABiBisApEYBPAgFcH0D0leHkggA2B7VkimG-DmDN1IB5SMzuGeMC3Mym1fhLR-mBSZRZRszswcyczfRvxRA82Bkp2DClNETMzuKfj0wVkbmBQ5XDTVPs0c2c21Lc11K80OClMBNlJNM-nNKVmBTFWRAlTeFs1tM1LADr3c3MD1IlClIhPdPlP029PqClWRBlQDPVLtK1M1x1PDOdNhAy3hJjOrk9MVNm3qBVWRDVRTKDPtIzMdKzP1JdIy1RPzNNOmwtPqA1WRC1QrI1KrIpzDM8zrJzOM2xKbMLJm1WQkAcU5VNS7LTJDIdLAD7IjINIy0JN5TlILNUzjKVNaWNXMRtO7PTN7KdIHPJVfxYHQxYHtQYNgJdTdR5TKj9VuB9X8U9QDUCCDRDWTSvO8GgjdzG3Y1DW-N-NeC6kgMeOg1cAW1Q0sGNNjK9JIB3S-UsFcg6C3GxCMkNg2DXEsDULCi8jnSzFUnEI0lIC0kYFIEzEPNvxPNiHiDQwwyOiaBbA6Bkh6HmP63YCWLbRWIIw7UgpI0gt6Tous3YWDEkGfHiFyjmhyA2CNCvBSGZkJDgBi23h9iHAGBWXDTTV7x0u32qwFwBxlkOFYE0tTQF1dWGQsp-O3ysv-PUrUCvOqycr0uh1jRik2FYAcq0vMpsteAsv8vcpiD4JKL5HulEopNjnHG8BLinggEqAT2HRMHrSNnMPHDuF0NICNN8AyqgAwBMGYFnnUu-JiKqN3z7xQOqKzTdxKqqozwqqF2nB0sQMF2GWnFQMCsTUcoz3QKqL0uQPTzOx6uGS70ar-IwH8vGqQMgiGp3wADZJw3cupocOqbsrzFDGhXhUiJAkiuVXgnDVxXhGj3djdM599wRhgEdM4xdzrMh-hEh9BCCRdYFJIcDgIhwDQwhSRvLXKWqBc-qfr-qWqg4BdgafrgaOrfs7hKhiItLI5ry1BDKyCe8OqjNCgrzDTsjpTMatqpSdqozMb9qpSWipSjq4aaz+zXhZrbdNhwKppxxLBzJsKEN2LqwGYFKJRW19d1j1BEAIAWIbh2Bit0q+gZVlNBDyjk4JAwihacqHYBhgBaBBF2MyQZaRaHZWAFala8QYQbtrRVbMqHYbtNak5qIthyKVa0rZaPrEhjbtboRgjkR9aoAHZIboa4BbbJbtCnaHZUbGAPbTahiQqhwKNwrNhJBKZ2hGBLw2pZogNyx4gtx7xHxDwDQlJtjaxx19ACpmatp+s5LuAFKfteYCKhT+1yZylKk4KiyxaYg2lYYkkuVTt0lMlqJLk8lTtClHDmsJyhwScQkwlIVdl+7IsJt81CUGlskmlxy2l7kuk1tJaDkBkGUTwRkJBxlGlJbTlF6AVllxzt7PAIU+7YZF6hxKMoRTkMUsUJ7Jkrlp7bl2lOka7NhYVXl3lHDPlLlN7fll0wVAVxyX6D6ADB6olfBYVT6R7oQL7x6Sd8VL76ka9SV56A7JBggHKI7wxo7f1SxuB471IcUjwKF1AMRAcityjvA2qpqhr-cS9cdz9id1dsiHsnsXs3sCiBikbOBzbkRwbJbNtyGMBUDSr5q3dqHx8UxFcK8L8iGYHGGjpHtntXt3t+jSDqtOHSCeHkGIEmt0Go6rwsG46vI8HcljwiGrleGyHnVoJM1RHA86Hp8SVZGAzmHFG2GVGSHYhyjLHs1MZi8xGFdJ9K9wQy8GGuimGFHWHwQHbkbwHp1xhRiIBjkQY9iwZVAGguIiQWAbwknkn3oIZeB+A0nUB2B3AyR3BMYb59BkQN5GA7AwA25BEgA" width="100%" height="1200" title="Sequenzielle Spiele">
+
+</iframe>
 
 #### Typ von Spieler 1 (und damit die Menge seiner Auszahlungen) ist für Spieler 2 unsichtbar
 
