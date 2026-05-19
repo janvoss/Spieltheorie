@@ -30,5 +30,8 @@ format:
   pdf:
     documentclass: scrreprt
 
+engine: knitr
+
 editor: source
+
 
