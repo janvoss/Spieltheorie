@@ -1590,8 +1590,132 @@ $$\bar{f}(P_t) = p_1 f_1(P_t) + (1-p_1) f_2(P_t)$$
   - Randlösungen: Eine Strategie setzt sich komplett durch
   
   - Stabile Anteile der Strategien
+  
+  
+### Ein Beispiel: Das Gefangenendilemma
 
-### Einige Spiele
+#### Grundlagen
+
+Um die Dynamik im Gefangenendilemma mit der formalen Notation abzubilden, definieren wir zunächst die Strategien und die Auszahlungsmatrix (Fitnesswerte).
+
+```{python}
+#| message: false
+#| warning: false
+
+# Python
+
+
+A= 3
+a= 3
+B= 5
+b= 0
+C= 0
+c= 5
+D= 1
+d= 1
+
+
+from lets_plot import *
+
+LetsPlot.setup_html()
+
+ggplot() + \
+geom_text(x=- .5, y= 2   , label=a) +\
+geom_text(x=-1.5, y=  .75, label=A) +\
+geom_text(x=- .5, y=-1   , label=b) +\
+geom_text(x=-1.5, y=-2.25, label=B) +\
+geom_text(x= 1.5, y= 2   , label=c) +\
+geom_text(x=  .5, y=  .75, label=C) +\
+geom_text(x= 1.5, y=-1   , label=d) +\
+geom_text(x=  .5, y=-2.25, label=D) +\
+geom_text(x=-1  , y= 3.3 , label='1')+\
+geom_text(x= 1  , y= 3.3 , label='2')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='1')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='2')+\
+geom_text(x= 0 , y= 4 ,
+          fontface = "bold", label='Spieler 2')+\
+geom_text(x=-2.7 , y= 0 , angle=90,
+          fontface = "bold", label='Spieler 1')+\
+geom_segment(x=-2,  xend= 2, y= 0, yend= 0) +\
+geom_segment(x=-2,  xend= 2, y= 3, yend= 3) +\
+geom_segment(x=-2,  xend= 2, y=-3, yend=-3) +\
+geom_segment(x=-2,  xend=-2, y=-3, yend= 3) +\
+geom_segment(x= 0,  xend= 0, y=-3, yend= 3) +\
+geom_segment(x= 2,  xend= 2, y=-3, yend= 3) +\
+theme_void()+\
+labs(title='Auszahlungen in einem Gefangenendilemma')
+```
+
+* **Strategie 1:** Kooperieren ($C$)
+* **Strategie 2:** Defektieren ($D$)
+
+Die Auszahlungen ($u_{ij}$) beim Aufeinandertreffen der Strategien lauten:
+
+* $u_{11} = 3$ ($S_1$ trifft $S_1$)
+* $u_{12} = 0$ ($S_1$ trifft $S_2$)
+* $u_{21} = 5$ ($S_2$ trifft $S_1$)
+* $u_{22} = 1$ ($S_2$ trifft $S_2$)
+
+Die Populationsdynamik wird über die Variablen aus dem Modell beschrieben:
+
+* $p_1$: Anteil der Strategie-1-Spieler (Kooperierer)
+* $1 - p_1$: Anteil der Strategie-2-Spieler (Defektierer)
+* $f_1(P_t)$, $f_2(P_t)$: Fitness der jeweiligen Strategie zum Zeitpunkt $t$
+* $\bar{f}(P_t)$: Durchschnittliche Populationsfitness zum Zeitpunkt $t$
+
+Für eine schrittweise Betrachtung in Runden approximieren wir die kontinuierliche Differentialgleichung ($\dot{p}_1$) durch die zeitlich diskrete Veränderung ($\Delta p_1$):
+$\Delta p_1 = p_1 \left(f_1(P_t) - \bar{f}(P_t)\right)$
+
+#### Runde 1 ($t=0$)
+
+Wir starten mit einer Zusammensetzung der Population ($P_0$), in der 80 % der Individuen kooperieren.
+
+* $p_1 = 0,8$
+* $1 - p_1 = 0,2$
+
+**1. Fitnessberechnung:**
+$f_1(P_0) = p_1 u_{11} + (1 - p_1) u_{12} = 0,8 \cdot 3 + 0,2 \cdot 0 = 2,4$
+$f_2(P_0) = p_1 u_{21} + (1 - p_1) u_{22} = 0,8 \cdot 5 + 0,2 \cdot 1 = 4,0 + 0,2 = 4,2$
+
+**2. Durchschnittsfitness:**
+$\bar{f}(P_0) = p_1 f_1(P_0) + (1 - p_1) f_2(P_0)$
+$\bar{f}(P_0) = 0,8 \cdot 2,4 + 0,2 \cdot 4,2 = 1,92 + 0,84 = 2,76$
+
+**3. Veränderung des Anteils ($\Delta p_1$):**
+$\Delta p_1 = 0,8 \cdot (2,4 - 2,76) = 0,8 \cdot (-0,36) = -0,288$
+
+*Kernaussage:* Da die Fitness der Kooperierer ($2,4$) unter der Durchschnittsfitness ($2,76$) liegt, schrumpft ihr Anteil.
+Der neue Anteil der Kooperierer für die nächste Runde sinkt auf:
+$p_1(t=1) = 0,8 - 0,288 = 0,512$ (bzw. 51,2 %)
+
+---
+
+#### Runde 2 ($t=1$)
+
+Die neue Zusammensetzung der Population ($P_1$) lautet nun:
+
+* $p_1 = 0,512$
+* $1 - p_1 = 0,488$
+
+**1. Fitnessberechnung:**
+$f_1(P_1) = 0,512 \cdot 3 + 0,488 \cdot 0 = 1,536$
+$f_2(P_1) = 0,512 \cdot 5 + 0,488 \cdot 1 = 2,56 + 0,488 = 3,048$
+
+**2. Durchschnittsfitness:**
+$\bar{f}(P_1) = 0,512 \cdot 1,536 + 0,488 \cdot 3,048 \approx 0,7864 + 1,4874 = 2,2738$
+
+**3. Veränderung des Anteils ($\Delta p_1$):**
+$\Delta p_1 = 0,512 \cdot (1,536 - 2,2738) = 0,512 \cdot (-0,7378) \approx -0,3778$
+
+Auch in dieser Runde wächst die Strategie mit der überdurchschnittlichen Fitness (Defektieren), während der Anteil der Strategie 1 weiter einbricht.
+Der neue Anteil der Kooperierer sinkt auf:
+$p_1(t=2) = 0,512 - 0,3778 = 0,1342$ (bzw. 13,4 %)
+
+#### Fazit zur Dynamik
+
+Der Rechenweg demonstriert den zentralen Mechanismus der Replikatorgleichung: Solange der Term $\left(f_i(P_t) - \bar{f}(P_t)\right)$ negativ ist, verringert sich $p_i$. Im Gefangenendilemma ist $f_1(P_t)$ für jeden Wert von $p_1 \in (0,1)$ stets kleiner als $\bar{f}(P_t)$. Der Anteil der Kooperierer schrumpft unaufhaltsam, bis die Randlösung $p_1 = 0$ (die gesamte Population defektiert) erreicht ist.
+
+### Einige weitere Spiele
 
 #### Koordinationsspiel
 
@@ -1635,10 +1759,10 @@ geom_text(x= 1.5, y= 2   , label=c) +\
 geom_text(x=  .5, y=  .75, label=C) +\
 geom_text(x= 1.5, y=-1   , label=d) +\
 geom_text(x=  .5, y=-2.25, label=D) +\
-geom_text(x=-1  , y= 3.3 , label='I')+\
-geom_text(x= 1  , y= 3.3 , label='II')+\
-geom_text(x=-2.2, y= 1.375, angle=90, label='I')+\
-geom_text(x=-2.2, y=-1.625, angle=90, label='II')+\
+geom_text(x=-1  , y= 3.3 , label='1')+\
+geom_text(x= 1  , y= 3.3 , label='2')+\
+geom_text(x=-2.2, y= 1.375, angle=90, label='1')+\
+geom_text(x=-2.2, y=-1.625, angle=90, label='2')+\
 geom_text(x= 0 , y= 4 ,
           fontface = "bold", label='Spieler 2')+\
 geom_text(x=-2.7 , y= 0 , angle=90,
@@ -1680,13 +1804,13 @@ if (#Anzahl_NGG == 1 or
 else:   print(f"Gemischte Strategien: p_o= {round(p_o, 2)}, p_l= {round(p_l, 2)}")
 ```
 
-Für dieses Spiel beträgt im Gleichgewicht in gemischten Strategien $p_I=p_II=0,5$
+Für dieses Spiel beträgt im Gleichgewicht in gemischten Strategien $p_1=p_2=0,5$
 
 - Erster Fall: Schon zu Beginn des Spiels entsprechen die Populationsanteile diesen Werten und die Replikatordynamik ist deterministisch. Dann ist die Zusammensetzung der Population stabil.
 
-- Zweiter Fall: Schon zu Beginn des Spiels entsprechen die Populationsanteile diesen Werten und die Replikatordynamik ist stochastisch. Dann ist die Zusammensetzung der Population instabil und konvergiert gegen $p_I=0$ oder gegen $p_I=1$.
+- Zweiter Fall: Schon zu Beginn des Spiels entsprechen die Populationsanteile diesen Werten und die Replikatordynamik ist stochastisch. Dann ist die Zusammensetzung der Population instabil und konvergiert gegen $p_1=0$ oder gegen $p_1=1$.
 
-- Dritter Fall: Zu Beginn des Spiels gilt $p_I \neq 0.5$. Dann konvergiert gegen $p_I=0$ oder gegen $p_I=1$, je nachdem ob zu Beginn $p_I$ kleiner oder größer $0,5$ war.
+- Dritter Fall: Zu Beginn des Spiels gilt $p_1 \neq 0.5$. Dann konvergiert gegen $p_1=0$ oder gegen $p_I=1$, je nachdem ob zu Beginn $p_1$ kleiner oder größer $0,5$ war.
 
 ```{python}
 #| message: false
