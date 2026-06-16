@@ -29,6 +29,61 @@ labs(title="Rote und blaue Punkte",
 
 Und jetzt reden wir über @Musgrave81
 
+## Von der dichotomen Rationalität zur kontinuierlichen Rationalität
+
+- Bislang haben wir rationales Verhalten einfach unterstellt
+
+- Aber vielleicht sind Menschen nicht völlig rational oder völlig irrational, sondern etwas dazwischen?
+
+- Und vielleicht erwarten Menschen von anderen Menschen auch nicht, dass sie völlig rational oder völlig irrational sind, sondern irgendetwas dazwischen?
+
+- Dieses "Dazwischen" kann man mit einem **Quantal Resonse Gleichgewicht** darstellen
+
+-Idee: Die Menschen suchen nach einer gleichgewichtigen Strategie, gehen aber davon aus, dass weder sie noch alle anderen Mitspieler völlig rational oder völlig irrational sind, sondern etwas "dazwischen". 
+
+### Erste Annäherung: Luce-Modell
+
+- Nach der Luce-Auswahlregel  entspricht die Wahrscheinlichkeit, eine Option zu ziehen, ihrer relativen Signalstärke im Vergleich zu allen anderen Signalen : $$P(s) = \frac{\text{Signal}(s)}{\sum \text{Signal}(\text{alle})}$$
+
+- Aber: Funktioniert nur bei positiven Signalen und Rationalität kann noch nicht skaliert werden (für das "Dazwischen")
+
+### Exponenzialfunktion als Lösung
+
+- Anstelle des Signals verwendet man je nach Entscheidung den Term $$e^{\lambda \cdot \text{Auszahlung}}$$
+
+Für eine Entscheidung links oder rechts zu spielen, beträgt die Wahrscheinlichkeit $p_l$ dann 
+
+$$p_l = \frac{e^{\lambda \cdot E_l}}{e^{\lambda \cdot E_l} + e^{\lambda \cdot E_r}}$$
+
+- Die Wahrscheinlichkeit für oben vs. unten berechnet sich analog
+
+$$p_o = \frac{e^{\lambda \cdot E_o}}{e^{\lambda \cdot E_o} + e^{\lambda \cdot E_u}}$$
+
+- Der Clou: Die Erwartungswerte ergeben sich auf der Basis dieser Wahrscheinlichkeiten.
+
+- Der Erwartungswert für oben ergibt sich als $$E_o=p_l \cdot A + (1-p_l) \cdot C$$
+
+usw. 
+
+- Das Quantal Response Gleichgewicht berechnet sich durch nummerische Iteration, sodass die Wahrscheinlichkeiten und die Erwartugswerte zusammenpassen (das können Sie in einer Klausur nicht händisch ausrechnent! Müssen Sie also auch nicht). 
+
+### Der Rationalitätsparameter lambda
+
+- Der  Parameter $\lambda$ gibt uns das Ausmaß der Rationalität an
+
+- Für $\lambda=0$ wählen alle Spieler zufällig. Die Wahrscheinlichkeit ist also genau 0,5
+
+- Für $\lambda>0$ nähert sich das Quantal Response Gleichgewicht dem Nash Gleichgewicht an.
+
+Für $\lambda \to \infty$ entspricht das QRE dem Nash-Gleichgewicht
+
+
+### QRE vs. Nash-GG in 2x2 SPielen
+
+<iframe src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IIgK60ABAB4AtJIBm1CQBMAClADmcdiMmTStUtTgaIcarrABFMVDJRqkrHE6oSnOJIDiJ2gW5tAHd-blJJADJJADkoHllfOFDg0NIhMAFcPUlOWhU4ehYAGShWIjFSXQh9fVz8wsYzCyqams46fMYASQhUCqtqWHoVKHTcSXSsKEMSRyMAE-D2EphhqAFEMYnq1t29-Rg+SQBeSQAGcZgoAA8TyQBWcYA3RzEvU4uc8lQ7s4wzgCMmWyrW4jHYwJ2rRBNVQXFIjBImisAEExJwAF5QbjKCCaThXBG0W4AZVQtAscEYkgBknYAC0kiYIMIMpC9kpVFgiEEWvtiMoYBB2AA2cYQMTwRj+Hp9SrpFFbBV0gDy9Ao4yKfAA1pwNlsXsp3pIAMwCdn8oiC4ViyQSqUy3r9dIAYSVYBdqvVEHGLgCpD1mzwkkNb1+5ph+gtrU5eW5vMjNQFkpt4slVMdcqsACF3dm6QBVMgayRaiC6-XB0PGgAs5qyUN2yaForTDoIsudYAAIu7u4Xiz7nHB-YGDa9jUDhI2ow29om4ZwEUjUeisTixHiCdNpaTyZTqQAmOlkxzkFnpeuJ2MqeN8vbN1N29PSjtO+Uod1QL0lssVoPPBOdxmtGTZWimrbPu2nYfgQ7oED+Q5+mEY5VkBpx1tOeygfoN53om+iPpB9oZm+WbpPQ7r0AO56ajqqGAUa4Y4Um4EtraJGvjBVgqO6Kg0SWyEBpWjFhqcU6JixiZghCc67Iuy54lY3Z5FA2qGJwARUpIAASfBBEknBBleM6SHC6TZkkExCGIZwmvQ1EfJIQTzDiFCSCoFKSCi6lwGIjBeE8ABv1B0JokgYmICjzKFtDhewJIBBARikH05bhOqUh-PcAgYJIABSXjcEF3DaUINl2Q5khJHirjkKF4QhIwKjjPkS5EGZVIKHAvnUtqJBPFSmgUow4QjJwkjWFgACikjaNo1TjZI2qDJwuSaaVMRxNwCR+AEKT+nS9CDGGZYUiyGCXjCoEwlcfBNJYC7UEQpAqhU5FgAAjgFajPWkwalXFYR3OkIpnGcqDXFdjZYZI07TiIniMIN1JyIom4EDMwp8HK4zlKlFQCJIIDZPjcoACTfaYf0yPIAUQJ0v0vewJONva6qIgoiKbioE1ozW4MwoMqwjLTkg4xU5PC2sMIwiiYsS6Q5MogA3JI+Zo4r5PZmrnqa++5Mumr-b6xTvaNt+puS1AavUVbSv0GrCH2+TBBq-xLu8Y2MIAMSSAA0iqWAzf7AAqBZYIgkgkqwS5wIStAbV4aiMAAPwom7hVAUWSAFfBeLE8SJMkcAhP6XjsJZcfeWQQREKNFCw-ofQBQA+tE018-IdBLhCMK0AodLywAfKc+YRFE36j5IBBEy3cDt53YsEOw8+L5w4w95UK8AuMU5E37aq-vR-eD+wnrT-2E8z5I0-rGZ-kLx3Xcz6vj-r5vifb+wu-nOaB+SCPkhEcKFT50nzNPeW19qLTxUHPd+z9l5vzbs-T+vcV6fH3pIP2RZaKlhPo2AedJ+zT09Nffi096DwJQUvNGK816oMkFvdgGDxhnH-tgyQuDBIgIDLLRsfsUTQGoKwDSWl1ZUhARKPEHlXBzXjoncu1QABixI0rqQmuwBQjhqATW1DVXONU5FPHrtwew+QLxswoOYRgrcfho3YN+eQ1F5AIQANQeSbnaaxVJW6fTFuweW8h8zyE9B47sXiYSoFboca4cAPbyAHhYTw7BzAQBsXYk4HxxjRBROMdg-FnFEwAPTePSb41AXjPoxOJPEhW3VdE6DSRk-xxxskxDycQyQoSSllJaZExssT4mt0NHkMWABCROGBoCrxqXEuBkQoiTM4NMqA7BqlDIWdfAi+x5JzLqdPM4iyzL7I9uJY5Ozdk1A2bUihTlr43PmTIcS-DWh+3pGIAyidM6yL6vXAKvlqiFx2gAdWxIwJOfA6ABH0UYdyChU7UgsZIJmaRCFn2ZJoUg3BkFP07kTNpNIiasz2H7aafB8gVDinIvO5gJrAt2kkfapdUh0gxBgbMeVvBwG0bVNJnkTAwCuF45urdoA8DFgwzuwBgAAgALpytlXKxM1TxXcElQg6VSrFWHmVaZEwC0VCt0GOqJwaNJhGPpdtBI3h0gwgAL7VUaeLDFFAsU4qlXqLJ5xjmbJGXMBZJLdh+39gY2lrhxhQA5tVI4mhU7UEMNoCa2hDgbXIBNbw3g2UcrygAWWmAEPg4U1DWIpHqBcYrtqStOSqytEq0aPPiYmA1FAjUmosGLdI3LU3lytUXW1YAHVOs8C6ukmLsW4vXkTYeRLiaJj9rmsQCbaCoBMBmvagQWWHXYOyzlAciD108tALGa19zUBFZw6IFQMReGRSmxRYR3I9E8gobq9MMTqPCI4CaTxvkWGZJIUO9MbEVrVfU5JOg-WjJaiczZbCMA5VrWBzWDSUlQYDeMRtMHsoXpbQzY1UaO3mrAAyzNdJF3LtXXIskFJz12sbI6iDc7TJkuuAieO2k0ScGgNweA2jQqSFKUWOOibYVor2NE5D8hspIarWjGT+q4CGoI6aztJHrWZvo60e1ryah+ymtNWQKpUCGEOFSH5ywiDDVILIRK3BkqkAJulKpbdupuVRvIDOEBMa0BIKvRE9AvVBtaPY+QqAAucCVWrfxaNwtEEC8AXViZpoAlbkA-QDbJAACpvKSA8T-bpkhPpExy26UyKXW7cOqJlnL+Z8u0nkMV7LkhzZ7GmoeVuf4JqSua9+erhXKnNcouVjrQkX4-By+4ukDWzIlY8omCtz1rNizgNcOE0tRY5Yq0A3p7BVvraGJtyQ23vREw8ft9gG3vxbdS1ViMplqlLaMCttbl3DvXeOx1rru2LtXea+1zr9EzvVVe39rbo3eF6gvQFUg-lhSrwG8aqzRgBAAD1jz5f8Y1pH1m0eHi8Tp72jYiAmdoDAVuQ0CjJRfiT0zq8WB3AwQh+DOVxgKGqKcKmrc3MmEYOMS5VzBfPQMtSU4rC-7jDEOgbSYuf570yJIeA2KiD8VOOkIoshszKO8CSTX0MQti1p2TinjBtD0Gp+TVALAotFcN6T8nlPzeJ0t9bpLRO3ktemO5XIMAl0jQoDCTwpAMCeHiT-Q8ZpA9nqpLSNGjB6B8CIDAVJkoOZEC5uUBmG8aTjEG1H2jVJjxx4TxAJPKfVhUnT9zLPe98kzeK0TXT+gABWKVfG3DRm4AvjAMe503APcvaeM882z4cDn3S-iHkuDcX4GB8cwlb453xrAxZd4PLSDxjB+8KEH5X4fNfFdHFOLISf0-bgfDnwMj3qLqoQvqsyKJf12CL-ILY644wX-L9zwEO4AJbQCjuFN3oDl3ODYUjWoFQDMVnxNFZ0kBuDkVOGURRCKBJGmjkn2GuBNRBjABowPEkGPASitwTUbi2FYCwLVxwOj2pFpAZCZBIODEuTunHzcGlDIB33SB0nmCijijE3cjJ0mhmhDBWS2n7THXezuAAFI58FBWRN53sWIahMD+DZcT9mcaQEMFcyDlDX5VDHh1Ccor89NvIAhPAIB1QNppQFBYcZEb04pwhpEPIvJVs1JzwRCdopgGYghwVIUIBoVuBeDRALZrhE4QDphGd2BMEFd21dFwjEwWC+BSB2CwAutyphQDMo4pDDxB4AAfNwjI6Q2QorTDOtbgBXOI8LBIpIsbVI9gdIyQTInIvI+ogorYAEWQT6PedokorxBXK3FQZvWfRDIIkIqfOA8IWXSIuQ01CaWXco1gxIqwKrOkOohoyQXI4FfIrIwoto1AToyTbaMo0yeItgqwdLWomaTYxojY5orYrYXYk5NVHorxegIga4CEbYaEARHwZgMMPSagBQdoPgc6RQRFRwrwbFOAeuOAMRUqaoWwKAFQZgQcWQRkMgemGEKNOgcwdgJ4cIyYyQdVCY+XcYAAigzQZgVgAADjOC2ATRX1OEj3dyMJRDDi6AADUuhposBQ4o5swTovAzp3JbCkp3JAl-QflMpJAAANWQFEEwuAKOXA3nfA5yVyBNYcUcX-QrYrEEP2TE-OHErU7HNVEkq0bAxEVgRwY6N4Wk0gek-AzeIIVXfApuPU46A0wkh47aU0pwCgi0q0o0W0+00Y6gJ0u4efJk-QP2PSYsU3LfBmF4uJaoBFJFLyLjdcXEBaCKJlezAPRsAKTGFhdgVQmsPQksvQgEf4CsqshXHeDAAEMsv4UsveesxsjAUsw4q5FeVQhs8YHs6s5s9Qjskkn+dsts3soc8c2Ay5Uk3OTQYA3+Rc8AyA78C-Sk2Al45qGXCYMAck0oAAdhpIyCb04VDlWzGk4zXGxEzPchUFYGgB7XVRqgRQWhhHIDY2LL+BNHGHUO-JyAqJOPSHYAkM0HGBAsKM6XWDZxIHGIdJnjNIoOOigAIG1EvA+JqHfMqFUL-OwvGGOIWKApArAs0EKOzHGCoWgrIHDJ9OwKQpQrQrfPPPYHUNGN-LwoAoIrAGAtAvqJIq2BdBJIVwUBguovgt9J3LotQoyHQv0EwuYsrNGNwv-PmKSO4uIsKO7FaiEpEtOFGNnIokGHoukpPJDT8HMFLCU1bS8H4NRSFksoZisAIAoFf1pPsudJXjwzbUI2oH5xwLJz9ypHIAEMM2mjIEhRUEzgDwyHQN2TpLuFflGNyV6J-1l1yT3hFCiLDNl0SpRAUNaFnJXnSH9OoGtLgC2CAJAM+E+EcBXNnwyoV3oHCgoKCF4HIC2CcvP3OAwAAE5YZ7VpxCdEZeB+AUR0B2AJA8KqQUZpwwB7U5UgA" width="100%" height="1200" title="QRE vs. Nash GG">
+
+</iframe>
+
 ## Flat-Rate Bias
 
 s. Tafelaufschrieb
