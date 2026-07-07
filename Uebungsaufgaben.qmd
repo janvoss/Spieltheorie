@@ -277,7 +277,7 @@ display(HTML(results_df.to_html(index=False)))
 :::
 
 -------------
-**Ergänzende Übungsaufgaben**
+# Ergänzende Übungsaufgaben{-}
 
 1. Wodurch ist bei sequenziellen Spielen ein separierendes Gleichgewicht gekennzeichnet? Wodurch ein Pooling-Gleichgewicht?
 
@@ -286,3 +286,26 @@ display(HTML(results_df.to_html(index=False)))
 1. Beschreiben Sie die Dynamik in einem evolutionären Spiel durch die Replikatordynamik.
 
 1. Wie werden nach der Prospect Theory Wahrscheinlichkeiten in Wahrscheinlichkeitsgewichte übersetzt (verbale Umschreibung reicht aus)?
+
+1. Wie werden im Rahmen der Prospect Theory positive und negative Ereignisse bewertet?
+
+1. Zeigen Sie in dieser Grafik, wie die Bündelung von negativen und positiven
+Ereignissen die Gesamtwahrnehmung einer Situation beeinflussen kann.
+
+1. Beschreiben Sie das Problem unglaubwürdiger Selbstbindung bei sequenziellen Spielen infolge der Teilspielperfektheit. Kann man das Problem umgehen?
+
+1. Was ist ein Quantal Response Gleichgewicht? Wie wird die Wahrscheinlichkeit für eine bestimmte Strategie in diesem Konzept berechnet? In welchem Verhältnis steht ein Quantal Response Gleichgewicht zum Nash Gleichgewicht?
+
+1. Wenn jemand zwei Handlungsmöglichkeiten zur Verfügung hat, wie groß ist dann die Wahrscheinlichkeit für die Wahl einer der Handlungsmöglichkeiten im Rahmen des Quantal Response Gleichgewichts, wenn für den Rationalitätsparamter gilt: $\lambda=0$?
+
+1. Was besagt der Flat-rate bias?
+
+1. Erläutern Sie die Wahl eines optimalen Güterbündels aus zwei Gütern bei einem normalen Tarif für beide Güter und bei einem Flat-rate Tarif für eines der beiden Güter.
+
+1. Was besagt der Status-quo Bias?
+
+1. Zeigen Sie anhand einer geeigneten und erläuterten Grafik, dass im Rahmen des mental
+accountings eine Preissenkung eventuell nicht zu einer höheren nachgefragten
+Menge führt.
+
+1. Erläutenr Sie das Allais-Paradoxon. Halten SIe es für plausibel, dass das Ausmaß der Risikoaversion abhängig ist von der Wahrscheinlichkeit für den schlechesten Zustand?
